@@ -1,0 +1,148 @@
+{
+  "links": [
+    {
+      "id": "1",
+      "url": "https://chat.openai.com/",
+      "category": "llm",
+      "name": { "zh": "ChatGPT", "en": "ChatGPT" },
+      "desc": { "zh": "通用对话与创作的大语言模型", "en": "General-purpose LLM for conversation and creation" },
+      "tags": { "zh": ["对话","写作","编程"], "en": ["Conversation","Writing","Coding"] },
+      "sponsor": false
+    },
+    {
+      "id": "2",
+      "url": "https://claude.ai/",
+      "category": "llm",
+      "name": { "zh": "Claude", "en": "Claude" },
+      "desc": { "zh": "Anthropic 开发的安全可靠的 AI 助手", "en": "Safe and reliable AI assistant by Anthropic" },
+      "tags": { "zh": ["对话","分析","写作"], "en": ["Chat","Analysis","Writing"] },
+      "sponsor": false
+    },
+    {
+      "id": "3",
+      "url": "https://www.midjourney.com/",
+      "category": "image",
+      "name": { "zh": "Midjourney", "en": "Midjourney" },
+      "desc": { "zh": "文本生成图像创作平台", "en": "Text-to-image creation platform" },
+      "tags": { "zh": ["作图","海报","艺术"], "en": ["Image","Poster","Art"] },
+      "sponsor": false
+    },
+    {
+      "id": "4",
+      "url": "https://www.canva.com/ai-image-generator/",
+      "category": "image",
+      "name": { "zh": "Canva AI", "en": "Canva AI" },
+      "desc": { "zh": "在线设计平台的 AI 图像生成工具", "en": "AI image generator in online design platform" },
+      "tags": { "zh": ["设计","图像","模板"], "en": ["Design","Image","Template"] },
+      "sponsor": false
+    },
+    {
+      "id": "5",
+      "url": "https://runwayml.com/",
+      "category": "video",
+      "name": { "zh": "Runway", "en": "Runway" },
+      "desc": { "zh": "AI 视频生成与编辑平台", "en": "AI video generation and editing platform" },
+      "tags": { "zh": ["视频","生成","编辑"], "en": ["Video","Generate","Edit"] },
+      "sponsor": false
+    },
+    {
+      "id": "6",
+      "url": "https://www.synthesia.io/",
+      "category": "video",
+      "name": { "zh": "Synthesia", "en": "Synthesia" },
+      "desc": { "zh": "AI 虚拟人视频制作平台", "en": "AI avatar video creation platform" },
+      "tags": { "zh": ["虚拟人","视频","演示"], "en": ["Avatar","Video","Demo"] },
+      "sponsor": false
+    },
+    {
+      "id": "7",
+      "url": "https://elevenlabs.io/",
+      "category": "audio",
+      "name": { "zh": "ElevenLabs", "en": "ElevenLabs" },
+      "desc": { "zh": "高质量 AI 语音合成平台", "en": "High-quality AI text-to-speech platform" },
+      "tags": { "zh": ["配音","TTS","语音"], "en": ["Voice","TTS","Speech"] },
+      "sponsor": false
+    },
+    {
+      "id": "8",
+      "url": "https://murf.ai/",
+      "category": "audio",
+      "name": { "zh": "Murf", "en": "Murf" },
+      "desc": { "zh": "专业级 AI 语音生成工具", "en": "Professional AI voice generation tool" },
+      "tags": { "zh": ["语音","配音","播客"], "en": ["Voice","Narration","Podcast"] },
+      "sponsor": false
+    },
+    {
+      "id": "9",
+      "url": "https://perplexity.ai/",
+      "category": "search",
+      "name": { "zh": "Perplexity", "en": "Perplexity" },
+      "desc": { "zh": "基于检索增强的 AI 搜索引擎", "en": "RAG-powered AI search engine" },
+      "tags": { "zh": ["搜索","问答","研究"], "en": ["Search","Q&A","Research"] },
+      "sponsor": false
+    },
+    {
+      "id": "10",
+      "url": "https://you.com/",
+      "category": "search",
+      "name": { "zh": "You.com", "en": "You.com" },
+      "desc": { "zh": "AI 驱动的智能搜索平台", "en": "AI-powered intelligent search platform" },
+      "tags": { "zh": ["搜索","AI","隐私"], "en": ["Search","AI","Privacy"] },
+      "sponsor": false
+    },
+    {
+      "id": "11",
+      "url": "https://github.com/features/copilot",
+      "category": "code",
+      "name": { "zh": "GitHub Copilot", "en": "GitHub Copilot" },
+      "desc": { "zh": "AI 编程助手和代码补全工具", "en": "AI pair programmer and code completion" },
+      "tags": { "zh": ["编程","自动补全","开发"], "en": ["Coding","Completion","Development"] },
+      "sponsor": false
+    },
+    {
+      "id": "12",
+      "url": "https://cursor.sh/",
+      "category": "code",
+      "name": { "zh": "Cursor", "en": "Cursor" },
+      "desc": { "zh": "AI 驱动的代码编辑器", "en": "AI-powered code editor" },
+      "tags": { "zh": ["编辑器","AI","编程"], "en": ["Editor","AI","Programming"] },
+      "sponsor": false
+    },
+    {
+      "id": "13",
+      "url": "https://www.notion.so/product/ai",
+      "category": "office",
+      "name": { "zh": "Notion AI", "en": "Notion AI" },
+      "desc": { "zh": "文档与知识库的 AI 助手", "en": "AI assistant for docs and knowledge base" },
+      "tags": { "zh": ["办公","文档","笔记"], "en": ["Office","Docs","Notes"] },
+      "sponsor": false
+    },
+    {
+      "id": "14",
+      "url": "https://www.jasper.ai/",
+      "category": "office",
+      "name": { "zh": "Jasper", "en": "Jasper" },
+      "desc": { "zh": "企业级 AI 内容创作平台", "en": "Enterprise AI content creation platform" },
+      "tags": { "zh": ["内容","营销","写作"], "en": ["Content","Marketing","Writing"] },
+      "sponsor": false
+    },
+    {
+      "id": "15",
+      "url": "https://www.character.ai/",
+      "category": "other",
+      "name": { "zh": "Character.AI", "en": "Character.AI" },
+      "desc": { "zh": "与 AI 角色对话的娱乐平台", "en": "Entertainment platform for AI character chat" },
+      "tags": { "zh": ["娱乐","角色","对话"], "en": ["Entertainment","Character","Chat"] },
+      "sponsor": false
+    },
+    {
+      "id": "16",
+      "url": "https://replika.ai/",
+      "category": "other",
+      "name": { "zh": "Replika", "en": "Replika" },
+      "desc": { "zh": "个人 AI 伴侣和聊天机器人", "en": "Personal AI companion and chatbot" },
+      "tags": { "zh": ["伴侣","聊天","情感"], "en": ["Companion","Chat","Emotional"] },
+      "sponsor": false
+    }
+  ]
+}
