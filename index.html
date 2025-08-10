@@ -5,61 +5,72 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AbeiTools · 阿北的 AI 工具箱</title>
   <meta name="description" content="发现优质 AI 工具，提升你的效率与创造力。AbeiTools - AI 工具导航。" />
-  
-  <!-- Open Graph -->
   <meta property="og:title" content="AbeiTools · 阿北的 AI 工具箱" />
-  <meta property="og:description" content="发现优质 AI 工具，提升你的效率与创造力。AbeiTools - AI 工具导航。" />
+  <meta property="og:description" content="发现优质 AI 工具，提升你的效率与创造力。" />
   <meta property="og:type" content="website" />
-  
-  <!-- Google AdSense 验证脚本 -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6542658688331359" crossorigin="anonymous"></script>
-  
-  <!-- Tailwind CSS (CDN) for quick MVP styling -->
+
+  <!-- ✅ Google AdSense 验证脚本（必须在 <head>，保持与你后台给的 client 完全一致） -->
+  <script async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+    crossorigin="anonymous"></script>
+
+  <!-- Tailwind CDN（MVP 快速样式） -->
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"; }
+    /* 两行截断 */
+    .line-2 { display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
   </style>
 </head>
 <body class="bg-white text-slate-800">
-  <!-- Header -->
+  <!-- 顶部 -->
   <header class="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 py-3 flex items-center gap-4">
       <div class="text-xl font-semibold">AbeiTools</div>
       <div id="welcome" class="text-sm text-slate-600">发现优质 AI 工具，提升你的效率与创造力。</div>
       <div class="ml-auto flex items-center gap-2">
-        <input id="search" type="search" inputmode="search" placeholder="搜索名称/简介/标签…" aria-label="搜索工具" class="w-56 md:w-72 px-3 py-2 rounded-xl bg-slate-100 outline-none focus:ring-2 focus:ring-indigo-500" />
-        <button id="langToggle" class="px-3 py-2 rounded-xl border border-slate-300 hover:bg-slate-100 text-sm focus:ring-2 focus:ring-indigo-500" aria-label="切换语言">EN</button>
+        <input id="search" type="search" inputmode="search" placeholder="搜索名称/简介/标签…"
+          class="w-56 md:w-72 px-3 py-2 rounded-xl bg-slate-100 outline-none focus:ring-2 focus:ring-indigo-500" />
+        <button id="langToggle" class="px-3 py-2 rounded-xl border border-slate-300 hover:bg-slate-100 text-sm"
+          aria-label="Switch language">EN</button>
       </div>
     </div>
   </header>
 
   <main class="max-w-7xl mx-auto px-4 py-6 grid grid-cols-12 gap-6">
-    <!-- Left: categories (1.5) -->
+    <!-- 左：分类 1.5 -->
     <aside class="col-span-12 md:col-span-3 lg:col-span-2">
-      <nav id="categoryNav" class="sticky top-24">
+      <nav class="sticky top-24">
         <h2 id="catTitle" class="text-sm font-medium text-slate-500 mb-2">分类</h2>
         <div id="catButtons" class="flex md:block flex-wrap gap-2"></div>
       </nav>
     </aside>
 
-    <!-- Center: cards (6) -->
-    <section class="col-span-12 md:col-span-6 lg:col-span-8" id="content">
+    <!-- 中：卡片 6 -->
+    <section class="col-span-12 md:col-span-6 lg:col-span-8">
       <div id="sections" class="space-y-10"></div>
+      <div id="loadError" class="hidden rounded-2xl border border-red-200 bg-red-50 text-red-700 p-4 text-sm">
+        数据加载失败，请刷新重试。
+      </div>
     </section>
 
-    <!-- Right: ads (1.5) -->
+    <!-- 右：广告 1.5 -->
     <aside class="col-span-12 md:col-span-3 lg:col-span-2">
-      <div class="sticky top-24 space-y-4" id="ads">
+      <div class="sticky top-24 space-y-4">
         <div class="text-sm font-medium text-slate-500">广告</div>
-        <ins class="adsbygoogle"
+
+        <!-- ✅ 右侧广告位（响应式） -->
+        <ins class="adsbygoogle block w-full"
              style="display:block;min-height:250px"
-             data-ad-client="ca-pub-6542658688331359"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
              data-ad-slot="0000000000"
              data-ad-format="auto"
              data-full-width-responsive="true"></ins>
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        <!-- 占位卡，若审核期/未填充时显示 -->
-        <div id="adFallback" class="border border-dashed rounded-2xl p-4 text-xs text-slate-500 text-center" style="display:none;">
+
+        <!-- 审核/未填充占位 -->
+        <div id="adFallback"
+             class="hidden rounded-2xl border border-dashed border-slate-300 p-4 text-center text-xs text-slate-500">
           广告加载中或待审核
         </div>
       </div>
@@ -71,108 +82,59 @@
   </footer>
 
   <script>
-    // =============== 基础多语言 ===============
-    const i18n = {
+    // ======= i18n 基文案 =======
+    const I18N = {
       zh: {
         welcome: "发现优质 AI 工具，提升你的效率与创造力。",
         searchPh: "搜索名称/简介/标签…",
         categories: "分类",
-        footerTip: "人工精选的 AI 工具导航",
-        labelSponsor: "赞助"
+        footer: "人工精选的 AI 工具导航",
+        backTop: "回到顶部",
+        sponsor: "赞助"
       },
       en: {
         welcome: "Discover quality AI tools to boost your efficiency and creativity.",
         searchPh: "Search name/description/tags…",
         categories: "Categories",
-        footerTip: "Curated AI tools directory",
-        labelSponsor: "Sponsored"
+        footer: "Curated AI tools directory",
+        backTop: "Back to top",
+        sponsor: "Sponsored"
       }
     };
 
-    // 分类（固定 8 类）
+    // ======= 分类（固定 8 类） =======
     const CATEGORY_META = {
       llm:   { order: 1,  name: { zh: "AI 大模型", en: "AI Large Language Models" } },
-      image: { order: 2,  name: { zh: "AI 图像",  en: "AI Image" } },
-      video: { order: 3,  name: { zh: "AI 视频",  en: "AI Video" } },
-      audio: { order: 4,  name: { zh: "AI 音频",  en: "AI Audio & Speech" } },
-      search:{ order: 5,  name: { zh: "AI 搜索",  en: "AI Search & Retrieval" } },
-      code:  { order: 6,  name: { zh: "AI 编程",  en: "AI Coding" } },
-      office:{ order: 7,  name: { zh: "AI 办公",  en: "AI Office & Productivity" } },
-      other: { order: 99, name: { zh: "其他",    en: "Others" } }
+      image: { order: 2,  name: { zh: "AI 图像",   en: "AI Image" } },
+      video: { order: 3,  name: { zh: "AI 视频",   en: "AI Video" } },
+      audio: { order: 4,  name: { zh: "AI 音频",   en: "AI Audio & Speech" } },
+      search:{ order: 5,  name: { zh: "AI 搜索",   en: "AI Search & Retrieval" } },
+      code:  { order: 6,  name: { zh: "AI 编程",   en: "AI Coding" } },
+      office:{ order: 7,  name: { zh: "AI 办公",   en: "AI Office & Productivity" } },
+      other: { order: 99, name: { zh: "其他",     en: "Others" } }
     };
 
-    // 全局数据变量，将从 JSON 文件加载
-    let DATA = [];
-
-    // =============== 渲染逻辑 ===============
-    const $ = (sel, el=document) => el.querySelector(sel);
-    const $$ = (sel, el=document) => Array.from(el.querySelectorAll(sel));
+    // ======= 工具函数 =======
+    const $  = (s, el=document)=>el.querySelector(s);
+    const $$ = (s, el=document)=>Array.from(el.querySelectorAll(s));
 
     const state = {
-      lang: (localStorage.getItem('lang') || (navigator.language||'en').toLowerCase().startsWith('zh') ? 'zh' : 'en')
+      lang: (localStorage.getItem('lang') ||
+            ((navigator.language||'en').toLowerCase().startsWith('zh') ? 'zh' : 'en'))
     };
 
     function setLang(lang){
-      state.lang = lang; localStorage.setItem('lang', lang);
+      state.lang = lang;
+      localStorage.setItem('lang', lang);
       document.documentElement.lang = lang;
-      
-      // 更新页面标题和描述
-      if (lang === 'zh') {
-        document.title = 'AbeiTools · 阿北的 AI 工具箱';
-        document.querySelector('meta[name="description"]').content = '发现优质 AI 工具，提升你的效率与创造力。AbeiTools - AI 工具导航。';
-        document.querySelector('meta[property="og:title"]').content = 'AbeiTools · 阿北的 AI 工具箱';
-        document.querySelector('meta[property="og:description"]').content = '发现优质 AI 工具，提升你的效率与创造力。AbeiTools - AI 工具导航。';
-      } else {
-        document.title = 'AbeiTools · AI Tools Directory';
-        document.querySelector('meta[name="description"]').content = 'Discover quality AI tools to boost your efficiency and creativity. AbeiTools - AI tools directory.';
-        document.querySelector('meta[property="og:title"]').content = 'AbeiTools · AI Tools Directory';
-        document.querySelector('meta[property="og:description"]').content = 'Discover quality AI tools to boost your efficiency and creativity. AbeiTools - AI tools directory.';
-      }
-      
-      // 文案
-      $('#welcome').textContent = i18n[lang].welcome;
-      $('#search').placeholder = i18n[lang].searchPh;
-      $('#catTitle').textContent = i18n[lang].categories;
-      $('#footerTip').textContent = i18n[lang].footerTip;
-      $('#langToggle').textContent = lang === 'zh' ? 'EN' : '中文';
-      renderLists();
-    }
 
-    // 分类按钮 & 分区
-    function renderLists(){
-      const catOrder = Object.entries(CATEGORY_META).sort((a,b)=>a[1].order-b[1].order).map(([code])=>code);
-      const catButtons = $('#catButtons');
-      const sections = $('#sections');
-      catButtons.innerHTML = ''; sections.innerHTML='';
-
-      const counts = {};
-      catOrder.forEach(code => {
-        const items = DATA.filter(x => x.category === code);
-        if(items.length === 0) return; // 无数据分类可暂不渲染
-        counts[code] = items.length;
-
-        // nav button
-        const btn = document.createElement('a');
-        btn.href = `#cat-${code}`;
-        btn.className = 'inline-flex w-auto md:w-full items-center justify-between md:justify-start gap-2 px-3 py-2 rounded-xl text-sm hover:bg-indigo-50 hover:text-indigo-700';
-        btn.innerHTML = `<span>${CATEGORY_META[code].name[state.lang]}</span><span class="hidden md:inline text-xs text-slate-400">${items.length}</span>`;
-        catButtons.appendChild(btn);
-
-        // section
-        const sec = document.createElement('section');
-        sec.id = `cat-${code}`;
-        sec.innerHTML = `
-          <div class="flex items-center justify-between mb-3">
-            <h2 class="text-base md:text-lg font-semibold">${CATEGORY_META[code].name[state.lang]}</h2>
-            <a href="#top" class="text-xs text-slate-500 hover:text-indigo-600">${state.lang==='zh'?'回到顶部':'Back to top'}</a>
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" data-grid="${code}"></div>
-        `;
-        sections.appendChild(sec);
-
-        const grid = sec.querySelector(`[data-grid="${code}"]`);
-        items.forEach(item => grid.appendChild(createCard(item)));
-      });
+      $('#welcome').textContent = I18N[lang].welcome;
+      $('#search').placeholder   = I18N[lang].searchPh;
+      $('#catTitle').textContent = I18N[lang].categories;
+      $('#footerTip').textContent= I18N[lang].footer;
+      $('#langToggle').textContent= lang === 'zh' ? 'EN' : '中文';
+      document.title = lang==='zh' ? 'AbeiTools · 阿北的 AI 工具箱' : 'AbeiTools · AI Tools Directory';
+      renderLists(window.__DATA__||[]);
     }
 
     function createCard(item){
@@ -182,78 +144,81 @@
       a.className = 'group block rounded-2xl border border-slate-200 p-4 hover:shadow-sm hover:border-indigo-300 transition bg-white';
       a.innerHTML = `
         <div class="flex items-start gap-3">
-          <div class="shrink-0 w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-slate-500 font-semibold">${(item.name[lang]||'A').slice(0,1)}</div>
+          <div class="shrink-0 w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-slate-500 font-semibold">
+            ${(item.name?.[lang] || 'A').slice(0,1)}
+          </div>
           <div class="min-w-0">
             <div class="flex items-center gap-2">
-              <h3 class="font-medium truncate">${item.name[lang]}</h3>
+              <h3 class="font-medium truncate">${item.name?.[lang] || ''}</h3>
+              ${item.sponsor ? `<span class="text-[10px] px-1.5 py-0.5 rounded bg-amber-100 text-amber-800">${I18N[lang].sponsor}</span>` : ''}
             </div>
-            <p class="text-sm text-slate-600 line-clamp-2">${item.desc[lang]||''}</p>
+            <p class="text-sm text-slate-600 line-2">${item.desc?.[lang] || ''}</p>
             <div class="mt-2 flex flex-wrap gap-1.5">
-              ${(item.tags?.[lang]||[]).slice(0,4).map(t=>`<span class='text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600'>${t}</span>`).join('')}
+              ${(item.tags?.[lang] || []).slice(0,4).map(t => `<span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600">${t}</span>`).join('')}
             </div>
           </div>
         </div>`;
       return a;
     }
 
-    // 搜索（当前语言字段本地过滤）
+    function renderLists(DATA){
+      const sections = $('#sections'); sections.innerHTML = '';
+      const catButtons = $('#catButtons'); catButtons.innerHTML = '';
+
+      const orderedCats = Object.entries(CATEGORY_META).sort((a,b)=>a[1].order-b[1].order).map(([c])=>c);
+      orderedCats.forEach(code=>{
+        const items = DATA.filter(x=>x.category===code);
+        if(items.length===0) return;
+
+        // 左侧按钮
+        const btn = document.createElement('a');
+        btn.href = `#cat-${code}`;
+        btn.className = 'inline-flex w-auto md:w-full items-center justify-between md:justify-start gap-2 px-3 py-2 rounded-xl text-sm hover:bg-indigo-50 hover:text-indigo-700';
+        btn.innerHTML = `<span>${CATEGORY_META[code].name[state.lang]}</span><span class="hidden md:inline text-xs text-slate-400">${items.length}</span>`;
+        catButtons.appendChild(btn);
+
+        // 中间分区
+        const sec = document.createElement('section');
+        sec.id = `cat-${code}`;
+        sec.innerHTML = `
+          <div class="flex items-center justify-between mb-3">
+            <h2 class="text-base md:text-lg font-semibold">${CATEGORY_META[code].name[state.lang]}</h2>
+            <a href="#top" class="text-xs text-slate-500 hover:text-indigo-600">${I18N[state.lang].backTop}</a>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" data-grid="${code}"></div>
+        `;
+        sections.appendChild(sec);
+        const grid = sec.querySelector(`[data-grid="${code}"]`);
+        items.forEach(it=>grid.appendChild(createCard(it)));
+      });
+    }
+
     function bindSearch(){
       const input = $('#search');
-      input.addEventListener('input', () => {
+      input.addEventListener('input', ()=>{
         const q = input.value.trim().toLowerCase();
-        $$('#sections a.group').forEach(card => {
-          const text = card.textContent.toLowerCase();
-          card.style.display = text.includes(q) ? '' : 'none';
+        $$('#sections a.group').forEach(card=>{
+          card.style.display = card.textContent.toLowerCase().includes(q) ? '' : 'none';
         });
       });
     }
 
-    // 语言切换
-    $('#langToggle').addEventListener('click', () => setLang(state.lang==='zh'?'en':'zh'));
-
-    // 数据加载函数
-    async function loadData() {
-      try {
-        const response = await fetch('/data/links.json', { cache: 'no-cache' });
-        if (!response.ok) {
-          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-        }
-        const data = await response.json();
-        // 兼容两种格式：纯数组或 { links: [...] }
-        DATA = Array.isArray(data) ? data : (data.links || []);
-        renderLists();
-      } catch (error) {
-        console.error('数据加载失败:', error);
-        showError('数据加载失败，请稍后重试');
-      }
-    }
-
-    // 错误显示函数
-    function showError(message) {
-      const sections = $('#sections');
-      sections.innerHTML = `
-        <div class="text-center py-12">
-          <div class="text-red-500 text-lg mb-2">⚠️ ${message}</div>
-          <button onclick="loadData()" class="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500">
-            重新加载
-          </button>
-        </div>
-      `;
-    }
-
-    // 初始化
+    // ======= 初始化 =======
     document.getElementById('year').textContent = new Date().getFullYear();
+    $('#langToggle').addEventListener('click', ()=> setLang(state.lang==='zh'?'en':'zh'));
     bindSearch();
-    setLang(state.lang);
-    loadData(); // 加载数据
 
-  </script>
-  
-  <!-- 广告占位逻辑 -->
-  <script defer>
-    setTimeout(() => {
-      const ad = document.querySelector('ins.adsbygoogle iframe');
-      document.getElementById('adFallback').style.display = ad ? 'none' : 'block';
+    // 读取 JSON（相对路径 + 版本号避免缓存）
+    fetch('./data/links.json?v=' + Date.now(), { cache: 'no-cache' })
+      .then(r => r.json())
+      .then(d => Array.isArray(d) ? d : (d.links || []))
+      .then(list => { window.__DATA__ = list; setLang(state.lang); })
+      .catch(() => { $('#loadError').classList.remove('hidden'); setLang(state.lang); });
+
+    // 广告占位兜底（审核或未填充）
+    setTimeout(()=>{
+      const ok = document.querySelector('ins.adsbygoogle iframe');
+      $('#adFallback').classList.toggle('hidden', !!ok);
     }, 3000);
   </script>
 </body>
