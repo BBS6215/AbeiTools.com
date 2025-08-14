@@ -1,148 +1,62 @@
 {
   "links": [
-    {
-      "id": "1",
-      "url": "https://chat.openai.com/",
-      "category": "llm",
-      "name": { "zh": "ChatGPT", "en": "ChatGPT" },
-      "desc": { "zh": "通用对话与创作的大语言模型", "en": "General-purpose LLM for conversation and creation" },
-      "tags": { "zh": ["对话","写作","编程"], "en": ["Conversation","Writing","Coding"] },
-      "sponsor": false
-    },
-    {
-      "id": "2",
-      "url": "https://claude.ai/",
-      "category": "llm",
-      "name": { "zh": "Claude", "en": "Claude" },
-      "desc": { "zh": "Anthropic 开发的安全可靠的 AI 助手", "en": "Safe and reliable AI assistant by Anthropic" },
-      "tags": { "zh": ["对话","分析","写作"], "en": ["Chat","Analysis","Writing"] },
-      "sponsor": false
-    },
-    {
-      "id": "3",
-      "url": "https://www.midjourney.com/",
-      "category": "image",
-      "name": { "zh": "Midjourney", "en": "Midjourney" },
-      "desc": { "zh": "文本生成图像创作平台", "en": "Text-to-image creation platform" },
-      "tags": { "zh": ["作图","海报","艺术"], "en": ["Image","Poster","Art"] },
-      "sponsor": false
-    },
-    {
-      "id": "4",
-      "url": "https://www.canva.com/ai-image-generator/",
-      "category": "image",
-      "name": { "zh": "Canva AI", "en": "Canva AI" },
-      "desc": { "zh": "在线设计平台的 AI 图像生成工具", "en": "AI image generator in online design platform" },
-      "tags": { "zh": ["设计","图像","模板"], "en": ["Design","Image","Template"] },
-      "sponsor": false
-    },
-    {
-      "id": "5",
-      "url": "https://runwayml.com/",
-      "category": "video",
-      "name": { "zh": "Runway", "en": "Runway" },
-      "desc": { "zh": "AI 视频生成与编辑平台", "en": "AI video generation and editing platform" },
-      "tags": { "zh": ["视频","生成","编辑"], "en": ["Video","Generate","Edit"] },
-      "sponsor": false
-    },
-    {
-      "id": "6",
-      "url": "https://www.synthesia.io/",
-      "category": "video",
-      "name": { "zh": "Synthesia", "en": "Synthesia" },
-      "desc": { "zh": "AI 虚拟人视频制作平台", "en": "AI avatar video creation platform" },
-      "tags": { "zh": ["虚拟人","视频","演示"], "en": ["Avatar","Video","Demo"] },
-      "sponsor": false
-    },
-    {
-      "id": "7",
-      "url": "https://elevenlabs.io/",
-      "category": "audio",
-      "name": { "zh": "ElevenLabs", "en": "ElevenLabs" },
-      "desc": { "zh": "高质量 AI 语音合成平台", "en": "High-quality AI text-to-speech platform" },
-      "tags": { "zh": ["配音","TTS","语音"], "en": ["Voice","TTS","Speech"] },
-      "sponsor": false
-    },
-    {
-      "id": "8",
-      "url": "https://murf.ai/",
-      "category": "audio",
-      "name": { "zh": "Murf", "en": "Murf" },
-      "desc": { "zh": "专业级 AI 语音生成工具", "en": "Professional AI voice generation tool" },
-      "tags": { "zh": ["语音","配音","播客"], "en": ["Voice","Narration","Podcast"] },
-      "sponsor": false
-    },
-    {
-      "id": "9",
-      "url": "https://perplexity.ai/",
-      "category": "search",
-      "name": { "zh": "Perplexity", "en": "Perplexity" },
-      "desc": { "zh": "基于检索增强的 AI 搜索引擎", "en": "RAG-powered AI search engine" },
-      "tags": { "zh": ["搜索","问答","研究"], "en": ["Search","Q&A","Research"] },
-      "sponsor": false
-    },
-    {
-      "id": "10",
-      "url": "https://you.com/",
-      "category": "search",
-      "name": { "zh": "You.com", "en": "You.com" },
-      "desc": { "zh": "AI 驱动的智能搜索平台", "en": "AI-powered intelligent search platform" },
-      "tags": { "zh": ["搜索","AI","隐私"], "en": ["Search","AI","Privacy"] },
-      "sponsor": false
-    },
-    {
-      "id": "11",
-      "url": "https://github.com/features/copilot",
-      "category": "code",
-      "name": { "zh": "GitHub Copilot", "en": "GitHub Copilot" },
-      "desc": { "zh": "AI 编程助手和代码补全工具", "en": "AI pair programmer and code completion" },
-      "tags": { "zh": ["编程","自动补全","开发"], "en": ["Coding","Completion","Development"] },
-      "sponsor": false
-    },
-    {
-      "id": "12",
-      "url": "https://cursor.sh/",
-      "category": "code",
-      "name": { "zh": "Cursor", "en": "Cursor" },
-      "desc": { "zh": "AI 驱动的代码编辑器", "en": "AI-powered code editor" },
-      "tags": { "zh": ["编辑器","AI","编程"], "en": ["Editor","AI","Programming"] },
-      "sponsor": false
-    },
-    {
-      "id": "13",
-      "url": "https://www.notion.so/product/ai",
-      "category": "office",
-      "name": { "zh": "Notion AI", "en": "Notion AI" },
-      "desc": { "zh": "文档与知识库的 AI 助手", "en": "AI assistant for docs and knowledge base" },
-      "tags": { "zh": ["办公","文档","笔记"], "en": ["Office","Docs","Notes"] },
-      "sponsor": false
-    },
-    {
-      "id": "14",
-      "url": "https://www.jasper.ai/",
-      "category": "office",
-      "name": { "zh": "Jasper", "en": "Jasper" },
-      "desc": { "zh": "企业级 AI 内容创作平台", "en": "Enterprise AI content creation platform" },
-      "tags": { "zh": ["内容","营销","写作"], "en": ["Content","Marketing","Writing"] },
-      "sponsor": false
-    },
-    {
-      "id": "15",
-      "url": "https://www.character.ai/",
-      "category": "other",
-      "name": { "zh": "Character.AI", "en": "Character.AI" },
-      "desc": { "zh": "与 AI 角色对话的娱乐平台", "en": "Entertainment platform for AI character chat" },
-      "tags": { "zh": ["娱乐","角色","对话"], "en": ["Entertainment","Character","Chat"] },
-      "sponsor": false
-    },
-    {
-      "id": "16",
-      "url": "https://replika.ai/",
-      "category": "other",
-      "name": { "zh": "Replika", "en": "Replika" },
-      "desc": { "zh": "个人 AI 伴侣和聊天机器人", "en": "Personal AI companion and chatbot" },
-      "tags": { "zh": ["伴侣","聊天","情感"], "en": ["Companion","Chat","Emotional"] },
-      "sponsor": false
-    }
+    { "id":"1","url":"https://chat.openai.com/","category":"llm","name":{"zh":"ChatGPT","en":"ChatGPT"},"desc":{"zh":"多模态对话助手，写作编程皆可","en":"Multimodal assistant for writing, research and coding"},"tags":{"zh":["对话","写作","编程"],"en":["Conversation","Writing","Coding"]},"sponsor":false },
+    { "id":"2","url":"https://claude.ai/","category":"llm","name":{"zh":"Claude","en":"Claude"},"desc":{"zh":"长文本理解与生成，注重安全可控","en":"Long-context conversational model focused on safety"},"tags":{"zh":["对话","长文本"],"en":["Chat","Long context"]},"sponsor":false },
+    { "id":"3","url":"https://gemini.google.com/","category":"llm","name":{"zh":"Google Gemini","en":"Google Gemini"},"desc":{"zh":"多模态模型，深度集成 Workspace","en":"Multimodal model integrated with Workspace"},"tags":{"zh":["多模态","办公"],"en":["Multimodal","Workspace"]},"sponsor":false },
+    { "id":"4","url":"https://x.com/grok","category":"llm","name":{"zh":"Grok","en":"Grok"},"desc":{"zh":"面向实时信息的推理型大模型","en":"Reasoning model with real-time information access"},"tags":{"zh":["搜索","推理"],"en":["Search","Reasoning"]},"sponsor":false },
+    { "id":"5","url":"https://developers.google.com/ai/large-models/overview","category":"llm","name":{"zh":"Gemini Nano","en":"Gemini Nano"},"desc":{"zh":"轻量端侧模型，适合移动设备","en":"Lightweight on-device model for mobile/edge"},"tags":{"zh":["端侧","轻量"],"en":["On-device","Lightweight"]},"sponsor":false },
+
+    { "id":"6","url":"https://www.midjourney.com/","category":"image","name":{"zh":"Midjourney","en":"Midjourney"},"desc":{"zh":"文本生成高质量艺术风格图像","en":"Text-to-image with artistic, high-quality outputs"},"tags":{"zh":["作图","生成"],"en":["Text-to-image","Art"]},"sponsor":false },
+    { "id":"7","url":"https://labs.openai.com/","category":"image","name":{"zh":"DALL·E 3","en":"DALL·E 3"},"desc":{"zh":"官方图像生成，风格丰富可控","en":"OpenAI image generation with fine controls"},"tags":{"zh":["作图","生成"],"en":["Text-to-image","Creative"]},"sponsor":false },
+    { "id":"8","url":"https://leonardo.ai/","category":"image","name":{"zh":"Leonardo.ai","en":"Leonardo.ai"},"desc":{"zh":"偏游戏美术与概念原画生成","en":"Game art and concept art generation"},"tags":{"zh":["原画","游戏美术"],"en":["Concept art","Game art"]},"sponsor":false },
+    { "id":"9","url":"https://www.canva.com/","category":"image","name":{"zh":"Canva Magic Studio","en":"Canva Magic Studio"},"desc":{"zh":"Canva 内置 AI 图像与设计工具","en":"AI image/design tools inside Canva"},"tags":{"zh":["设计","海报"],"en":["Design","Templates"]},"sponsor":false },
+    { "id":"10","url":"https://runwayml.com/","category":"image","name":{"zh":"Runway ML","en":"Runway ML"},"desc":{"zh":"图像生成与创意特效编辑平台","en":"Creative platform for gen-image and effects"},"tags":{"zh":["特效","编辑"],"en":["Effects","Editing"]},"sponsor":false },
+    { "id":"11","url":"https://stability.ai/","category":"image","name":{"zh":"Stable Diffusion","en":"Stable Diffusion"},"desc":{"zh":"开源图像模型生态，支持自托管","en":"Open-source image models, self-host friendly"},"tags":{"zh":["开源","模型"],"en":["Open source","Models"]},"sponsor":false },
+
+    { "id":"12","url":"https://www.synthesia.io/","category":"video","name":{"zh":"Synthesia","en":"Synthesia"},"desc":{"zh":"虚拟主播生成，多语言配音支持","en":"AI avatars with multilingual voiceover"},"tags":{"zh":["虚拟人","讲解"],"en":["Avatar","Presenter"]},"sponsor":false },
+    { "id":"13","url":"https://www.veed.io/","category":"video","name":{"zh":"VEED","en":"VEED"},"desc":{"zh":"一体化视频生成与在线剪辑","en":"All-in-one video generation and editing"},"tags":{"zh":["剪辑","字幕"],"en":["Editing","Captions"]},"sponsor":false },
+    { "id":"14","url":"https://www.heygen.com/","category":"video","name":{"zh":"HeyGen","en":"HeyGen"},"desc":{"zh":"文本转视频，支持自定义虚拟人","en":"Text-to-video with custom avatars"},"tags":{"zh":["虚拟人","配音"],"en":["Avatar","Voice"]},"sponsor":false },
+    { "id":"15","url":"https://opusclip.com/","category":"video","name":{"zh":"OpusClip","en":"OpusClip"},"desc":{"zh":"长视频自动剪成社交短视频","en":"Auto repurpose long video into shorts"},"tags":{"zh":["短视频","剪辑"],"en":["Shorts","Editing"]},"sponsor":false },
+    { "id":"16","url":"https://pictory.ai/","category":"video","name":{"zh":"Pictory","en":"Pictory"},"desc":{"zh":"脚本或文章一键生成解说视频","en":"Create narrated videos from scripts/blogs"},"tags":{"zh":["解说","生成"],"en":["Narration","Auto"]},"sponsor":false },
+
+    { "id":"17","url":"https://elevenlabs.io/","category":"audio","name":{"zh":"ElevenLabs","en":"ElevenLabs"},"desc":{"zh":"高质量语音合成，情感与语调丰富","en":"High-quality TTS with rich styles"},"tags":{"zh":["TTS","配音"],"en":["TTS","Voice"]},"sponsor":false },
+    { "id":"18","url":"https://murf.ai/","category":"audio","name":{"zh":"Murf.ai","en":"Murf.ai"},"desc":{"zh":"文字转语音，适合教程解说配音","en":"Text-to-speech for tutorials/voiceovers"},"tags":{"zh":["配音","语音"],"en":["Voiceover","TTS"]},"sponsor":false },
+    { "id":"19","url":"https://suno.ai/","category":"audio","name":{"zh":"Suno","en":"Suno"},"desc":{"zh":"AI 音乐创作，多风格自动生成","en":"AI music creation across multiple styles"},"tags":{"zh":["音乐","创作"],"en":["Music","Generation"]},"sponsor":false },
+    { "id":"20","url":"https://www.aiva.ai/","category":"audio","name":{"zh":"AIVA","en":"AIVA"},"desc":{"zh":"面向游戏影视的配乐作曲","en":"AI composition for games and film scoring"},"tags":{"zh":["配乐","作曲"],"en":["Composition","Scoring"]},"sponsor":false },
+    { "id":"21","url":"https://www.lalal.ai/","category":"audio","name":{"zh":"LALAL.AI","en":"LALAL.AI"},"desc":{"zh":"音轨分离，提取人声或伴奏","en":"Stem separation for vocals and instruments"},"tags":{"zh":["分离","人声"],"en":["Separation","Stems"]},"sponsor":false },
+
+    { "id":"22","url":"https://www.perplexity.ai/","category":"search","name":{"zh":"Perplexity","en":"Perplexity"},"desc":{"zh":"问答式搜索，引文可溯源","en":"Answer-engine search with citations"},"tags":{"zh":["问答","检索"],"en":["QA","Citations"]},"sponsor":false },
+    { "id":"23","url":"https://www.google.com/ai/","category":"search","name":{"zh":"Google AI Overviews","en":"Google AI Overviews"},"desc":{"zh":"搜索结果中提供 AI 总结卡片","en":"AI overviews inside Google Search results"},"tags":{"zh":["摘要","搜索"],"en":["Summary","Search"]},"sponsor":false },
+    { "id":"24","url":"https://you.com/","category":"search","name":{"zh":"You.com","en":"You.com"},"desc":{"zh":"可定制的 AI 搜索助手","en":"Customizable AI search assistant"},"tags":{"zh":["隐私","插件"],"en":["Privacy","Plugins"]},"sponsor":false },
+    { "id":"25","url":"https://chat.openai.com/","category":"search","name":{"zh":"ChatGPT 搜索","en":"ChatGPT with Search"},"desc":{"zh":"内置联网检索，实时获取信息","en":"Built-in web browsing for up-to-date info"},"tags":{"zh":["联网","搜索"],"en":["Browsing","Search"]},"sponsor":false },
+
+    { "id":"26","url":"https://github.com/features/copilot/","category":"code","name":{"zh":"GitHub Copilot","en":"GitHub Copilot"},"desc":{"zh":"IDE 内 AI 代码补全与生成","en":"AI code completion inside IDEs"},"tags":{"zh":["补全","VSCode"],"en":["Autocomplete","IDE"]},"sponsor":false },
+    { "id":"27","url":"https://www.tabnine.com/","category":"code","name":{"zh":"Tabnine","en":"Tabnine"},"desc":{"zh":"多语言智能补全，支持本地部署","en":"Multilanguage autocomplete with on-prem options"},"tags":{"zh":["补全","本地化"],"en":["Autocomplete","On-prem"]},"sponsor":false },
+    { "id":"28","url":"https://replit.com/ghostwriter","category":"code","name":{"zh":"Replit Ghostwriter","en":"Replit Ghostwriter"},"desc":{"zh":"在线 IDE 集成 AI 编程助手","en":"AI coding assistant inside Replit IDE"},"tags":{"zh":["在线IDE","协作"],"en":["Online IDE","Collaboration"]},"sponsor":false },
+    { "id":"29","url":"https://codeium.com/","category":"code","name":{"zh":"Codeium","en":"Codeium"},"desc":{"zh":"免费代码助手，覆盖多语言","en":"Free code assistant for many languages"},"tags":{"zh":["补全","生成"],"en":["Autocomplete","Generation"]},"sponsor":false },
+    { "id":"30","url":"https://platform.openai.com/","category":"code","name":{"zh":"Codex","en":"Codex"},"desc":{"zh":"OpenAI 编程模型与 API 能力","en":"OpenAI coding models and API"},"tags":{"zh":["API","模型"],"en":["API","Models"]},"sponsor":false },
+
+    { "id":"31","url":"https://github.com/Significant-Gravitas/Auto-GPT","category":"agent","name":{"zh":"Auto-GPT","en":"Auto-GPT"},"desc":{"zh":"开源自主代理，按目标自动执行多步任务","en":"Autonomous agent executing multi-step tasks"},"tags":{"zh":["智能体","自动化"],"en":["Agent","Automation"]},"sponsor":false },
+    { "id":"32","url":"https://github.com/yoheinakajima/babyagi","category":"agent","name":{"zh":"BabyAGI","en":"BabyAGI"},"desc":{"zh":"轻量任务管理智能体，迭代生成子任务","en":"Lightweight task-driven agent with memory"},"tags":{"zh":["任务","记忆"],"en":["Tasks","Memory"]},"sponsor":false },
+    { "id":"33","url":"https://agentgpt.reworkd.ai/","category":"agent","name":{"zh":"AgentGPT","en":"AgentGPT"},"desc":{"zh":"Web 部署多角色、多目标的自主代理","en":"Web-deployable autonomous multi-agent"},"tags":{"zh":["多智能体","网页"],"en":["Multi-agent","Web"]},"sponsor":false },
+    { "id":"34","url":"https://github.com/THUDM/MetaGPT","category":"agent","name":{"zh":"MetaGPT","en":"MetaGPT"},"desc":{"zh":"面向软件开发的多智能体协作平台","en":"Multi-agent system for software engineering"},"tags":{"zh":["开发","协作"],"en":["Dev","Collaboration"]},"sponsor":false },
+    { "id":"35","url":"https://beta.character.ai/","category":"agent","name":{"zh":"Character.AI","en":"Character.AI"},"desc":{"zh":"自定义人格与记忆的对话智能体","en":"Custom persona chat agents with memory"},"tags":{"zh":["人格","对话"],"en":["Persona","Chat"]},"sponsor":false },
+
+    { "id":"36","url":"https://www.make.com/","category":"workflow","name":{"zh":"Make（Integromat）","en":"Make (Integromat)"},"desc":{"zh":"可视化拖拽自动化，含 AI/HTTP 模块","en":"Visual drag-and-drop automation with AI/HTTP"},"tags":{"zh":["工作流","自动化"],"en":["Workflow","Automation"]},"sponsor":false },
+    { "id":"37","url":"https://airflow.apache.org/","category":"workflow","name":{"zh":"Apache Airflow","en":"Apache Airflow"},"desc":{"zh":"开源工作流调度，编排 ETL 与训练管道","en":"Open-source scheduler for ETL/ML pipelines"},"tags":{"zh":["调度","ETL"],"en":["Scheduler","ETL"]},"sponsor":false },
+    { "id":"38","url":"https://www.prefect.io/","category":"workflow","name":{"zh":"Prefect","en":"Prefect"},"desc":{"zh":"Python 原生工作流，动态依赖与监控","en":"Python-native workflows with dynamic deps/obs"},"tags":{"zh":["Python","监控"],"en":["Python","Observability"]},"sponsor":false },
+    { "id":"39","url":"https://www.kubeflow.org/","category":"workflow","name":{"zh":"Kubeflow","en":"Kubeflow"},"desc":{"zh":"Kubernetes 上的完整 ML 工作流套件","en":"ML workflow suite on Kubernetes"},"tags":{"zh":["K8s","ML"],"en":["Kubernetes","ML"]},"sponsor":false },
+    { "id":"40","url":"https://huggingface.co/docs/hub/workflows","category":"workflow","name":{"zh":"HF Hub Workflows","en":"Hugging Face Hub Workflows"},"desc":{"zh":"模型训练/评估/部署的一键 CI/CD","en":"One-click CI/CD for train/eval/deploy"},"tags":{"zh":["CI/CD","模型"],"en":["CI/CD","Models"]},"sponsor":false },
+
+    { "id":"41","url":"https://www.notion.so/product/ai","category":"office","name":{"zh":"Notion AI","en":"Notion AI"},"desc":{"zh":"笔记与数据库内置 AI 助手","en":"AI assistant in notes and databases"},"tags":{"zh":["笔记","总结"],"en":["Notes","Summary"]},"sponsor":false },
+    { "id":"42","url":"https://copilot.microsoft.com/","category":"office","name":{"zh":"Microsoft Copilot","en":"Microsoft Copilot"},"desc":{"zh":"集成于 Microsoft 365 的智能助手","en":"AI assistant across Microsoft 365"},"tags":{"zh":["Office","助手"],"en":["Office","Assistant"]},"sponsor":false },
+    { "id":"43","url":"https://workspace.google.com/","category":"office","name":{"zh":"Google Workspace AI","en":"Google Workspace AI"},"desc":{"zh":"Docs/Sheets/Slides 智能撰写","en":"Smart writing in Docs, Sheets, Slides"},"tags":{"zh":["文档","表格"],"en":["Docs","Sheets"]},"sponsor":false },
+    { "id":"44","url":"https://airtable.com/","category":"office","name":{"zh":"Airtable AI","en":"Airtable AI"},"desc":{"zh":"表格数据库加入 AI 能力","en":"AI features inside Airtable DB"},"tags":{"zh":["表格","数据库"],"en":["Table","Database"]},"sponsor":false },
+    { "id":"45","url":"https://zoom.us/ai","category":"office","name":{"zh":"Zoom AI Companion","en":"Zoom AI Companion"},"desc":{"zh":"会议转录、要点与行动项生成","en":"Transcription, highlights and actions"},"tags":{"zh":["会议","转录"],"en":["Meetings","Transcription"]},"sponsor":false },
+
+    { "id":"46","url":"https://zapier.com/solutions/ai","category":"other","name":{"zh":"Zapier AI","en":"Zapier AI"},"desc":{"zh":"自动化流程中集成 LLM 能力","en":"Embed LLMs into automation workflows"},"tags":{"zh":["自动化","集成"],"en":["Automation","Integration"]},"sponsor":false },
+    { "id":"47","url":"https://www.canva.com/","category":"other","name":{"zh":"Canva Magic Write","en":"Canva Magic Write"},"desc":{"zh":"面向设计的 AI 文案生成","en":"AI copywriting for design scenarios"},"tags":{"zh":["文案","设计"],"en":["Copywriting","Design"]},"sponsor":false },
+    { "id":"48","url":"https://fathom.video/","category":"other","name":{"zh":"Fathom","en":"Fathom"},"desc":{"zh":"会议录制与智能摘要插件","en":"Meeting recorder with AI summaries"},"tags":{"zh":["会议","摘要"],"en":["Meetings","Summary"]},"sponsor":false },
+    { "id":"49","url":"https://mem.ai/","category":"other","name":{"zh":"Mem.ai","en":"Mem.ai"},"desc":{"zh":"个人知识管理与智能联想","en":"Personal knowledge management with AI"},"tags":{"zh":["笔记","知识库"],"en":["Notes","PKM"]},"sponsor":false }
   ]
 }
