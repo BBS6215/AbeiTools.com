@@ -6,7 +6,7 @@
   <title>AbeiTools · 阿北的 AI 工具箱</title>
   <meta name="description" content="发现优质 AI 工具，提升你的效率与创造力。" />
 
-  <!-- ✅ Google AdSense 自动广告验证脚本（换成你的 Publisher ID） -->
+  <!-- ✅ Google AdSense 自动广告验证脚本（你的 Publisher ID 已保留） -->
   <script async
     src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6542625868833135"
     crossorigin="anonymous"></script>
@@ -16,17 +16,21 @@
   <style>
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial; }
     .line-2 { display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+
+    /* 侧栏样式增强：隐藏手机端滚动条、规整列表间距 */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
   </style>
 </head>
 <body class="bg-white text-slate-800">
 
   <!-- 顶部 -->
-  <header class="sticky top-0 bg-white/80 backdrop-blur border-b border-slate-200 z-40">
+  <header class="sticky top-0 bg-white/80 backdrop-blur border-b border-slate-200 z-40" id="top">
     <div class="max-w-7xl mx-auto px-4 py-3 flex items-center gap-4">
       <div class="text-xl font-semibold">AbeiTools</div>
       <div id="welcome" class="text-sm text-slate-600">发现优质 AI 工具，提升你的效率与创造力。</div>
       <div class="ml-auto flex items-center gap-2">
-        <input id="search" type="search" placeholder="搜索名称/简介/标签…" 
+        <input id="search" type="search" placeholder="搜索名称/简介/标签…"
           class="w-56 md:w-72 px-3 py-2 rounded-xl bg-slate-100 outline-none focus:ring-2 focus:ring-indigo-500" />
         <button id="langToggle" class="px-3 py-2 rounded-xl border border-slate-300 hover:bg-slate-100 text-sm">EN</button>
       </div>
@@ -34,11 +38,16 @@
   </header>
 
   <main class="max-w-7xl mx-auto px-4 py-6 grid grid-cols-12 gap-6">
-    <!-- 左：分类 -->
-    <aside class="col-span-12 md:col-span-3 lg:col-span-2">
-      <nav class="sticky top-24">
+    <!-- 左：分类（规整版） -->
+    <aside class="col-span-12 md:col-span-3 lg:col-span-2 min-w-[180px]">
+      <nav class="sticky top-24" id="categoryNav">
         <h2 id="catTitle" class="text-sm font-medium text-slate-500 mb-2">分类</h2>
-        <div id="catButtons" class="flex md:block flex-wrap gap-2"></div>
+
+        <!-- 手机端：横向滚动标签 -->
+        <div id="catChips" class="md:hidden flex gap-2 overflow-x-auto no-scrollbar pb-1"></div>
+
+        <!-- 桌面端：一列整齐列表 -->
+        <ul id="catList" class="hidden md:grid md:grid-cols-1 md:gap-2"></ul>
       </nav>
     </aside>
 
@@ -101,11 +110,12 @@
     function setLang(lang){
       state.lang = lang;
       localStorage.setItem('lang', lang);
+      document.documentElement.lang = lang;
       $('#welcome').textContent = I18N[lang].welcome;
-      $('#search').placeholder = I18N[lang].searchPh;
+      $('#search').placeholder   = I18N[lang].searchPh;
       $('#catTitle').textContent = I18N[lang].categories;
-      $('#footerTip').textContent = I18N[lang].footer;
-      $('#langToggle').textContent = lang === 'zh' ? 'EN' : '中文';
+      $('#footerTip').textContent= I18N[lang].footer;
+      $('#langToggle').textContent= lang === 'zh' ? 'EN' : '中文';
       renderLists(window.__DATA__||[]);
     }
 
@@ -120,31 +130,96 @@
       return a;
     }
 
+    // === 渲染分类（规整：桌面列表 + 手机横向 chips）===
     function renderLists(DATA){
       const sections = $('#sections'); sections.innerHTML = '';
-      const catButtons = $('#catButtons'); catButtons.innerHTML = '';
-      const orderedCats = Object.entries(CATEGORY_META).sort((a,b)=>a[1].order-b[1].order).map(([c])=>c);
+      const catList  = $('#catList');  catList.innerHTML = '';
+      const catChips = $('#catChips'); catChips.innerHTML = '';
+
+      const orderedCats = Object.entries(CATEGORY_META)
+        .sort((a,b)=>a[1].order-b[1].order)
+        .map(([c])=>c);
 
       orderedCats.forEach(code=>{
         const items = DATA.filter(x=>x.category===code);
         if(items.length===0) return;
 
-        const btn = document.createElement('a');
-        btn.href = `#cat-${code}`;
-        btn.className = 'px-3 py-2 rounded-xl text-sm hover:bg-indigo-50';
-        btn.textContent = CATEGORY_META[code].name[state.lang];
-        catButtons.appendChild(btn);
+        // 左侧：桌面一列规整列表 + 数量徽标
+        const li = document.createElement('li');
+        li.innerHTML = `
+          <a href="#cat-${code}"
+             class="cat-link group w-full flex items-center justify-between gap-2 px-3 py-2
+                    rounded-xl border border-slate-200 text-sm hover:border-indigo-300
+                    hover:bg-indigo-50 hover:text-indigo-700 transition">
+            <span class="truncate">${CATEGORY_META[code].name[state.lang]}</span>
+            <span class="min-w-[1.5rem] text-center text-xs text-slate-500 group-hover:text-indigo-700">${items.length}</span>
+          </a>`;
+        catList.appendChild(li);
 
+        // 手机：横向 chips
+        const chip = document.createElement('a');
+        chip.href = `#cat-${code}`;
+        chip.className = `whitespace-nowrap px-3 py-1.5 rounded-full border border-slate-200 text-sm
+                          hover:border-indigo-300 hover:bg-indigo-50 hover:text-indigo-700`;
+        chip.textContent = CATEGORY_META[code].name[state.lang];
+        catChips.appendChild(chip);
+
+        // 中间：分区 + 网格
         const sec = document.createElement('section');
         sec.id = `cat-${code}`;
-        sec.innerHTML = `<h2 class="text-lg font-semibold mb-3">${CATEGORY_META[code].name[state.lang]}</h2>
-                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" data-grid="${code}"></div>`;
+        sec.innerHTML = `
+          <div class="flex items-center justify-between mb-3">
+            <h2 class="text-base md:text-lg font-semibold">${CATEGORY_META[code].name[state.lang]}</h2>
+            <a href="#top" class="text-xs text-slate-500 hover:text-indigo-600">${I18N[state.lang].backTop}</a>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" data-grid="${code}"></div>`;
         sections.appendChild(sec);
         const grid = sec.querySelector(`[data-grid="${code}"]`);
         items.forEach(it=>grid.appendChild(createCard(it)));
       });
+
+      initScrollSpy(); // 绑定滚动高亮
     }
 
+    // === 滚动高亮当前分类（ScrollSpy）===
+    function initScrollSpy(){
+      const links = Array.from(document.querySelectorAll('#catList .cat-link'));
+      const sections = Array.from(document.querySelectorAll('#sections > section'));
+      const ACTIVE = 'bg-indigo-50 text-indigo-700 border-indigo-300';
+
+      function setActive(id){
+        links.forEach(a => {
+          const on = a.getAttribute('href') === `#${id}`;
+          a.classList.toggle(ACTIVE, on);
+        });
+      }
+
+      // 点击平滑滚动，并高亮
+      links.forEach(a=>{
+        a.addEventListener('click', (e)=>{
+          const id = a.getAttribute('href').slice(1);
+          const el = document.getElementById(id);
+          if(!el) return;
+          e.preventDefault();
+          const y = el.getBoundingClientRect().top + window.scrollY - 80; // 顶部栏高度预留
+          window.scrollTo({ top: y, behavior: 'smooth' });
+          setActive(id);
+        });
+      });
+
+      // 可见性观察，自动高亮
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(ent=>{
+          if (ent.isIntersecting && ent.intersectionRatio > 0.4) {
+            setActive(ent.target.id);
+          }
+        });
+      }, { rootMargin: '-100px 0px -60% 0px', threshold: [0.4, 0.6] });
+
+      sections.forEach(sec => io.observe(sec));
+    }
+
+    // === 搜索 ===
     function bindSearch(){
       $('#search').addEventListener('input', ()=>{
         const q = $('#search').value.trim().toLowerCase();
@@ -154,14 +229,16 @@
       });
     }
 
+    // 初始化
     document.getElementById('year').textContent = new Date().getFullYear();
     $('#langToggle').addEventListener('click', ()=> setLang(state.lang==='zh'?'en':'zh'));
     bindSearch();
 
+    // 读取数据（相对路径 + 防缓存；线上/本地HTTP可用）
     fetch('./data/links.json?v=' + Date.now(), { cache: 'no-cache' })
       .then(r => r.json())
-      .then(d => { window.__DATA__ = Array.isArray(d) ? d : d.links; setLang(state.lang); })
-      .catch(()=> $('#loadError').classList.remove('hidden'));
+      .then(d => { window.__DATA__ = Array.isArray(d) ? d : (d.links || []); setLang(state.lang); })
+      .catch(()=> { $('#loadError').classList.remove('hidden'); setLang(state.lang); });
   </script>
 </body>
 </html>
