@@ -3,20 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>HTML 转图片 · 在线工具</title>
+  <title>HTML 转图片（JPEG、PNG、PDF）</title>
 
-  <!-- 样式 -->
   <style>
-    :root{
-      --brand:#2563eb;
-      --border:#e5e7eb;
-      --muted:#6b7280;
-      --bg:#ffffff;
-    }
+    :root{ --brand:#2563eb; --border:#e5e7eb; --muted:#6b7280; --bg:#ffffff; }
     *{box-sizing:border-box}
     body{margin:0;background:var(--bg);color:#111827;
       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;}
-
     .wrap{max-width:1280px;margin:0 auto;padding:20px 16px}
 
     /* 顶部条 */
@@ -52,23 +45,26 @@
 
     /* 右侧：广告侧栏（自动广告占位） */
     .aside{position:sticky;top:12px}
-    .ad-note{padding:12px;color:#9ca3af;font-size:12px}
-    .ad-box{min-height:240px;background:#f9fafb}
+    .ad-box{min-height:240px;background:#f9fafb;border-top:1px solid #f3f4f6}
+    .ad-note{padding:10px;color:#9ca3af;font-size:12px}
 
-    .hint{font-size:12px;color:#6b7280;padding:8px 0}
+    .hint{font-size:12px;color:#6b7280;padding:8px 10px}
+
+    /* 导出状态气泡 */
+    .toast{position:fixed;right:12px;bottom:12px;background:#111827;color:#fff;padding:8px 10px;border-radius:8px;font-size:12px;opacity:.92;z-index:9999;display:none}
 
     @media(max-width:1100px){
-      .grid{grid-template-columns:1fr; }
+      .grid{grid-template-columns:1fr}
       .aside{position:static}
     }
   </style>
 
-  <!-- 安全与导出依赖 -->
-  <script src="https://unpkg.com/dompurify@3.1.7/dist/purify.min.js"></script>
-  <script src="https://unpkg.com/html-to-image@1.11.11/dist/html-to-image.min.js"></script>
-  <script src="https://unpkg.com/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+  <!-- 依赖 -->
+  <script defer src="https://unpkg.com/dompurify@3.1.7/dist/purify.min.js"></script>
+  <script defer src="https://unpkg.com/html-to-image@1.11.11/dist/html-to-image.min.js"></script>
+  <script defer src="https://unpkg.com/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
 
-  <!-- Google AdSense 自动广告（你已开通，无需 slot 即可自动投放） -->
+  <!-- Google AdSense 自动广告（无需 slot） -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6542625868833135" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -111,7 +107,6 @@
       <section class="card">
         <header id="previewHdr">预览区</header>
         <div class="preview-wrap">
-          <!-- 画布舞台：宽高可变 -->
           <div class="stage" id="stage" style="width:800px;height:450px;background:#ffffff">
             <div id="preview"></div>
           </div>
@@ -166,159 +161,137 @@
     </div>
   </div>
 
-  <!-- 逻辑脚本 -->
+  <div class="toast" id="toast"></div>
+
   <script>
-    (function(){
-      // --- 多语言 ---
-      const i18n = {
-        zh:{
-          tagline:"发现优质 AI 工具，提升你的效率与创造力。",
-          title:"HTML 转图片（JPEG、PNG、PDF）",
-          subtitle:"在线快速将任何网页或 HTML 代码转换为清晰的图片或 PDF 文件。",
-          editorHdr:"编辑区",
-          uploadLbl:"上传 HTML",
-          previewHdr:"预览区",
-          ratioLbl:"比例",
-          sizeLbl:"尺寸",
-          bgLbl:"背景",
-          scaleLbl:"倍率",
-          nameLbl:"文件名",
-          png:"导出 PNG", jpg:"导出 JPEG", pdf:"导出 PDF",
-          render:"渲染预览", clear:"清空",
-          hint:"提示：Ctrl/⌘ + Enter 渲染；Ctrl/⌘ + S 快速导出 PNG",
-          adsHdr:"广告",
-          langBtn:"EN",
-          placeholder:"在此粘贴 HTML 代码"
-        },
-        en:{
-          tagline:"Discover quality AI tools to boost productivity and creativity.",
-          title:"HTML to Image (JPEG/PNG/PDF)",
-          subtitle:"Convert any webpage or HTML snippet into crisp images or a PDF — in your browser.",
-          editorHdr:"Editor",
-          uploadLbl:"Upload HTML",
-          previewHdr:"Preview",
-          ratioLbl:"Ratio",
-          sizeLbl:"Size",
-          bgLbl:"Background",
-          scaleLbl:"Scale",
-          nameLbl:"Filename",
-          png:"Export PNG", jpg:"Export JPEG", pdf:"Export PDF",
-          render:"Render", clear:"Clear",
-          hint:"Tip: Ctrl/⌘ + Enter to render; Ctrl/⌘ + S to quick-save PNG",
-          adsHdr:"Ads",
-          langBtn:"中文",
-          placeholder:"Paste your HTML here"
-        }
-      };
-      let lang = 'zh';
-      const $ = id => document.getElementById(id);
-      function L(t){ const s=i18n[lang]; Object.keys(t).forEach(k=>$(k).textContent=s[t[k]]); }
-      function applyLang(){
-        const t=i18n[lang];
-        $('tagline').textContent=t.tagline;
-        document.title=t.title; $('title').textContent=t.title;
-        $('subtitle').textContent=t.subtitle;
-        $('editorHdr').textContent=t.editorHdr;
-        $('uploadLbl').textContent=t.uploadLbl;
-        $('previewHdr').textContent=t.previewHdr;
-        $('ratioLbl').textContent=t.ratioLbl;
-        $('sizeLbl').textContent=t.sizeLbl;
-        $('bgLbl').textContent=t.bgLbl;
-        $('scaleLbl').textContent=t.scaleLbl;
-        $('nameLbl').textContent=t.nameLbl;
-        $('btnPNG').textContent=t.png;
-        $('btnJPG').textContent=t.jpg;
-        $('btnPDF').textContent=t.pdf;
-        $('btnRender').textContent=t.render;
-        $('btnClear').textContent=t.clear;
-        $('hint').textContent=t.hint;
-        $('adsHdr').textContent=t.adsHdr;
-        $('btnLang').textContent=t.langBtn;
-        $('code').placeholder=t.placeholder;
+  (function(){
+    // --- 多语言 ---
+    const i18n = {
+      zh:{
+        tagline:"发现优质 AI 工具，提升你的效率与创造力。",
+        title:"HTML 转图片（JPEG、PNG、PDF）",
+        subtitle:"在线快速将任何网页或 HTML 代码转换为清晰的图片或 PDF 文件。",
+        editorHdr:"编辑区", uploadLbl:"上传 HTML", previewHdr:"预览区",
+        ratioLbl:"比例", sizeLbl:"尺寸", bgLbl:"背景", scaleLbl:"倍率", nameLbl:"文件名",
+        png:"导出 PNG", jpg:"导出 JPEG", pdf:"导出 PDF",
+        render:"渲染预览", clear:"清空",
+        hint:"提示：Ctrl/⌘ + Enter 渲染；Ctrl/⌘ + S 快速导出 PNG",
+        adsHdr:"广告", adNote:"Google 自动广告投放区（如未显示，可能在审核中或被拦截）。",
+        langBtn:"EN", placeholder:"在此粘贴 HTML 代码",
+        ratioOpts:["1:1","3:4","4:3","16:9","自定义"],
+        toastOk:"导出完成 ✓",
+        toastFail:"导出失败：请使用 http/https 访问，并避免跨域图片/字体。详情见控制台。"
+      },
+      en:{
+        tagline:"Discover quality AI tools to boost productivity and creativity.",
+        title:"HTML to Image (JPEG/PNG/PDF)",
+        subtitle:"Convert any webpage or HTML snippet into crisp images or a PDF — in your browser.",
+        editorHdr:"Editor", uploadLbl:"Upload HTML", previewHdr:"Preview",
+        ratioLbl:"Ratio", sizeLbl:"Size", bgLbl:"Background", scaleLbl:"Scale", nameLbl:"Filename",
+        png:"Export PNG", jpg:"Export JPEG", pdf:"Export PDF",
+        render:"Render", clear:"Clear",
+        hint:"Tip: Ctrl/⌘ + Enter to render; Ctrl/⌘ + S to quick-save PNG",
+        adsHdr:"Ads", adNote:"Google Auto Ads area (may be under review or blocked by ad blockers).",
+        langBtn:"中文", placeholder:"Paste your HTML here",
+        ratioOpts:["1:1","3:4","4:3","16:9","Custom"],
+        toastOk:"Exported ✓",
+        toastFail:"Export failed: open via http/https and avoid cross-origin images/fonts. See console."
       }
-      $('btnLang').addEventListener('click', ()=>{ lang = (lang==='zh'?'en':'zh'); applyLang(); });
-      applyLang();
+    };
+    let lang='zh';
+    const $=id=>document.getElementById(id);
+    function applyLang(){
+      const t=i18n[lang];
+      $('tagline').textContent=t.tagline;
+      document.title=t.title; $('title').textContent=t.title;
+      $('subtitle').textContent=t.subtitle;
+      $('editorHdr').textContent=t.editorHdr;
+      $('uploadLbl').textContent=t.uploadLbl;
+      $('previewHdr').textContent=t.previewHdr;
+      $('ratioLbl').textContent=t.ratioLbl;
+      $('sizeLbl').textContent=t.sizeLbl;
+      $('bgLbl').textContent=t.bgLbl;
+      $('scaleLbl').textContent=t.scaleLbl;
+      $('nameLbl').textContent=t.nameLbl;
+      $('btnPNG').textContent=t.png; $('btnJPG').textContent=t.jpg; $('btnPDF').textContent=t.pdf;
+      $('btnRender').textContent=t.render; $('btnClear').textContent=t.clear;
+      $('hint').textContent=t.hint; $('adsHdr').textContent=t.adsHdr; $('adNote').textContent=t.adNote;
+      $('btnLang').textContent=t.langBtn; $('code').placeholder=t.placeholder;
+      // 下拉选项文本
+      const r=$('ratio'), curVal=r.value, labels=t.ratioOpts;
+      r.options[0].text=labels[0]; r.options[1].text=labels[1];
+      r.options[2].text=labels[2]; r.options[3].text=labels[3];
+      r.options[4].text=labels[4]; r.value=curVal;
+    }
+    $('btnLang').addEventListener('click',()=>{lang=(lang==='zh'?'en':'zh');applyLang();});
+    applyLang();
 
-      // --- 元素引用 ---
-      const code=$('code'), file=$('file');
-      const stage=$('stage'), preview=$('preview');
-      const w=$('w'), h=$('h'), ratio=$('ratio'), bg=$('bg'), scaleSel=$('scale'), filenameEl=$('filename');
+    // --- 元素 ---
+    const code=$('code'), file=$('file'); const stage=$('stage'), preview=$('preview');
+    const w=$('w'), h=$('h'), ratio=$('ratio'), bg=$('bg'), scaleSel=$('scale'), filenameEl=$('filename');
+    const toast=$('toast'); function tip(msg,ok){toast.textContent=msg;toast.style.background=ok?'#16a34a':'#111827';toast.style.display='block';setTimeout(()=>toast.style.display='none',1800);}
 
-      // --- 上传 HTML 文件 ---
-      file.addEventListener('change', async (e)=>{
-        const f = e.target.files && e.target.files[0];
-        if(!f) return;
-        const txt = await f.text();
-        code.value = txt;
-        render();
-      });
+    // 上传
+    file.addEventListener('change',async (e)=>{ const f=e.target.files&&e.target.files[0]; if(!f) return; const txt=await f.text(); code.value=txt; render(); });
 
-      // --- 比例联动：当非 custom 时，根据宽度计算高度 ---
-      function applyRatio(){
-        const vw = parseInt(w.value,10)||800;
-        const val = ratio.value;
-        if(val==='custom'){ h.removeAttribute('readonly'); return; }
-        h.setAttribute('readonly','readonly');
-        const [a,b] = val.split(':').map(Number);
-        const vh = Math.max(64, Math.round(vw * (b/a)));
-        h.value = vh;
-      }
-      ratio.addEventListener('change', applyRatio);
-      w.addEventListener('input', ()=>{ if(ratio.value!=='custom') applyRatio(); });
+    // 比例联动
+    function applyRatio(){
+      const vw=parseInt(w.value,10)||800;
+      if(ratio.value==='custom'){ h.removeAttribute('readonly'); return; }
+      const [a,b]=ratio.value.split(':').map(Number);
+      h.setAttribute('readonly','readonly');
+      h.value=Math.max(64,Math.round(vw*(b/a)));
+    }
+    ratio.addEventListener('change',applyRatio);
+    w.addEventListener('input',()=>{ if(ratio.value!=='custom') applyRatio(); });
 
-      // --- 渲染 ---
-      function render(){
-        const width = Math.max(64, parseInt(w.value,10)||800);
-        const height = Math.max(64, parseInt(h.value,10)||450);
-        stage.style.width = width + 'px';
-        stage.style.height = height + 'px';
-        stage.style.background = bg.value || '#ffffff';
-        const safeHTML = DOMPurify.sanitize(code.value, {FORBID_TAGS:['script','iframe','object','embed']});
-        preview.innerHTML = safeHTML;
-      }
+    // 渲染
+    function render(){
+      const width=Math.max(64,parseInt(w.value,10)||800);
+      const height=Math.max(64,parseInt(h.value,10)||450);
+      stage.style.width=width+'px'; stage.style.height=height+'px';
+      stage.style.background=bg.value||'#ffffff';
+      const safeHTML=DOMPurify.sanitize(code.value,{FORBID_TAGS:['script','iframe','object','embed']});
+      preview.innerHTML=safeHTML;
+    }
 
-      // --- 导出 ---
-      async function exportAs(type){
-        const scale = parseInt(scaleSel.value,10) || 1;
-        const name = (filenameEl.value||'export').replace(/[^\w\-]+/g,'_');
-        const node = stage;
-        const options = {
-          cacheBust:true, useCORS:true, pixelRatio:scale,
-          width: node.clientWidth, height: node.clientHeight,
-          backgroundColor: getComputedStyle(node).backgroundColor
-        };
+    // 导出
+    async function exportAs(type){
+      try{
+        const scale=parseInt(scaleSel.value,10)||1;
+        const name=(filenameEl.value||'export').replace(/[^\w\-]+/g,'_');
+        const node=stage;
+        const options={cacheBust:true,useCORS:true,pixelRatio:scale,
+          width:node.clientWidth,height:node.clientHeight,
+          backgroundColor:getComputedStyle(node).backgroundColor};
         if(type==='png'){
-          const dataUrl = await htmlToImage.toPng(node, options);
-          download(dataUrl, name+'.png');
+          const url=await htmlToImage.toPng(node,options); download(url,name+'.png'); tip(i18n[lang].toastOk,true);
         }else if(type==='jpeg'){
-          const dataUrl = await htmlToImage.toJpeg(node, {...options, quality:0.95});
-          download(dataUrl, name+'.jpg');
+          const url=await htmlToImage.toJpeg(node,{...options,quality:0.95}); download(url,name+'.jpg'); tip(i18n[lang].toastOk,true);
         }else if(type==='pdf'){
-          const pngUrl = await htmlToImage.toPng(node, options);
-          const { jsPDF } = window.jspdf;
-          const pdf = new jsPDF({orientation: node.clientWidth>=node.clientHeight ? 'l':'p', unit:'px', format:[node.clientWidth,node.clientHeight]});
-          pdf.addImage(pngUrl, 'PNG', 0, 0, node.clientWidth, node.clientHeight);
-          pdf.save(name+'.pdf');
+          const url=await htmlToImage.toPng(node,options);
+          if(!window.jspdf||!window.jspdf.jsPDF) throw new Error('jsPDF not loaded');
+          const { jsPDF }=window.jspdf;
+          const pdf=new jsPDF({orientation:node.clientWidth>=node.clientHeight?'l':'p',unit:'px',format:[node.clientWidth,node.clientHeight]});
+          pdf.addImage(url,'PNG',0,0,node.clientWidth,node.clientHeight); pdf.save(name+'.pdf'); tip(i18n[lang].toastOk,true);
         }
-      }
-      function download(dataUrl, filename){
-        const a=document.createElement('a'); a.href=dataUrl; a.download=filename; a.click();
-      }
+      }catch(e){ console.error(e); tip(i18n[lang].toastFail,false); }
+    }
+    function download(dataUrl,filename){ const a=document.createElement('a'); a.href=dataUrl; a.download=filename; a.click(); }
 
-      // --- 事件 ---
-      $('btnRender').addEventListener('click', render);
-      $('btnClear').addEventListener('click', ()=>{ code.value=''; preview.innerHTML=''; });
-      $('btnPNG').addEventListener('click', ()=>exportAs('png'));
-      $('btnJPG').addEventListener('click', ()=>exportAs('jpeg'));
-      $('btnPDF').addEventListener('click', ()=>exportAs('pdf'));
+    // 事件
+    $('btnRender').addEventListener('click',render);
+    $('btnClear').addEventListener('click',()=>{code.value='';preview.innerHTML='';});
+    $('btnPNG').addEventListener('click',()=>exportAs('png'));
+    $('btnJPG').addEventListener('click',()=>exportAs('jpeg'));
+    $('btnPDF').addEventListener('click',()=>exportAs('pdf'));
+    document.addEventListener('keydown',(e)=>{
+      if((e.ctrlKey||e.metaKey)&&e.key==='Enter'){e.preventDefault();render();}
+      if((e.ctrlKey||e.metaKey)&&(e.key==='s'||e.key==='S')){e.preventDefault();exportAs('png');}
+    });
 
-      document.addEventListener('keydown',(e)=>{
-        if((e.ctrlKey||e.metaKey)&&e.key==='Enter'){ e.preventDefault(); render(); }
-        if((e.ctrlKey||e.metaKey)&&(e.key==='s'||e.key==='S')){ e.preventDefault(); exportAs('png'); }
-      });
-
-      // --- 初始内容：一个卡片风示例，方便对比 ---
-      code.value = `
+    // 默认示例（轻量卡片风）
+    code.value = `
 <style>
 .bg{width:100%;height:100%;background:linear-gradient(180deg,#1f3a8a,#7833b4);padding:36px}
 .card{background:#fff;border-radius:24px;box-shadow:0 8px 24px rgba(0,0,0,.12);padding:28px 32px}
@@ -339,12 +312,13 @@
     </div>
   </div>
 </div>`;
-      applyRatio(); // 根据默认 16:9 设置高度
-      render();
+    // 初始化
+    applyRatio();
+    render();
 
-      // --- 自动广告初始化（不强制在侧栏渲染，真实展示由 Google 控制） ---
-      try{ (adsbygoogle = window.adsbygoogle || []).push({}); }catch(e){}
-    })();
+    // 尝试触发自动广告
+    try{ (adsbygoogle = window.adsbygoogle || []).push({}); }catch(e){}
+  })();
   </script>
 </body>
 </html>
