@@ -3,241 +3,348 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>HTML 代码转图片 · 本地导出</title>
+  <title>HTML 转图片 · 在线工具</title>
+
+  <!-- 样式 -->
   <style>
-    :root { --bg:#0f172a; --panel:#111827; --muted:#94a3b8; --text:#e5e7eb; --accent:#22c55e; }
+    :root{
+      --brand:#2563eb;
+      --border:#e5e7eb;
+      --muted:#6b7280;
+      --bg:#ffffff;
+    }
     *{box-sizing:border-box}
-    body{margin:0;background:linear-gradient(120deg,#0b1220,#111827 40%,#0b1220);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial}
-    .wrap{max-width:1200px;margin:24px auto;padding:0 16px}
-    h1{color:#fff;margin:0 0 6px;font-size:22px}
-    .sub{color:var(--muted);font-size:13px;margin-bottom:16px}
-    .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    .card{background:rgba(17,24,39,.6);backdrop-filter:blur(6px);border:1px solid rgba(148,163,184,.15);border-radius:16px;overflow:hidden}
-    .card header{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;border-bottom:1px solid rgba(148,163,184,.12);color:#cbd5e1;font-size:12px}
-    .card body{display:block}
-    textarea{width:100%;height:420px;background:#0b1020;color:#e2e8f0;border:none;outline:none;padding:12px 12px 52px;line-height:1.5;font-size:13px;font-family:ui-monospace,Menlo,Consolas,monospace;resize:vertical}
-    .toolbar{display:flex;gap:10px;flex-wrap:wrap;padding:10px;border-top:1px solid rgba(148,163,184,.12);background:#0b1020}
-    .toolbar .row{display:flex;gap:8px;align-items:center;color:#cbd5e1;font-size:12px}
-    .toolbar input,.toolbar select{height:30px;border:1px solid rgba(148,163,184,.25);background:#0f172a;color:#e5e7eb;border-radius:8px;padding:0 8px}
-    .toolbar button{height:32px;border:none;background:var(--accent);color:#052e12;padding:0 12px;border-radius:10px;font-weight:700;cursor:pointer}
-    .toolbar button.ghost{background:transparent;color:#cbd5e1;border:1px solid rgba(148,163,184,.25)}
-    .preview-wrap{padding:12px;display:flex;justify-content:center;align-items:center;min-height:480px;background:#0b1020}
-    .stage{position:relative;display:inline-block;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.35);background:#fff}
-    .stage>.inner{padding:0;margin:0}
-    .hint{color:#94a3b8;font-size:12px;padding:10px}
-    .footer{display:flex;justify-content:space-between;align-items:center;color:#94a3b8;font-size:12px;padding:10px}
-    .kbd{display:inline-block;padding:2px 6px;border:1px solid rgba(148,163,184,.35);border-radius:6px;background:#0f172a;color:#cbd5e1}
-    .success{color:#10b981}
-    .error{color:#f87171}
+    body{margin:0;background:var(--bg);color:#111827;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;}
+
+    .wrap{max-width:1280px;margin:0 auto;padding:20px 16px}
+
+    /* 顶部条 */
+    .topbar{display:flex;align-items:center;justify-content:space-between;margin:4px 0 8px}
+    .brand{display:flex;gap:12px;align-items:baseline}
+    .brand .logo{font-weight:800;font-size:20px;letter-spacing:.2px}
+    .brand .tagline{color:#6b7280;font-size:14px}
+    .btn{background:var(--brand);color:#fff;border:none;border-radius:8px;padding:6px 12px;font-size:13px;cursor:pointer}
+    .btn.ghost{background:#fff;border:1px solid var(--border);color:#111827;border-radius:18px}
+
+    h1{font-size:26px;margin:8px 0 6px;font-weight:800}
+    .sub{color:#374151;font-size:15px;margin:0 0 14px}
+
+    /* 三列布局：25% / 55% / 20% */
+    .grid{display:grid;grid-template-columns: 1fr 2.2fr 0.8fr;gap:16px}
+
+    .card{border:1px solid var(--border);border-radius:12px;background:#fff;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+    .card header{padding:10px 14px;border-bottom:1px solid #f3f4f6;background:#f9fafb;font-size:14px;font-weight:600}
+
+    /* 左侧：编辑区 */
+    .editor-wrap{display:flex;flex-direction:column;height:100%}
+    textarea{width:100%;height:360px;border:none;outline:none;padding:12px;font-size:13px;
+      font-family:ui-monospace,Menlo,Consolas,monospace;background:#f9fafb;resize:vertical}
+    .toolbar{display:flex;flex-wrap:wrap;gap:10px;padding:10px;border-top:1px solid #f3f4f6;background:#fafafa}
+    .toolbar .row{display:flex;gap:8px;align-items:center}
+    .toolbar input,.toolbar select{border:1px solid #d1d5db;padding:6px 8px;border-radius:6px;font-size:13px}
+    .toolbar label{color:#6b7280;font-size:12px}
+
+    /* 中间：预览区 */
+    .preview-wrap{display:flex;justify-content:center;align-items:center;min-height:480px;background:#f3f4f6}
+    .stage{border:1px solid var(--border);border-radius:16px;background:#fff;overflow:hidden;box-shadow:0 10px 24px rgba(0,0,0,.08)}
+    .exportbar{display:flex;flex-wrap:wrap;gap:10px;padding:10px;border-top:1px solid #f3f4f6;background:#fafafa}
+
+    /* 右侧：广告侧栏（自动广告占位） */
+    .aside{position:sticky;top:12px}
+    .ad-note{padding:12px;color:#9ca3af;font-size:12px}
+    .ad-box{min-height:240px;background:#f9fafb}
+
+    .hint{font-size:12px;color:#6b7280;padding:8px 0}
+
+    @media(max-width:1100px){
+      .grid{grid-template-columns:1fr; }
+      .aside{position:static}
+    }
   </style>
-  <!-- 安全：DOMPurify 用于清洗用户输入的 HTML，避免 XSS -->
+
+  <!-- 安全与导出依赖 -->
   <script src="https://unpkg.com/dompurify@3.1.7/dist/purify.min.js"></script>
-  <!-- 导出：html-to-image 将任意 DOM 节点转为 PNG/JPEG/SVG -->
   <script src="https://unpkg.com/html-to-image@1.11.11/dist/html-to-image.min.js"></script>
-  <!-- 可选：生成 PDF（将 PNG 嵌入 PDF） -->
   <script src="https://unpkg.com/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+
+  <!-- Google AdSense 自动广告（你已开通，无需 slot 即可自动投放） -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6542625868833135" crossorigin="anonymous"></script>
 </head>
 <body>
   <div class="wrap">
-    <h1>HTML → 图片（PNG/JPEG/SVG/PDF 导出）</h1>
-    <div class="sub">将你的 HTML/CSS 贴到左侧，点击“渲染预览”。右侧展示效果，可一键导出。支持自定义画布尺寸、背景色与缩放倍率。</div>
+    <!-- 顶部 -->
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo">AbeiTools</div>
+        <div class="tagline" id="tagline">发现优质 AI 工具，提升你的效率与创造力。</div>
+      </div>
+      <div>
+        <button class="btn ghost" id="btnLang">EN</button>
+      </div>
+    </div>
+
+    <h1 id="title">HTML 转图片（JPEG、PNG、PDF）</h1>
+    <p class="sub" id="subtitle">在线快速将任何网页或 HTML 代码转换为清晰的图片或 PDF 文件。</p>
+
+    <!-- 三列主体 -->
     <div class="grid">
-      <!-- 编辑区 -->
+      <!-- 左：编辑 + 上传（25%） -->
       <section class="card">
-        <header>
-          <span>编辑区 · 支持内联 CSS 与 &lt;style&gt;</span>
-          <button class="ghost" id="btnSample">插入示例</button>
-        </header>
-        <body>
-          <textarea id="code" placeholder="在此粘贴你的 HTML 片段（不需要 &lt;html&gt; &lt;body&gt; 外壳）"></textarea>
+        <header id="editorHdr">编辑区</header>
+        <div class="editor-wrap">
+          <textarea id="code" placeholder="在此粘贴 HTML 代码"></textarea>
           <div class="toolbar">
             <div class="row">
-              <label>画布尺寸</label>
-              <input id="w" type="number" value="800" min="64" step="1" style="width:90px"/>×
-              <input id="h" type="number" value="450" min="64" step="1" style="width:90px"/>
+              <label id="uploadLbl">上传 HTML</label>
+              <input id="file" type="file" accept=".html,.htm,.txt" />
             </div>
             <div class="row">
-              <label>背景</label>
-              <input id="bg" type="color" value="#ffffff"/>
+              <button class="btn" id="btnRender">渲染预览</button>
+              <button class="btn ghost" id="btnClear">清空</button>
             </div>
-            <div class="row">
-              <label>倍率</label>
-              <select id="scale">
-                <option value="1">1x</option>
-                <option value="2" selected>2x（高清）</option>
-                <option value="3">3x</option>
-              </select>
-            </div>
-            <button id="btnRender">渲染预览</button>
           </div>
-        </body>
+        </div>
       </section>
 
-      <!-- 预览 & 导出区 -->
+      <!-- 中：预览（55%） -->
       <section class="card">
-        <header>
-          <span>预览区 · 可拖动边缘查看阴影</span>
-          <div>
-            <button class="ghost" id="btnClear">清空</button>
+        <header id="previewHdr">预览区</header>
+        <div class="preview-wrap">
+          <!-- 画布舞台：宽高可变 -->
+          <div class="stage" id="stage" style="width:800px;height:450px;background:#ffffff">
+            <div id="preview"></div>
           </div>
-        </header>
-        <body>
-          <div class="preview-wrap" id="previewWrap">
-            <div class="stage" id="stage" style="width:800px;height:450px;background:#ffffff">
-              <div class="inner" id="preview"></div>
-            </div>
+        </div>
+        <div class="exportbar">
+          <div class="row">
+            <label id="ratioLbl">比例</label>
+            <select id="ratio">
+              <option value="1:1">1:1</option>
+              <option value="3:4">3:4</option>
+              <option value="4:3">4:3</option>
+              <option value="16:9" selected>16:9</option>
+              <option value="custom">自定义</option>
+            </select>
           </div>
-          <div class="toolbar">
-            <div class="row">
-              <label>文件名</label>
-              <input id="filename" value="export" style="width:180px"/>
-            </div>
-            <button id="btnPNG">导出 PNG</button>
-            <button id="btnJPG">导出 JPEG</button>
-            <button id="btnSVG">导出 SVG</button>
-            <button id="btnPDF">导出 PDF</button>
+          <div class="row">
+            <label id="sizeLbl">尺寸</label>
+            <input id="w" type="number" value="800" min="64" step="1" style="width:96px" />×
+            <input id="h" type="number" value="450" min="64" step="1" style="width:96px" />
           </div>
-          <div class="footer">
-            <div>
-              <span class="kbd">Ctrl/⌘ + Enter</span> 渲染预览
-              <span class="kbd">Ctrl/⌘ + S</span> 快速导出 PNG
-            </div>
-            <div id="status"></div>
+          <div class="row">
+            <label id="bgLbl">背景</label>
+            <input id="bg" type="color" value="#ffffff" />
           </div>
-          <div class="hint">提示：
-            1) 支持内联 <code>&lt;style&gt;</code> 与内联样式；2) 如需外部字体，可在代码顶部插入 <code>&lt;link href=&quot;https://fonts.googleapis.com/...&quot; rel=&quot;stylesheet&quot;&gt;</code>；
-            3) 若外链图片跨域，建议先转为 Base64 或使用同源资源。</div>
-        </body>
+          <div class="row">
+            <label id="scaleLbl">倍率</label>
+            <select id="scale">
+              <option value="1">1x</option>
+              <option value="2" selected>2x</option>
+              <option value="3">3x</option>
+            </select>
+          </div>
+          <div class="row">
+            <label id="nameLbl">文件名</label>
+            <input id="filename" value="export" style="width:160px" />
+          </div>
+          <div class="row">
+            <button class="btn" id="btnPNG">导出 PNG</button>
+            <button class="btn" id="btnJPG">导出 JPEG</button>
+            <button class="btn" id="btnPDF">导出 PDF</button>
+          </div>
+        </div>
+        <div class="hint" id="hint">提示：Ctrl/⌘ + Enter 渲染；Ctrl/⌘ + S 快速导出 PNG</div>
       </section>
+
+      <!-- 右：广告（20%） -->
+      <aside class="card aside">
+        <header id="adsHdr">广告</header>
+        <div class="ad-box" id="adsBox"></div>
+        <div class="ad-note" id="adNote">Google 自动广告投放区（如未显示，可能在审核中或被拦截）。</div>
+      </aside>
     </div>
   </div>
 
-<script>
-(function(){
-  const code = document.getElementById('code');
-  const w = document.getElementById('w');
-  const h = document.getElementById('h');
-  const bg = document.getElementById('bg');
-  const scaleSel = document.getElementById('scale');
-  const stage = document.getElementById('stage');
-  const preview = document.getElementById('preview');
-  const statusEl = document.getElementById('status');
-  const filenameEl = document.getElementById('filename');
-
-  const setStatus = (msg, type='')=>{
-    statusEl.textContent = msg || '';
-    statusEl.className = type || '';
-    if(msg){ setTimeout(()=>{statusEl.textContent='';statusEl.className='';}, 2200); }
-  };
-
-  function render(){
-    try{
-      const width = Math.max(64, parseInt(w.value||0,10)||800);
-      const height = Math.max(64, parseInt(h.value||0,10)||450);
-      stage.style.width = width + 'px';
-      stage.style.height = height + 'px';
-      stage.style.background = bg.value || '#ffffff';
-
-      // 允许 style 与 link，但禁止 script/iframe 以保证安全
-      const CLEAN_CONFIG = {
-        ADD_TAGS: ['style','link'],
-        ADD_ATTR: ['rel','href','as','crossorigin','integrity','type','media'],
-        FORBID_TAGS: ['script','iframe','object','embed'],
-        FORBID_ATTR: ['onload','onclick','onerror','style*'], // 禁止行内事件，允许普通 style（下面会重新允许）
-        ALLOW_DATA_ATTR: false
+  <!-- 逻辑脚本 -->
+  <script>
+    (function(){
+      // --- 多语言 ---
+      const i18n = {
+        zh:{
+          tagline:"发现优质 AI 工具，提升你的效率与创造力。",
+          title:"HTML 转图片（JPEG、PNG、PDF）",
+          subtitle:"在线快速将任何网页或 HTML 代码转换为清晰的图片或 PDF 文件。",
+          editorHdr:"编辑区",
+          uploadLbl:"上传 HTML",
+          previewHdr:"预览区",
+          ratioLbl:"比例",
+          sizeLbl:"尺寸",
+          bgLbl:"背景",
+          scaleLbl:"倍率",
+          nameLbl:"文件名",
+          png:"导出 PNG", jpg:"导出 JPEG", pdf:"导出 PDF",
+          render:"渲染预览", clear:"清空",
+          hint:"提示：Ctrl/⌘ + Enter 渲染；Ctrl/⌘ + S 快速导出 PNG",
+          adsHdr:"广告",
+          langBtn:"EN",
+          placeholder:"在此粘贴 HTML 代码"
+        },
+        en:{
+          tagline:"Discover quality AI tools to boost productivity and creativity.",
+          title:"HTML to Image (JPEG/PNG/PDF)",
+          subtitle:"Convert any webpage or HTML snippet into crisp images or a PDF — in your browser.",
+          editorHdr:"Editor",
+          uploadLbl:"Upload HTML",
+          previewHdr:"Preview",
+          ratioLbl:"Ratio",
+          sizeLbl:"Size",
+          bgLbl:"Background",
+          scaleLbl:"Scale",
+          nameLbl:"Filename",
+          png:"Export PNG", jpg:"Export JPEG", pdf:"Export PDF",
+          render:"Render", clear:"Clear",
+          hint:"Tip: Ctrl/⌘ + Enter to render; Ctrl/⌘ + S to quick-save PNG",
+          adsHdr:"Ads",
+          langBtn:"中文",
+          placeholder:"Paste your HTML here"
+        }
       };
-      // 单独允许 style 属性
-      DOMPurify.removed = [];
-      const safeHTML = DOMPurify.sanitize(code.value, {...CLEAN_CONFIG, ALLOWED_ATTR: false});
-
-      preview.innerHTML = safeHTML;
-      // 重新允许 style（仅在预览容器内）
-      const walker = document.createTreeWalker(preview, NodeFilter.SHOW_ELEMENT);
-      let node;
-      while((node = walker.nextNode())){
-        // 若存在 data-style 之类保留，可扩展；这里简单允许现有 style 不处理
+      let lang = 'zh';
+      const $ = id => document.getElementById(id);
+      function L(t){ const s=i18n[lang]; Object.keys(t).forEach(k=>$(k).textContent=s[t[k]]); }
+      function applyLang(){
+        const t=i18n[lang];
+        $('tagline').textContent=t.tagline;
+        document.title=t.title; $('title').textContent=t.title;
+        $('subtitle').textContent=t.subtitle;
+        $('editorHdr').textContent=t.editorHdr;
+        $('uploadLbl').textContent=t.uploadLbl;
+        $('previewHdr').textContent=t.previewHdr;
+        $('ratioLbl').textContent=t.ratioLbl;
+        $('sizeLbl').textContent=t.sizeLbl;
+        $('bgLbl').textContent=t.bgLbl;
+        $('scaleLbl').textContent=t.scaleLbl;
+        $('nameLbl').textContent=t.nameLbl;
+        $('btnPNG').textContent=t.png;
+        $('btnJPG').textContent=t.jpg;
+        $('btnPDF').textContent=t.pdf;
+        $('btnRender').textContent=t.render;
+        $('btnClear').textContent=t.clear;
+        $('hint').textContent=t.hint;
+        $('adsHdr').textContent=t.adsHdr;
+        $('btnLang').textContent=t.langBtn;
+        $('code').placeholder=t.placeholder;
       }
-      setStatus('预览已更新', 'success');
-    }catch(e){
-      console.error(e); setStatus('渲染失败：'+ e.message, 'error');
-    }
-  }
+      $('btnLang').addEventListener('click', ()=>{ lang = (lang==='zh'?'en':'zh'); applyLang(); });
+      applyLang();
 
-  // 导出助手
-  async function exportAs(type){
-    const scale = parseInt(scaleSel.value,10) || 1;
-    const name = (filenameEl.value||'export').replace(/[^\w\-]+/g,'_');
-    const node = stage; // 将包含背景与内边距的一整个舞台导出
+      // --- 元素引用 ---
+      const code=$('code'), file=$('file');
+      const stage=$('stage'), preview=$('preview');
+      const w=$('w'), h=$('h'), ratio=$('ratio'), bg=$('bg'), scaleSel=$('scale'), filenameEl=$('filename');
 
-    const options = {
-      cacheBust: true,
-      pixelRatio: scale,
-      width: node.clientWidth,
-      height: node.clientHeight,
-      backgroundColor: getComputedStyle(node).backgroundColor
-    };
+      // --- 上传 HTML 文件 ---
+      file.addEventListener('change', async (e)=>{
+        const f = e.target.files && e.target.files[0];
+        if(!f) return;
+        const txt = await f.text();
+        code.value = txt;
+        render();
+      });
 
-    try{
-      if(type==='png'){
-        const dataUrl = await htmlToImage.toPng(node, options);
-        download(dataUrl, name + '.png');
-      }else if(type==='jpeg'){
-        const dataUrl = await htmlToImage.toJpeg(node, {...options, quality: 0.95});
-        download(dataUrl, name + '.jpg');
-      }else if(type==='svg'){
-        const dataUrl = await htmlToImage.toSvg(node, options);
-        download(dataUrl, name + '.svg');
-      }else if(type==='pdf'){
-        const pngUrl = await htmlToImage.toPng(node, options);
-        const { jsPDF } = window.jspdf;
-        const pdf = new jsPDF({orientation: node.clientWidth >= node.clientHeight ? 'l' : 'p', unit: 'px', format: [node.clientWidth, node.clientHeight]});
-        pdf.addImage(pngUrl, 'PNG', 0, 0, node.clientWidth, node.clientHeight);
-        pdf.save(name + '.pdf');
+      // --- 比例联动：当非 custom 时，根据宽度计算高度 ---
+      function applyRatio(){
+        const vw = parseInt(w.value,10)||800;
+        const val = ratio.value;
+        if(val==='custom'){ h.removeAttribute('readonly'); return; }
+        h.setAttribute('readonly','readonly');
+        const [a,b] = val.split(':').map(Number);
+        const vh = Math.max(64, Math.round(vw * (b/a)));
+        h.value = vh;
       }
-      setStatus('已导出 ' + type.toUpperCase(), 'success');
-    }catch(e){
-      console.error(e); setStatus('导出失败：' + e.message, 'error');
-    }
-  }
+      ratio.addEventListener('change', applyRatio);
+      w.addEventListener('input', ()=>{ if(ratio.value!=='custom') applyRatio(); });
 
-  function download(dataUrl, filename){
-    const a = document.createElement('a');
-    a.href = dataUrl; a.download = filename; a.click();
-  }
+      // --- 渲染 ---
+      function render(){
+        const width = Math.max(64, parseInt(w.value,10)||800);
+        const height = Math.max(64, parseInt(h.value,10)||450);
+        stage.style.width = width + 'px';
+        stage.style.height = height + 'px';
+        stage.style.background = bg.value || '#ffffff';
+        const safeHTML = DOMPurify.sanitize(code.value, {FORBID_TAGS:['script','iframe','object','embed']});
+        preview.innerHTML = safeHTML;
+      }
 
-  // 事件绑定
-  document.getElementById('btnRender').addEventListener('click', render);
-  document.getElementById('btnPNG').addEventListener('click', ()=>exportAs('png'));
-  document.getElementById('btnJPG').addEventListener('click', ()=>exportAs('jpeg'));
-  document.getElementById('btnSVG').addEventListener('click', ()=>exportAs('svg'));
-  document.getElementById('btnPDF').addEventListener('click', ()=>exportAs('pdf'));
-  document.getElementById('btnClear').addEventListener('click', ()=>{ code.value=''; preview.innerHTML=''; setStatus('已清空'); });
-  document.getElementById('btnSample').addEventListener('click', ()=>{
-    code.value = `
+      // --- 导出 ---
+      async function exportAs(type){
+        const scale = parseInt(scaleSel.value,10) || 1;
+        const name = (filenameEl.value||'export').replace(/[^\w\-]+/g,'_');
+        const node = stage;
+        const options = {
+          cacheBust:true, useCORS:true, pixelRatio:scale,
+          width: node.clientWidth, height: node.clientHeight,
+          backgroundColor: getComputedStyle(node).backgroundColor
+        };
+        if(type==='png'){
+          const dataUrl = await htmlToImage.toPng(node, options);
+          download(dataUrl, name+'.png');
+        }else if(type==='jpeg'){
+          const dataUrl = await htmlToImage.toJpeg(node, {...options, quality:0.95});
+          download(dataUrl, name+'.jpg');
+        }else if(type==='pdf'){
+          const pngUrl = await htmlToImage.toPng(node, options);
+          const { jsPDF } = window.jspdf;
+          const pdf = new jsPDF({orientation: node.clientWidth>=node.clientHeight ? 'l':'p', unit:'px', format:[node.clientWidth,node.clientHeight]});
+          pdf.addImage(pngUrl, 'PNG', 0, 0, node.clientWidth, node.clientHeight);
+          pdf.save(name+'.pdf');
+        }
+      }
+      function download(dataUrl, filename){
+        const a=document.createElement('a'); a.href=dataUrl; a.download=filename; a.click();
+      }
+
+      // --- 事件 ---
+      $('btnRender').addEventListener('click', render);
+      $('btnClear').addEventListener('click', ()=>{ code.value=''; preview.innerHTML=''; });
+      $('btnPNG').addEventListener('click', ()=>exportAs('png'));
+      $('btnJPG').addEventListener('click', ()=>exportAs('jpeg'));
+      $('btnPDF').addEventListener('click', ()=>exportAs('pdf'));
+
+      document.addEventListener('keydown',(e)=>{
+        if((e.ctrlKey||e.metaKey)&&e.key==='Enter'){ e.preventDefault(); render(); }
+        if((e.ctrlKey||e.metaKey)&&(e.key==='s'||e.key==='S')){ e.preventDefault(); exportAs('png'); }
+      });
+
+      // --- 初始内容：一个卡片风示例，方便对比 ---
+      code.value = `
 <style>
-  .card{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#a78bfa,#60a5fa);}
-  .box{background:rgba(255,255,255,.9);border-radius:20px;padding:28px 32px;text-align:center;box-shadow:0 10px 24px rgba(0,0,0,.15);}
-  .title{font:700 28px/1.2 ui-sans-serif,system-ui;letter-spacing:.5px;margin:0 0 8px;color:#0f172a}
-  .sub{font:14px/1.6 ui-sans-serif,system-ui;color:#334155;margin:0}
+.bg{width:100%;height:100%;background:linear-gradient(180deg,#1f3a8a,#7833b4);padding:36px}
+.card{background:#fff;border-radius:24px;box-shadow:0 8px 24px rgba(0,0,0,.12);padding:28px 32px}
+.title{font-weight:800;font-size:24px;margin:0 0 10px;color:#111827}
+.lead{color:#475569;margin:0 0 18px}
+.sec h3{margin:16px 0 8px;font-size:18px}
+.sec p{margin:0 0 10px;color:#334155}
 </style>
-<div class="card">
-  <div class="box">
-    <h2 class="title">Hello, Image!</h2>
-    <p class="sub">把任意 HTML/CSS 渲染为图片并下载。</p>
+<div class="bg">
+  <div class="card">
+    <h2 class="title">HTML → Image</h2>
+    <p class="lead">Paste HTML on the left, render & export here.</p>
+    <div class="sec">
+      <h3>更清晰的导出</h3>
+      <p>支持 PNG / JPEG / PDF，倍率 1x–3x。</p>
+      <h3>安全</h3>
+      <p>自动移除脚本与 iframe，避免跨域脚本污染。</p>
+    </div>
   </div>
 </div>`;
-    render();
-  });
+      applyRatio(); // 根据默认 16:9 设置高度
+      render();
 
-  // 快捷键：渲染 & 快速导出
-  document.addEventListener('keydown', (e)=>{
-    if((e.ctrlKey||e.metaKey) && e.key==='Enter'){ e.preventDefault(); render(); }
-    if((e.ctrlKey||e.metaKey) && (e.key==='s' || e.key==='S')){ e.preventDefault(); exportAs('png'); }
-  });
-
-  // 首次渲染示例
-  document.getElementById('btnSample').click();
-})();
-</script>
+      // --- 自动广告初始化（不强制在侧栏渲染，真实展示由 Google 控制） ---
+      try{ (adsbygoogle = window.adsbygoogle || []).push({}); }catch(e){}
+    })();
+  </script>
 </body>
 </html>
