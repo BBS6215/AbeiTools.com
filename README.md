@@ -17,10 +17,12 @@
 
 ```
 AbeiTools.com/
-├── index.html              # 主页面（唯一需要的文件）
+├── index.html              # 主页面
+├── demo-data.json          # 本地演示数据（file:// 协议使用）
 ├── data/
-│   └── links.json         # 工具数据文件
-└── README.md
+│   └── links.json         # 线上真实数据（http:// 协议使用）
+├── 404.html               # 404 错误页面
+└── README.md              # 项目文档
 ```
 
 ## 🛠️ 部署配置
@@ -106,9 +108,16 @@ AbeiTools.com/
 
 ### 本地开发
 
+**方式一：HTTP 服务器（推荐）**
 1. 克隆仓库到本地
-2. 使用 Live Server 或类似工具启动本地服务器
-3. 访问 `http://localhost:xxxx` 查看效果
+2. 在项目根目录运行：`python -m http.server 8080`
+3. 访问 `http://localhost:8080` 查看效果
+4. 此方式会加载真实数据 `data/links.json`
+
+**方式二：直接打开文件**
+1. 直接双击 `index.html` 文件
+2. 浏览器会以 `file://` 协议打开
+3. 此方式会自动加载演示数据 `demo-data.json`，避免 CORS 问题
 
 ### 数据更新流程
 
