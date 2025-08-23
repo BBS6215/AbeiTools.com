@@ -37,8 +37,10 @@
     <!-- 左：分类 -->
     <aside class="col-span-12 md:col-span-3 lg:col-span-2">
       <nav class="sticky top-24">
-        <h2 id="catTitle" class="text-sm font-medium text-slate-500 mb-2">分类</h2>
-        <div id="catButtons" class="flex md:block flex-wrap gap-2"></div>
+        <div class="bg-white rounded-2xl border border-slate-200 p-4">
+          <h2 id="catTitle" class="text-lg font-semibold text-slate-800 mb-3">分类导航</h2>
+          <div id="catButtons" class="space-y-1"></div>
+        </div>
       </nav>
     </aside>
 
@@ -69,7 +71,7 @@
     const I18N = {
       zh: { welcome: "发现优质 AI 工具，提升你的效率与创造力。",
             searchPh: "搜索名称/简介/标签…",
-            categories: "分类",
+            categories: "分类导航",
             footer: "人工精选的 AI 工具导航",
             backTop: "回到顶部" },
       en: { welcome: "Discover quality AI tools to boost your efficiency and creativity.",
@@ -143,7 +145,7 @@
 
         const btn = document.createElement('a');
         btn.href = `#cat-${code}`;
-        btn.className = 'px-3 py-2 rounded-xl text-sm hover:bg-indigo-50';
+        btn.className = 'block w-full px-4 py-3 text-sm font-medium text-slate-700 hover:text-indigo-600 hover:bg-indigo-50 rounded-lg transition-colors duration-200 text-left border border-transparent hover:border-indigo-200';
         btn.textContent = CATEGORY_META[code].name[state.lang];
         catButtons.appendChild(btn);
 
