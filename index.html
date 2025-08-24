@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="zh" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AbeiTools · 阿北的 AI 工具箱</title>
-  <meta name="description" content="发现优质 AI 工具，提升你的效率与创造力。" />
+  <title>AbeiTools · AI Tools Directory</title>
+  <meta name="description" content="Discover quality AI tools to boost your efficiency and creativity." />
 
   <!-- ✅ Google AdSense 自动广告验证脚本（换成你的 Publisher ID） -->
   <script async
@@ -16,6 +16,42 @@
   <style>
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial; }
     .line-2 { display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+    
+    /* RTL Support */
+    [dir="rtl"] {
+      text-align: right;
+    }
+    [dir="rtl"] .flex {
+      flex-direction: row-reverse;
+    }
+    [dir="rtl"] .gap-2 > *:not(:last-child) {
+      margin-left: 0.5rem;
+      margin-right: 0;
+    }
+    [dir="rtl"] .gap-4 > *:not(:last-child) {
+      margin-left: 1rem;
+      margin-right: 0;
+    }
+    [dir="rtl"] .ml-auto {
+      margin-left: 0;
+      margin-right: auto;
+    }
+    
+    /* Language dropdown animation */
+    #langMenu {
+      transform-origin: top right;
+      transition: all 0.15s ease-out;
+    }
+    #langMenu.hidden {
+      opacity: 0;
+      transform: scale(0.95) translateY(-10px);
+      pointer-events: none;
+    }
+    
+    /* Arabic font improvements */
+    [lang="ar"] {
+      font-family: "Segoe UI", "Tahoma", "DejaVu Sans", "Arabic UI Text", sans-serif;
+    }
   </style>
 </head>
 <body class="bg-white text-slate-800">
@@ -24,11 +60,25 @@
   <header class="sticky top-0 bg-white/80 backdrop-blur border-b border-slate-200 z-40">
     <div class="max-w-7xl mx-auto px-4 py-3 flex items-center gap-4">
       <div class="text-xl font-semibold">AbeiTools</div>
-      <div id="welcome" class="text-sm text-slate-600">发现优质 AI 工具，提升你的效率与创造力。</div>
+      <div id="welcome" class="text-sm text-slate-600">Discover quality AI tools to boost your efficiency and creativity.</div>
       <div class="ml-auto flex items-center gap-2">
-        <input id="search" type="search" placeholder="搜索名称/简介/标签…" 
+        <input id="search" type="search" placeholder="Search name/description/tags…" 
           class="w-56 md:w-72 px-3 py-2 rounded-xl bg-slate-100 outline-none focus:ring-2 focus:ring-indigo-500" />
-        <button id="langToggle" class="px-3 py-2 rounded-xl border border-slate-300 hover:bg-slate-100 text-sm">EN</button>
+        <div class="relative">
+          <button id="langToggle" class="flex items-center gap-1 px-3 py-2 rounded-xl border border-slate-300 hover:bg-slate-100 text-sm">
+            <span id="currentLang">EN</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div id="langMenu" class="absolute right-0 top-full mt-1 w-32 bg-white border border-slate-200 rounded-xl shadow-lg z-50 hidden">
+            <a href="#" data-lang="en" class="block px-4 py-2 text-sm hover:bg-slate-50 rounded-t-xl">English</a>
+            <a href="#" data-lang="zh" class="block px-4 py-2 text-sm hover:bg-slate-50">中文</a>
+            <a href="#" data-lang="es" class="block px-4 py-2 text-sm hover:bg-slate-50">Español</a>
+            <a href="#" data-lang="ar" class="block px-4 py-2 text-sm hover:bg-slate-50">العربية</a>
+            <a href="#" data-lang="ru" class="block px-4 py-2 text-sm hover:bg-slate-50 rounded-b-xl">Русский</a>
+          </div>
+        </div>
       </div>
     </div>
   </header>
@@ -38,7 +88,7 @@
     <aside class="col-span-12 md:col-span-3 lg:col-span-2">
       <nav class="sticky top-24">
         <div class="bg-white rounded-2xl border border-slate-200 p-4">
-          <h2 id="catTitle" class="text-lg font-semibold text-slate-800 mb-3">分类导航</h2>
+          <h2 id="catTitle" class="text-lg font-semibold text-slate-800 mb-3">Categories</h2>
           <div id="catButtons" class="space-y-1"></div>
         </div>
       </nav>
@@ -48,68 +98,132 @@
     <section class="col-span-12 md:col-span-6 lg:col-span-8">
       <div id="sections" class="space-y-10"></div>
       <div id="loadError" class="hidden rounded-2xl border border-red-200 bg-red-50 text-red-700 p-4 text-sm">
-        数据加载失败，请刷新重试。
+        Failed to load data, please refresh and try again.
       </div>
     </section>
 
     <!-- 右：广告提示（自动广告投放区） -->
     <aside class="col-span-12 md:col-span-3 lg:col-span-2">
       <div class="sticky top-24 space-y-4">
-        <div class="text-sm font-medium text-slate-500">广告</div>
+        <div class="text-sm font-medium text-slate-500">Ads</div>
         <div class="rounded-2xl border border-dashed border-slate-300 p-4 text-center text-xs text-slate-500">
-          Google 自动广告投放区
+          Google Auto Ads Area
         </div>
       </div>
     </aside>
   </main>
 
   <footer class="max-w-7xl mx-auto px-4 pb-10 text-xs text-slate-500">
-    © <span id="year"></span> AbeiTools · <span id="footerTip">人工精选的 AI 工具导航</span>
+    © <span id="year"></span> AbeiTools · <span id="footerTip">Curated AI tools directory</span>
   </footer>
 
   <script>
     const I18N = {
+      en: { welcome: "Discover quality AI tools to boost your efficiency and creativity.",
+            searchPh: "Search name/description/tags…",
+            categories: "Categories",
+            footer: "Curated AI tools directory",
+            backTop: "Back to top" },
       zh: { welcome: "发现优质 AI 工具，提升你的效率与创造力。",
             searchPh: "搜索名称/简介/标签…",
             categories: "分类导航",
             footer: "人工精选的 AI 工具导航",
             backTop: "回到顶部" },
-      en: { welcome: "Discover quality AI tools to boost your efficiency and creativity.",
-            searchPh: "Search name/description/tags…",
-            categories: "Categories",
-            footer: "Curated AI tools directory",
-            backTop: "Back to top" }
+      es: { welcome: "Descubre herramientas de IA de calidad para mejorar tu eficiencia y creatividad.",
+            searchPh: "Buscar nombre/descripción/etiquetas…",
+            categories: "Categorías",
+            footer: "Directorio curado de herramientas de IA",
+            backTop: "Volver arriba" },
+      ar: { welcome: "اكتشف أدوات الذكاء الاصطناعي عالية الجودة لتعزيز كفاءتك وإبداعك.",
+            searchPh: "البحث في الاسم/الوصف/العلامات…",
+            categories: "التصنيفات",
+            footer: "دليل منتقى لأدوات الذكاء الاصطناعي",
+            backTop: "العودة للأعلى" },
+      ru: { welcome: "Откройте для себя качественные инструменты ИИ для повышения эффективности и творчества.",
+            searchPh: "Поиск по имени/описанию/тегам…",
+            categories: "Категории",
+            footer: "Каталог инструментов ИИ",
+            backTop: "Наверх" }
     };
 
     const CATEGORY_META = {
-      llm:      { order: 1,  name: { zh: "AI 大模型", en: "AI Large Language Models" } },
-      image:    { order: 2,  name: { zh: "AI 图像",   en: "AI Image" } },
-      video:    { order: 3,  name: { zh: "AI 视频",   en: "AI Video" } },
-      audio:    { order: 4,  name: { zh: "AI 音频",   en: "AI Audio & Speech" } },
-      search:   { order: 5,  name: { zh: "AI 搜索",   en: "AI Search" } },
-      code:     { order: 6,  name: { zh: "AI 编程",   en: "AI Coding" } },
-      agent:    { order: 7,  name: { zh: "AI 智能体", en: "AI Agents" } },
-      workflow: { order: 8,  name: { zh: "AI 工作流", en: "AI Workflows" } },
-      office:   { order: 9,  name: { zh: "AI 办公",   en: "AI Office" } },
-      other:    { order: 99, name: { zh: "其他",     en: "Others" } }
+      llm:      { order: 1,  name: { 
+        en: "AI Large Language Models", zh: "AI 大模型", 
+        es: "Modelos de Lenguaje de IA", ar: "نماذج اللغة الذكية", ru: "Языковые модели ИИ" } },
+      image:    { order: 2,  name: { 
+        en: "AI Image", zh: "AI 图像", 
+        es: "Imagen de IA", ar: "صور الذكاء الاصطناعي", ru: "ИИ Изображения" } },
+      video:    { order: 3,  name: { 
+        en: "AI Video", zh: "AI 视频", 
+        es: "Video de IA", ar: "فيديو الذكاء الاصطناعي", ru: "ИИ Видео" } },
+      audio:    { order: 4,  name: { 
+        en: "AI Audio & Speech", zh: "AI 音频", 
+        es: "Audio y Voz de IA", ar: "صوت وكلام الذكاء الاصطناعي", ru: "ИИ Аудио и Речь" } },
+      search:   { order: 5,  name: { 
+        en: "AI Search", zh: "AI 搜索", 
+        es: "Búsqueda de IA", ar: "بحث الذكاء الاصطناعي", ru: "ИИ Поиск" } },
+      code:     { order: 6,  name: { 
+        en: "AI Coding", zh: "AI 编程", 
+        es: "Programación de IA", ar: "برمجة الذكاء الاصطناعي", ru: "ИИ Программирование" } },
+      agent:    { order: 7,  name: { 
+        en: "AI Agents", zh: "AI 智能体", 
+        es: "Agentes de IA", ar: "وكلاء الذكاء الاصطناعي", ru: "ИИ Агенты" } },
+      workflow: { order: 8,  name: { 
+        en: "AI Workflows", zh: "AI 工作流", 
+        es: "Flujos de trabajo de IA", ar: "تدفقات عمل الذكاء الاصطناعي", ru: "ИИ Рабочие процессы" } },
+      office:   { order: 9,  name: { 
+        en: "AI Office", zh: "AI 办公", 
+        es: "Oficina de IA", ar: "مكتب الذكاء الاصطناعي", ru: "ИИ Офис" } },
+      other:    { order: 99, name: { 
+        en: "Others", zh: "其他", 
+        es: "Otros", ar: "أخرى", ru: "Прочие" } }
     };
 
     const $  = (s, el=document)=>el.querySelector(s);
     const $$ = (s, el=document)=>Array.from(el.querySelectorAll(s));
 
     const state = {
-      lang: (localStorage.getItem('lang') ||
-            ((navigator.language||'en').toLowerCase().startsWith('zh') ? 'zh' : 'en'))
+      lang: localStorage.getItem('lang') || getDefaultLang()
     };
+    
+    function getDefaultLang() {
+      // 检查浏览器语言进行匹配，提供更好的用户体验
+      const nav = (navigator.language || 'en').toLowerCase();
+      if (nav.startsWith('zh')) return 'zh';
+      if (nav.startsWith('es')) return 'es';
+      if (nav.startsWith('ar')) return 'ar';
+      if (nav.startsWith('ru')) return 'ru';
+      return 'en'; // 其他情况默认英文
+    }
 
+    const LANG_NAMES = {
+      en: 'EN', zh: '中', es: 'ES', ar: 'عر', ru: 'RU'
+    };
+    
     function setLang(lang){
       state.lang = lang;
       localStorage.setItem('lang', lang);
+      
+      // Update HTML lang attribute and direction
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+      
+      // Update UI text
       $('#welcome').textContent = I18N[lang].welcome;
       $('#search').placeholder = I18N[lang].searchPh;
       $('#catTitle').textContent = I18N[lang].categories;
       $('#footerTip').textContent = I18N[lang].footer;
-      $('#langToggle').textContent = lang === 'zh' ? 'EN' : '中文';
+      $('#currentLang').textContent = LANG_NAMES[lang];
+      
+      // Update page title and meta
+      document.title = lang === 'zh' ? 'AbeiTools · 阿北的 AI 工具箱' :
+                      lang === 'es' ? 'AbeiTools · Caja de Herramientas de IA' :
+                      lang === 'ar' ? 'AbeiTools · صندوق أدوات الذكاء الاصطناعي' :
+                      lang === 'ru' ? 'AbeiTools · Инструменты ИИ' :
+                      'AbeiTools · AI Tools Directory';
+      
+      $('meta[name="description"]').content = I18N[lang].welcome;
+      
       renderLists(window.__DATA__||[]);
     }
 
@@ -117,18 +231,18 @@
       const lang = state.lang;
       const a = document.createElement('a');
       a.href = item.url; a.target = '_blank'; a.rel = 'noopener';
-      a.className = 'block rounded-2xl border border-slate-200 p-4 hover:shadow-sm hover:border-indigo-300 transition';
+      a.className = 'block rounded-2xl border border-slate-200 p-3 hover:shadow-sm hover:border-indigo-300 transition';
       
       // 获取图标URL，优先使用自定义图标，否则使用favicon
       const iconUrl = item.icon || `https://www.google.com/s2/favicons?domain=${new URL(item.url).hostname}&sz=32`;
       
       a.innerHTML = `
-        <div class="flex items-start gap-3">
+        <div class="flex items-start gap-2">
           <img src="${iconUrl}" alt="${item.name?.[lang] || ''}" class="w-8 h-8 rounded-lg flex-shrink-0 mt-0.5" 
                onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHJ4PSI4IiBmaWxsPSIjZjFmNWY5Ii8+PHBhdGggZD0iTTE2IDlhNyA3IDAgMSAwIDAgMTRBNyA3IDAgMCAwIDE2IDl6IiBmaWxsPSIjYzNkNGUzIi8+PC9zdmc+';" />
           <div class="flex-1 min-w-0">
             <h3 class="font-medium truncate">${item.name?.[lang] || ''}</h3>
-            <p class="text-sm text-slate-600 line-2 mt-1">${item.desc?.[lang] || ''}</p>
+            <p class="text-xs text-slate-600 line-2 mt-1">${item.desc?.[lang] || ''}</p>
           </div>
         </div>`;
       return a;
@@ -152,7 +266,7 @@
         const sec = document.createElement('section');
         sec.id = `cat-${code}`;
         sec.innerHTML = `<h2 class="text-lg font-semibold mb-3">${CATEGORY_META[code].name[state.lang]}</h2>
-                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" data-grid="${code}"></div>`;
+                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4" data-grid="${code}"></div>`;
         sections.appendChild(sec);
         const grid = sec.querySelector(`[data-grid="${code}"]`);
         items.forEach(it=>grid.appendChild(createCard(it)));
@@ -169,7 +283,27 @@
     }
 
     document.getElementById('year').textContent = new Date().getFullYear();
-    $('#langToggle').addEventListener('click', ()=> setLang(state.lang==='zh'?'en':'zh'));
+    
+    // Language menu handling
+    $('#langToggle').addEventListener('click', (e) => {
+      e.stopPropagation();
+      $('#langMenu').classList.toggle('hidden');
+    });
+    
+    // Language menu item clicks
+    $$('#langMenu a').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        setLang(e.target.dataset.lang);
+        $('#langMenu').classList.add('hidden');
+      });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', () => {
+      $('#langMenu').classList.add('hidden');
+    });
+    
     bindSearch();
 
     // 检测协议类型，本地文件协议使用演示数据，HTTP协议使用真实数据

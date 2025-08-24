@@ -1,72 +1,96 @@
-# AbeiTools - AI 工具导航站
+# AbeiTools - AI Tools Directory
 
-> 发现优质 AI 工具，提升你的效率与创造力
+> Discover quality AI tools to boost your efficiency and creativity
 
-## 🚀 功能特性
+## 🚀 Features
 
-- **🌐 双语支持**: 中英文界面切换，自动记忆偏好
-- **🔍 智能搜索**: 本地实时搜索名称、描述、标签
-- **📱 响应式设计**: 完美适配桌面端和移动端
-- **⚡ 快速加载**: 纯静态设计，首屏 < 2s
-- **📊 分类导航**: 8 大分类，锚点跳转，数量统计
-- **🔄 数据外置**: JSON 文件管理，修改即生效
-- **💰 广告支持**: 集成 Google AdSense，审核占位
-- **♿ 无障碍**: 支持键盘导航，WCAG AA 标准
+- **🌐 Multi-language Support**: 5 languages (EN, 中文, ES, AR, RU) with preference memory
+- **🔍 Smart Search**: Real-time local search by name, description, and tags
+- **📱 Responsive Design**: Perfect for both desktop and mobile devices
+- **⚡ Fast Loading**: Pure static design, first screen loads < 2s
+- **📊 Category Navigation**: 9 major categories with anchor jumping and count statistics
+- **🔄 External Data**: JSON file management, changes take effect immediately
+- **💰 Ad Support**: Integrated Google AdSense with approval placeholders
+- **♿ Accessibility**: Keyboard navigation support, WCAG AA compliant
+- **🛠️ Admin Panel**: Built-in content management system
 
-## 📁 项目结构
+## 🌍 Supported Languages
+
+- **English (EN)** - Default language
+- **中文 (ZH)** - Chinese Simplified
+- **Español (ES)** - Spanish
+- **العربية (AR)** - Arabic with RTL support
+- **Русский (RU)** - Russian
+
+## 📁 Project Structure
 
 ```
-AbeiTools.com/
-├── index.html              # 主页面
-├── demo-data.json          # 本地演示数据（file:// 协议使用）
+AbeiTools/
+├── index.html              # Main homepage
+├── admin.html              # Admin management panel
+├── 404.html                # 404 error page
+├── demo-data.json          # Demo data (for file:// protocol)
 ├── data/
-│   └── links.json         # 线上真实数据（http:// 协议使用）
-├── 404.html               # 404 错误页面
-└── README.md              # 项目文档
+│   └── links.json         # Production data (for http:// protocol)
+├── start_server.py         # Local development server
+└── README.md              # Project documentation
 ```
 
-## 🛠️ 部署配置
+## 🛠️ Deployment
 
-### 1. Cloudflare Pages 部署
+### 1. Cloudflare Pages Deployment (Recommended)
 
-1. 将代码推送到 GitHub 仓库
-2. 在 [Cloudflare Pages](https://pages.cloudflare.com/) 创建新项目
-3. 连接你的 GitHub 仓库
-4. 配置构建设置：
+1. Push code to your GitHub repository
+2. Create a new project on [Cloudflare Pages](https://pages.cloudflare.com/)
+3. Connect your GitHub repository
+4. Configure build settings:
    - **Framework preset**: `None`
-   - **Build command**: 留空
+   - **Build command**: Leave empty
    - **Build output directory**: `/`
-5. 绑定自定义域名（可选）
+5. Bind custom domain (optional)
 
-### 2. Google AdSense 配置
+### 2. Other Static Hosting Services
 
-1. 申请 [Google AdSense](https://www.google.com/adsense/) 账户
-2. 获取你的发布商 ID（格式：`ca-pub-xxxxxxxxxxxxxxxx`）
-3. 替换 `index.html` 中的 `ca-pub-XXXXXXXXXXXXXXXX` 为你的实际 ID
-4. 配置广告单元并更新 `data-ad-slot` 值
+This project works with any static hosting service:
+- **Netlify**: Just connect your GitHub repo
+- **Vercel**: Zero-config deployment
+- **GitHub Pages**: Enable in repository settings
+- **Firebase Hosting**: Use `firebase deploy`
 
-## 📝 使用说明
+### 3. Google AdSense Configuration
 
-### 前台使用
+1. Apply for [Google AdSense](https://www.google.com/adsense/) account
+2. Get your Publisher ID (format: `ca-pub-xxxxxxxxxxxxxxxx`)
+3. Replace `ca-pub-XXXXXXXXXXXXXXXX` in `index.html` with your actual ID
+4. Configure ad units and update `data-ad-slot` values
 
-- **访问网站**: 直接打开主页即可使用，无需注册
-- **搜索工具**: 使用顶部搜索框实时搜索工具
-- **切换语言**: 点击右上角 "EN/中文" 按钮，自动记忆偏好
-- **分类浏览**: 点击左侧分类导航快速跳转到对应分区
-- **工具访问**: 点击工具卡片在新标签页打开
+## 📝 Usage Guide
 
-### 数据管理
+### Frontend Usage
 
-**更新工具数据只需修改 `data/links.json` 文件：**
+- **Access Website**: Open homepage directly, no registration required
+- **Search Tools**: Use the top search box for real-time tool search
+- **Switch Language**: Click "EN/中文/ES/عر/RU" button in top-right corner
+- **Browse Categories**: Click left sidebar categories for quick navigation
+- **Access Tools**: Click tool cards to open in new tab
 
-1. **编辑文件**: 直接在 GitHub 仓库中编辑 `data/links.json`
-2. **提交更改**: 提交到 main 分支
-3. **自动部署**: Cloudflare Pages 自动重新部署（1-2 分钟）
-4. **查看效果**: 刷新网站即可看到更新
+### Data Management
 
-### 数据格式
+#### Method 1: Admin Panel (Recommended)
+1. Visit `/admin.html` in your browser
+2. Add, edit, or delete tools using the visual interface
+3. Export updated `links.json` file
+4. Upload to your GitHub repository
 
-工具数据存储在 `data/links.json` 文件中，格式如下：
+#### Method 2: Direct File Editing
+1. Edit `data/links.json` directly in GitHub repository
+2. Commit changes to main branch
+3. Cloudflare Pages auto-deploys (1-2 minutes)
+4. Refresh website to see updates
+
+### Data Format
+
+Tool data is stored in `data/links.json`:
 
 ```json
 {
@@ -77,74 +101,151 @@ AbeiTools.com/
       "category": "llm",
       "name": {
         "zh": "中文名称",
-        "en": "English Name"
+        "en": "English Name",
+        "es": "Nombre Español",
+        "ar": "الاسم العربي",
+        "ru": "Русское Имя"
       },
       "desc": {
         "zh": "中文描述（≤30字）",
-        "en": "English description (≤80 chars)"
+        "en": "English description (≤80 chars)",
+        "es": "Descripción en español",
+        "ar": "الوصف بالعربية",
+        "ru": "Русское описание"
       },
       "tags": {
         "zh": ["标签1", "标签2"],
-        "en": ["tag1", "tag2"]
+        "en": ["tag1", "tag2"],
+        "es": ["etiqueta1", "etiqueta2"],
+        "ar": ["علامة1", "علامة2"],
+        "ru": ["тег1", "тег2"]
       },
+      "icon": "https://example.com/icon.png", // optional
       "sponsor": false
     }
   ]
 }
 ```
 
-### 支持的分类
+### Supported Categories
 
-- `llm`: AI 大模型
-- `image`: AI 图像
-- `video`: AI 视频  
-- `audio`: AI 音频
-- `search`: AI 搜索
-- `code`: AI 编程
-- `office`: AI 办公
-- `other`: 其他
+- `llm`: AI Large Language Models
+- `image`: AI Image Generation
+- `video`: AI Video Creation
+- `audio`: AI Audio & Speech
+- `search`: AI Search Engines
+- `code`: AI Coding Assistants
+- `agent`: AI Agents & Automation
+- `workflow`: AI Workflow Tools
+- `office`: AI Office & Productivity
+- `other`: Other AI Tools
 
-## 🔧 开发说明
+## 🔧 Development
 
-### 本地开发
+### Local Development
 
-**方式一：HTTP 服务器（推荐）**
-1. 克隆仓库到本地
-2. 在项目根目录运行：`python -m http.server 8080`
-3. 访问 `http://localhost:8080` 查看效果
-4. 此方式会加载真实数据 `data/links.json`
+**Method 1: Python Server (Recommended)**
+```bash
+# Clone repository
+git clone https://github.com/yourusername/abeitools.git
+cd abeitools
 
-**方式二：直接打开文件**
-1. 直接双击 `index.html` 文件
-2. 浏览器会以 `file://` 协议打开
-3. 此方式会自动加载演示数据 `demo-data.json`，避免 CORS 问题
+# Start server (loads production data)
+python start_server.py
+# or
+python -m http.server 8080
 
-### 数据更新流程
+# Visit http://localhost:8080
+```
 
-1. **通过 CMS**: 访问 `/admin/` → 登录 → 编辑数据 → 发布
-2. **手动编辑**: 直接修改 `data/links.json` 文件并提交到 GitHub
+**Method 2: Direct File Opening**
+```bash
+# Double-click index.html
+# Browser opens with file:// protocol
+# Automatically loads demo-data.json to avoid CORS issues
+```
 
-### 验收标准
+### Clear Browser Cache/Storage
 
-部署完成后，请验证以下功能：
+If you see old language settings, clear browser storage:
+```javascript
+// Open browser console and run:
+localStorage.clear();
+location.reload();
+```
 
-- ✅ 主页正常显示，左栏分类数量与锚点跳转正确
-- ✅ 中英文切换功能正常，全站文案即时切换并记忆偏好
-- ✅ 搜索功能按当前语言实时过滤工具
-- ✅ 修改 `data/links.json` 后提交，刷新页面即可看到新数据
-- ✅ AdSense 验证脚本在 `<head>` 中，广告位正常显示或显示占位
-- ✅ 页面首屏加载 < 2s，移动端显示正常
-- ✅ 所有工具链接为 `target="_blank" rel="noopener nofollow"`
-- ✅ `<html lang>` 和页面标题/描述随语言变化
+### Quality Assurance Checklist
 
-## 📄 许可证
+After deployment, verify these features:
 
-MIT License
+- ✅ Homepage displays correctly with proper category counts
+- ✅ **Default language is English** for new visitors
+- ✅ Language switching works properly with preference memory
+- ✅ Search function filters tools by current language
+- ✅ Updating `data/links.json` reflects changes after refresh
+- ✅ AdSense verification script in `<head>`, ads display properly
+- ✅ Page first screen loads < 2s, mobile display works
+- ✅ All tool links have `target="_blank" rel="noopener nofollow"`
+- ✅ `<html lang>` and page title/description change with language
+- ✅ Admin panel functions correctly for content management
 
-## 🤝 贡献
+## 📊 Current Statistics
 
-欢迎提交 Issue 和 Pull Request！
+- **135+ AI Tools** across 9 categories
+- **5 Languages** fully supported
+- **Mobile Optimized** responsive design
+- **SEO Ready** with proper meta tags
+- **Admin Panel** for easy content management
+
+## 🔄 Update Instructions
+
+### For GitHub + Cloudflare Pages Users
+
+1. **Local Changes**: Make changes to your local files
+2. **Commit & Push**: 
+   ```bash
+   git add .
+   git commit -m "Update: [describe your changes]"
+   git push origin main
+   ```
+3. **Auto Deploy**: Cloudflare Pages automatically deploys (1-2 minutes)
+4. **Verify**: Check your live website
+
+### Important Files to Update
+
+Always include these files when pushing updates:
+- `index.html` - Main functionality
+- `data/links.json` - Tool database
+- `admin.html` - Management interface (if modified)
+
+## 📄 License
+
+MIT License - feel free to use this project for any purpose.
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit Issues and Pull Requests.
+
+### How to Contribute
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+### Contribution Ideas
+
+- Add new language translations
+- Improve UI/UX design
+- Add new AI tool categories
+- Enhance search functionality
+- Optimize performance
 
 ---
 
-**AbeiTools** - 让 AI 工具触手可及 ✨
+**AbeiTools** - Making AI Tools Accessible ✨
+
+🌐 **Live Demo**: [Your Website URL]
+📱 **Mobile Friendly**: Works perfectly on all devices
+🔧 **Easy Setup**: Deploy in under 5 minutes
