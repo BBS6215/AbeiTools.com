@@ -1,0 +1,169 @@
+{
+  "categories": {
+    "chat": {
+      "id": "chat",
+      "order": 1,
+      "icon": "<svg class=\"w-5 h-5\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z\"></path></svg>",
+      "color": "#3B82F6",
+      "enabled": true,
+      "name": {
+        "zh": "AI对话助手",
+        "en": "AI Chat Assistants", 
+        "es": "Asistentes de Chat IA",
+        "ar": "مساعدي الدردشة الذكية",
+        "ru": "ИИ Чат Ассистенты",
+        "ja": "AIチャットアシスタント"
+      },
+      "description": {
+        "zh": "ChatGPT、Claude、Gemini、文心一言",
+        "en": "ChatGPT, Claude, Gemini, Ernie Bot",
+        "es": "ChatGPT, Claude, Gemini, Ernie Bot", 
+        "ar": "ChatGPT وكلود وجيميني وإرني بوت",
+        "ru": "ChatGPT, Claude, Gemini, Ernie Bot",
+        "ja": "ChatGPT、Claude、Gemini、文心一言"
+      },
+      "usage": {
+        "zh": "智能对话、内容生成、学习辅助",
+        "en": "Smart conversation, content generation, learning assistance",
+        "es": "Conversación inteligente, generación contenido, asistencia aprendizaje",
+        "ar": "محادثة ذكية، توليد محتوى، مساعدة تعليمية",
+        "ru": "Умные разговоры, создание контента, помощь в обучении",
+        "ja": "スマート会話、コンテンツ生成、学習支援"
+      }
+    },
+    "creative": {
+      "id": "creative", 
+      "order": 3,
+      "icon": "<svg class=\"w-5 h-5\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z\"></path></svg>",
+      "color": "#EF4444",
+      "enabled": true,
+      "name": {
+        "zh": "内容创作",
+        "en": "Content Creation",
+        "es": "Creación de Contenido", 
+        "ar": "إنتاج المحتوى",
+        "ru": "Создание Контента",
+        "ja": "コンテンツ作成"
+      },
+      "description": {
+        "zh": "图像生成、视频制作、音频处理、文字创作",
+        "en": "Image generation, video production, audio processing, text creation",
+        "es": "Generación imágenes, producción video, procesamiento audio, creación texto",
+        "ar": "توليد الصور، إنتاج الفيديو، معالجة الصوت، إنشاء النصوص", 
+        "ru": "Генерация изображений, создание видео, обработка аудио, создание текста",
+        "ja": "画像生成、動画制作、音声処理、テキスト作成"
+      },
+      "usage": {
+        "zh": "设计海报、制作视频、生成音乐、撰写文案",
+        "en": "Design posters, create videos, generate music, write copy",
+        "es": "Diseñar carteles, crear videos, generar música, escribir contenido",
+        "ar": "تصميم الملصقات، إنشاء الفيديوهات، توليد الموسيقى، كتابة المحتوى",
+        "ru": "Дизайн постеров, создание видео, генерация музыки, написание текстов",
+        "ja": "ポスターデザイン、動画作成、音楽生成、コピーライティング"
+      }
+    },
+    "office": {
+      "id": "office",
+      "order": 4,
+      "icon": "<svg class=\"w-5 h-5\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2V6\"></path></svg>",
+      "color": "#10B981",
+      "enabled": true,
+      "name": {
+        "zh": "办公效率",
+        "en": "Office Efficiency", 
+        "es": "Eficiencia Oficina",
+        "ar": "كفاءة المكتب",
+        "ru": "Офисная Эффективность",
+        "ja": "オフィス効率"
+      },
+      "description": {
+        "zh": "协作工具、自动化流程、会议助手",
+        "en": "Collaboration tools, automation workflows, meeting assistants",
+        "es": "Herramientas colaboración, flujos automatización, asistentes reunión",
+        "ar": "أدوات تعاون، سير عمل تلقائية، مساعدو اجتماعات",
+        "ru": "Средства сотрудничества, автоматизация рабочих процессов, помощники для совещаний",
+        "ja": "コラボレーションツール、自動化ワークフロー、会議アシスタント"
+      },
+      "usage": {
+        "zh": "文档协作、会议纪要、任务管理",
+        "en": "Document collaboration, meeting minutes, task management",
+        "es": "Colaboración documentos, actas reuniones, gestión tareas",
+        "ar": "تعاون في الوثائق، محاضر الاجتماعات، إدارة المهام",
+        "ru": "Совместная работа над документами, протоколы совещаний, управление задачами",
+        "ja": "文書協力、会議議事録、タスク管理"
+      }
+    },
+    "coding": {
+      "id": "coding",
+      "order": 5,
+      "icon": "<svg class=\"w-5 h-5\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4\"></path></svg>",
+      "color": "#F59E0B",
+      "enabled": true,
+      "name": {
+        "zh": "编程开发",
+        "en": "Coding & Development",
+        "es": "Programación y Desarrollo",
+        "ar": "البرمجة والتطوير",
+        "ru": "Программирование и Разработка", 
+        "ja": "プログラミング・開発"
+      },
+      "description": {
+        "zh": "代码助手、开发工具、技术辅助",
+        "en": "Code assistants, development tools, technical assistance",
+        "es": "Asistentes código, herramientas desarrollo, asistencia técnica",
+        "ar": "مساعدو الأكواد، أدوات التطوير، المساعدة التقنية",
+        "ru": "Помощники по коду, средства разработки, техническая помощь",
+        "ja": "コードアシスタント、開発ツール、技術支援"
+      },
+      "usage": {
+        "zh": "代码编写、错误调试、项目部署",
+        "en": "Code writing, bug debugging, project deployment",
+        "es": "Escribir código, depurar errores, desplegar proyectos",
+        "ar": "كتابة الأكواد، إصلاح الأخطاء، نشر المشاريع",
+        "ru": "Написание кода, отладка ошибок, развертывание проектов",
+        "ja": "コード作成、バグデバッグ、プロジェクトデプロイ"
+      }
+    },
+    "search": {
+      "id": "search",
+      "order": 2,
+      "icon": "<svg class=\"w-5 h-5\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z\"></path></svg>",
+      "color": "#8B5CF6",
+      "enabled": true,
+      "name": {
+        "zh": "信息获取",
+        "en": "Information Retrieval",
+        "es": "Obtención de Información",
+        "ar": "استرجاع المعلومات", 
+        "ru": "Получение Информации",
+        "ja": "情報収集"
+      },
+      "description": {
+        "zh": "智能搜索、数据分析、研究助手",
+        "en": "Smart search, data analysis, research assistants",
+        "es": "Búsqueda inteligente, análisis datos, asistentes investigación",
+        "ar": "بحث ذكي، تحليل بيانات، مساعدو بحث",
+        "ru": "Умный поиск, анализ данных, исследовательские помощники",
+        "ja": "スマート検索、データ分析、研究アシスタント"
+      },
+      "usage": {
+        "zh": "资料查找、论文研究、市场分析",
+        "en": "Information searching, paper research, market analysis",
+        "es": "Búsqueda información, investigación papers, análisis mercado",
+        "ar": "البحث عن المعلومات، بحث الأوراق، تحليل السوق",
+        "ru": "Поиск информации, исследование статей, рыночный анализ",
+        "ja": "情報検索、論文研究、市場分析"
+      }
+    }
+  },
+  "settings": {
+    "defaultLanguage": "en",
+    "enabledLanguages": ["zh", "en", "es", "ar", "ru", "ja"],
+    "rtlLanguages": ["ar"],
+    "categoriesPerPage": 5,
+    "toolsPerCategory": 12,
+    "enableSearch": true,
+    "enableFiltering": true,
+    "enableCategoryIcons": true
+  }
+}

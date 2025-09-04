@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# 禁止抓取的目录
+Disallow: /admin/
+Disallow: /.claude/
+Disallow: /docs/
+Disallow: /assets/js/
+Disallow: /config/
+Disallow: /data/
+
+# 允许抓取的重要文件
+Allow: /assets/css/
+Allow: /assets/images/
+Allow: /tools/
+
+# Sitemap位置
+Sitemap: https://abeitools.com/sitemap.xml
+
+# 抓取延迟（可选）
+Crawl-delay: 1

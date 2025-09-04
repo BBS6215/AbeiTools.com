@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+        
+    <!-- Main homepage in all languages -->
+    <url>
+        <loc>https://abeitools.com/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://abeitools.com/?lang=zh" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://abeitools.com/?lang=en" />
+        <xhtml:link rel="alternate" hreflang="es-ES" href="https://abeitools.com/?lang=es" />
+        <xhtml:link rel="alternate" hreflang="ar" href="https://abeitools.com/?lang=ar" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://abeitools.com/?lang=ru" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://abeitools.com/?lang=ja" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://abeitools.com/" />
+        <lastmod>2025-01-04T00:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- Chinese (默认) -->
+    <url>
+        <loc>https://abeitools.com/?lang=zh</loc>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://abeitools.com/?lang=zh" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://abeitools.com/?lang=en" />
+        <xhtml:link rel="alternate" hreflang="es-ES" href="https://abeitools.com/?lang=es" />
+        <xhtml:link rel="alternate" hreflang="ar" href="https://abeitools.com/?lang=ar" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://abeitools.com/?lang=ru" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://abeitools.com/?lang=ja" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://abeitools.com/" />
+        <lastmod>2025-01-04T00:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- English -->
+    <url>
+        <loc>https://abeitools.com/?lang=en</loc>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://abeitools.com/?lang=zh" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://abeitools.com/?lang=en" />
+        <xhtml:link rel="alternate" hreflang="es-ES" href="https://abeitools.com/?lang=es" />
+        <xhtml:link rel="alternate" hreflang="ar" href="https://abeitools.com/?lang=ar" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://abeitools.com/?lang=ru" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://abeitools.com/?lang=ja" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://abeitools.com/" />
+        <lastmod>2025-01-04T00:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Spanish -->
+    <url>
+        <loc>https://abeitools.com/?lang=es</loc>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://abeitools.com/?lang=zh" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://abeitools.com/?lang=en" />
+        <xhtml:link rel="alternate" hreflang="es-ES" href="https://abeitools.com/?lang=es" />
+        <xhtml:link rel="alternate" hreflang="ar" href="https://abeitools.com/?lang=ar" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://abeitools.com/?lang=ru" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://abeitools.com/?lang=ja" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://abeitools.com/" />
+        <lastmod>2025-01-04T00:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Arabic -->
+    <url>
+        <loc>https://abeitools.com/?lang=ar</loc>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://abeitools.com/?lang=zh" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://abeitools.com/?lang=en" />
+        <xhtml:link rel="alternate" hreflang="es-ES" href="https://abeitools.com/?lang=es" />
+        <xhtml:link rel="alternate" hreflang="ar" href="https://abeitools.com/?lang=ar" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://abeitools.com/?lang=ru" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://abeitools.com/?lang=ja" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://abeitools.com/" />
+        <lastmod>2025-01-04T00:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Russian -->
+    <url>
+        <loc>https://abeitools.com/?lang=ru</loc>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://abeitools.com/?lang=zh" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://abeitools.com/?lang=en" />
+        <xhtml:link rel="alternate" hreflang="es-ES" href="https://abeitools.com/?lang=es" />
+        <xhtml:link rel="alternate" hreflang="ar" href="https://abeitools.com/?lang=ar" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://abeitools.com/?lang=ru" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://abeitools.com/?lang=ja" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://abeitools.com/" />
+        <lastmod>2025-01-04T00:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Japanese -->
+    <url>
+        <loc>https://abeitools.com/?lang=ja</loc>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://abeitools.com/?lang=zh" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://abeitools.com/?lang=en" />
+        <xhtml:link rel="alternate" hreflang="es-ES" href="https://abeitools.com/?lang=es" />
+        <xhtml:link rel="alternate" hreflang="ar" href="https://abeitools.com/?lang=ar" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://abeitools.com/?lang=ru" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://abeitools.com/?lang=ja" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://abeitools.com/" />
+        <lastmod>2025-01-04T00:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Category Pages - Chat -->
+    <url>
+        <loc>https://abeitools.com/?category=chat</loc>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://abeitools.com/?category=chat&amp;lang=zh" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://abeitools.com/?category=chat&amp;lang=en" />
+        <xhtml:link rel="alternate" hreflang="es-ES" href="https://abeitools.com/?category=chat&amp;lang=es" />
+        <xhtml:link rel="alternate" hreflang="ar" href="https://abeitools.com/?category=chat&amp;lang=ar" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://abeitools.com/?category=chat&amp;lang=ru" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://abeitools.com/?category=chat&amp;lang=ja" />
+        <lastmod>2025-01-04T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Category Pages - Creative -->
+    <url>
+        <loc>https://abeitools.com/?category=creative</loc>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://abeitools.com/?category=creative&amp;lang=zh" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://abeitools.com/?category=creative&amp;lang=en" />
+        <xhtml:link rel="alternate" hreflang="es-ES" href="https://abeitools.com/?category=creative&amp;lang=es" />
+        <xhtml:link rel="alternate" hreflang="ar" href="https://abeitools.com/?category=creative&amp;lang=ar" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://abeitools.com/?category=creative&amp;lang=ru" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://abeitools.com/?category=creative&amp;lang=ja" />
+        <lastmod>2025-01-04T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Category Pages - Office -->
+    <url>
+        <loc>https://abeitools.com/?category=office</loc>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://abeitools.com/?category=office&amp;lang=zh" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://abeitools.com/?category=office&amp;lang=en" />
+        <xhtml:link rel="alternate" hreflang="es-ES" href="https://abeitools.com/?category=office&amp;lang=es" />
+        <xhtml:link rel="alternate" hreflang="ar" href="https://abeitools.com/?category=office&amp;lang=ar" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://abeitools.com/?category=office&amp;lang=ru" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://abeitools.com/?category=office&amp;lang=ja" />
+        <lastmod>2025-01-04T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Category Pages - Coding -->
+    <url>
+        <loc>https://abeitools.com/?category=coding</loc>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://abeitools.com/?category=coding&amp;lang=zh" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://abeitools.com/?category=coding&amp;lang=en" />
+        <xhtml:link rel="alternate" hreflang="es-ES" href="https://abeitools.com/?category=coding&amp;lang=es" />
+        <xhtml:link rel="alternate" hreflang="ar" href="https://abeitools.com/?category=coding&amp;lang=ar" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://abeitools.com/?category=coding&amp;lang=ru" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://abeitools.com/?category=coding&amp;lang=ja" />
+        <lastmod>2025-01-04T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Category Pages - Search -->
+    <url>
+        <loc>https://abeitools.com/?category=search</loc>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://abeitools.com/?category=search&amp;lang=zh" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://abeitools.com/?category=search&amp;lang=en" />
+        <xhtml:link rel="alternate" hreflang="es-ES" href="https://abeitools.com/?category=search&amp;lang=es" />
+        <xhtml:link rel="alternate" hreflang="ar" href="https://abeitools.com/?category=search&amp;lang=ar" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://abeitools.com/?category=search&amp;lang=ru" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://abeitools.com/?category=search&amp;lang=ja" />
+        <lastmod>2025-01-04T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+</urlset>

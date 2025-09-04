@@ -1,0 +1,642 @@
+/* AbeiTools V3.0 - Main Styles */
+
+/* 基础样式重置和优化 */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========== 品牌展示样式 ========== */
+/* 品牌容器 */
+.brand-container {
+    position: relative;
+}
+
+/* 品牌标题 */
+.brand-title {
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6, #ef4444);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 品牌副标题 */
+.brand-subtitle {
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    color: #6b7280;
+    text-transform: uppercase;
+    font-size: 11px;
+    margin-top: 4px;
+    position: relative;
+    display: inline-block;
+}
+
+/* 副标题装饰 */
+.brand-subtitle::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 3px;
+    background: #3b82f6;
+    border-radius: 50%;
+    opacity: 0.6;
+}
+
+/* ========== 优化后的分区和层级样式 ========== */
+/* 分类区域容器 - 统一白底设计 */
+.category-section {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 28px 24px 32px 24px;
+    margin-bottom: 32px;
+    border: 1px solid #f1f3f4;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.06);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* 分区底部分隔线已移除，避免与标题下边框重复 */
+
+.category-section:hover {
+    box-shadow: 0 4px 12px 0 rgb(0 0 0 / 0.1);
+}
+
+/* 分类标题样式 - 移除延伸线，只保留标题下方细线 */
+.category-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 12px; /* 8-12px呼吸空间 */
+    position: relative;
+}
+
+.category-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 16px;
+    font-size: 20px;
+    font-weight: 600;
+    flex-shrink: 0;
+    position: relative;
+    /* 使用主色的15%透明度作为背景 */
+    background: rgba(var(--category-color-rgb), 0.15);
+    color: var(--category-color, #6B7280);
+}
+
+.category-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0;
+    flex: 1;
+}
+
+.category-count {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    color: #6b7280;
+    padding: 6px 12px;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+}
+
+/* 分类区域的标题工具数量样式 */
+.category-header .category-count {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    font-size: 11px;
+    padding: 4px 10px;
+    margin-left: auto;
+}
+
+/* 分类色彩系统 - 使用CSS变量 */
+.category-chat {
+    --category-color: #3b82f6;
+    --category-color-rgb: 59, 130, 246;
+}
+
+.category-creative {
+    --category-color: #ef4444;
+    --category-color-rgb: 239, 68, 68;
+}
+
+.category-office {
+    --category-color: #10b981;
+    --category-color-rgb: 16, 185, 129;
+}
+
+.category-coding {
+    --category-color: #f59e0b;
+    --category-color-rgb: 245, 158, 11;
+}
+
+.category-search {
+    --category-color: #8b5cf6;
+    --category-color-rgb: 139, 92, 246;
+}
+
+/* 左侧导航固定定位优化 */
+.sidebar,
+#sidebar {
+    position: sticky !important;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 10;
+}
+
+/* 覆盖Tailwind的lg:static类 */
+@media (min-width: 1024px) {
+    #sidebar {
+        position: sticky !important;
+        top: 0 !important;
+        left: auto !important;
+        transform: translateX(0) !important;
+        width: 20% !important;
+    }
+}
+
+/* 确保侧边栏内容可滚动 */
+#sidebar nav {
+    flex: 1;
+    overflow-y: auto;
+    max-height: calc(100vh - 200px); /* 减去头部和底部空间 */
+}
+
+/* 侧边栏滚动条样式 */
+#sidebar nav::-webkit-scrollbar {
+    width: 4px;
+}
+
+#sidebar nav::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#sidebar nav::-webkit-scrollbar-thumb {
+    background: rgba(156, 163, 175, 0.3);
+    border-radius: 2px;
+}
+
+#sidebar nav::-webkit-scrollbar-thumb:hover {
+    background: rgba(156, 163, 175, 0.5);
+}
+
+/* 侧边栏分类项统一样式 */
+.category-item {
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.category-item:hover {
+    background-color: rgba(59, 130, 246, 0.08);
+    transform: translateX(2px);
+}
+
+.category-item:focus-visible {
+    outline: 2px solid #3B82F6;
+    outline-offset: 2px;
+}
+
+/* 活跃状态样式由JavaScript动态设置，移除冲突的CSS规则 */
+
+/* 统一图标样式 */
+.category-icon {
+    border-radius: 50%;
+    background-color: rgba(59, 130, 246, 0.12);
+    transition: background-color 0.2s ease;
+}
+
+/* 统一图标线宽 */
+.category-item svg {
+    stroke-width: 1.5;
+}
+
+/* 工具网格容器 - 优化响应式断点 */
+.tools-grid {
+    display: grid;
+    gap: 16px;
+    margin-top: 4px;
+}
+
+/* 响应式栅格断点 */
+/* ≥1280px 4列 */
+@media (min-width: 1280px) {
+    .tools-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* 768px-1279px 3列 */
+@media (min-width: 768px) and (max-width: 1279px) {
+    .tools-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* 480px-767px 2列 */
+@media (min-width: 480px) and (max-width: 767px) {
+    .tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* 移动端分区标题字号-1级 */
+    .category-title {
+        font-size: 20px;
+    }
+}
+
+/* <480px 1列 */
+@media (max-width: 479px) {
+    .tools-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* 移动端分区标题字号-1级 */
+    .category-title {
+        font-size: 18px;
+    }
+    
+    /* 移动端工具卡片纵向布局 */
+    .tool-card {
+        min-height: 120px;
+    }
+    
+    .tool-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .tool-icon {
+        width: 56px; /* 移动端也使用56×56px保持一致 */
+        height: 56px;
+    }
+    
+    .tool-icon img {
+        width: 40px; /* 移动端图片也使用40×40px */
+        height: 40px;
+    }
+}
+
+/* category-footer相关样式已移除，因为HTML中不再使用 */
+
+/* ========== 统一的工具卡片样式 ========== */
+/* 工具卡片统一规则 */
+.tool-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #EAEAEA;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    min-height: 180px; /* 最小高度确保对齐 */
+    position: relative;
+    overflow: hidden;
+}
+
+/* 统一hover效果 */
+.tool-card:hover {
+    transform: translateY(-2px) scale(1.01);
+    border-color: var(--category-color, #3b82f6);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* 工具卡片头部 - 第一行：LOGO+标题垂直居中对齐 */
+.tool-header {
+    display: flex;
+    align-items: center; /* 确保LOGO与标题在同一水平线垂直居中 */
+    margin-bottom: 16px; /* 增加与第二行的间距 */
+    gap: 12px;
+    min-height: 56px; /* 确保第一行有足够高度容纳LOGO */
+}
+
+.tool-icon {
+    width: 56px; /* 调整为56×56px满足用户期望的视觉尺寸 */
+    height: 56px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: #ffffff;
+    border: 1px solid #EAEAEA;
+    overflow: hidden;
+    position: relative;
+    transition: box-shadow 0.3s ease;
+}
+
+.tool-icon img {
+    width: 40px; /* 调整为40×40px以适配56×56px的LOGO框 */
+    height: 40px;
+    border-radius: 6px;
+    object-fit: contain;
+    background: transparent !important;
+    /* 确保图标在白色背景上清晰显示 */
+    filter: brightness(0.95) contrast(1.05);
+}
+
+/* Logo容器hover效果 */
+.tool-card:hover .tool-icon {
+    box-shadow: 0 2px 6px 0 rgb(0 0 0 / 0.15), inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+/* 处理图标加载失败的情况 */
+.tool-icon img[src=""], 
+.tool-icon img:not([src]),
+.tool-icon img[src*="data:image/svg+xml"]:not([src*="fill"]) {
+    display: none;
+}
+
+.tool-icon img[onerror] + div,
+.tool-icon .fallback-icon {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    color: #6b7280;
+    font-size: 18px;
+}
+
+.tool-icon::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent 30%, var(--accent-color, #3b82f6) 100%);
+    opacity: 0.1;
+    border-radius: inherit;
+}
+
+.tool-title {
+    font-size: 20px; /* 放大一号：从18px增加到20px */
+    font-weight: 700; /* 保持粗字重 */
+    color: #1f2937;
+    line-height: 1.3;
+    margin: 0;
+    flex: 1;
+    /* 单行省略号处理，确保标题不换行 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* 工具描述样式 - 第二行：占满整行，智能字体缩放 */
+.tool-description {
+    color: #6b7280;
+    font-size: 14px; /* 基础字体大小 */
+    line-height: 1.5; /* 改善行间距 */
+    /* 限制描述最多3行，超出省略号 */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3; /* 用户要求最多3行 */
+    overflow: hidden;
+    margin-bottom: 16px;
+    flex: 1;
+    width: 100%; /* 确保占满整行 */
+    min-height: 66px; /* 3行文字的最小高度 (14px * 1.5 * 3 ≈ 63px + 3px余量) */
+}
+
+/* 智能字体缩放：长英文描述使用小字号 */
+.tool-description.long-english {
+    font-size: 13px; /* 英文长描述使用更小字号 */
+    line-height: 1.4; /* 稍微紧凑的行间距 */
+}
+
+/* 确保卡片高度对齐 */
+.tools-grid .tool-card {
+    align-self: stretch;
+}
+
+/* 可触控区域最小44px */
+.tool-card {
+    min-height: 44px;
+}
+
+/* 统一边距token */
+.tools-grid {
+    gap: 16px; /* 外间距 */
+}
+
+.tool-card {
+    padding: 20px; /* 内间距 */
+}
+
+/* ========== 原有样式保持 ========== */
+
+/* 多语言字体支持 */
+.font-chinese {
+    font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+}
+
+.font-arabic {
+    font-family: 'Noto Sans Arabic', 'Arabic UI Text', sans-serif;
+}
+
+.font-japanese {
+    font-family: 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+}
+
+/* RTL支持 */
+.rtl {
+    direction: rtl;
+    text-align: right;
+}
+
+.rtl .text-left {
+    text-align: right;
+}
+
+.rtl .text-right {
+    text-align: left;
+}
+
+/* 文本省略 */
+.line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+.line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
+
+/* 加载动画 */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* 无障碍支持 */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* 焦点样式 */
+.focus-visible:focus-visible {
+    outline: 2px solid #3B82F6;
+    outline-offset: 2px;
+}
+
+/* 打印样式 */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+    
+    .tool-card {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #e5e7eb;
+    }
+}
+
+/* 深色主题支持（预留） */
+@media (prefers-color-scheme: dark) {
+    .dark-auto {
+        /* 深色主题样式 */
+    }
+}
+
+/* 响应式图片 */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 链接样式 */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/* 表单元素优化 */
+input, select, textarea, button {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* 动画性能优化 */
+.will-change-transform {
+    will-change: transform;
+}
+
+.will-change-opacity {
+    will-change: opacity;
+}
+
+/* 高对比度支持 */
+@media (prefers-contrast: high) {
+    .tool-card {
+        border-width: 2px;
+    }
+    
+    button {
+        border-width: 2px;
+    }
+}
+
+/* 减少动画支持 */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
+}

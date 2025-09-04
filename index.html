@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AbeiTools是专业的AI工具导航站，精选优质人工智能工具，覆盖多个核心应用场景，支持6种语言，帮助用户快速找到最适合的AI工具。" data-i18n-content="site.description">
+    <meta name="keywords" content="AI工具,人工智能,工具导航,ChatGPT,Midjourney,AI助手,精选工具" data-i18n-content="site.keywords">
+    <meta name="author" content="ABeiTools">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%234F46E5'><path d='M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z'/><path d='M9 12l2 2 4-4' stroke='white' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://abeitools.com/">
+    <meta property="og:title" content="ABeiTools · 专业的AI工具导航站" data-i18n-content="site.ogTitle">
+    <meta property="og:description" content="发现优质 AI 工具，提升你的效率与创造力" data-i18n-content="site.ogDescription">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://abeitools.com/">
+    <meta property="twitter:title" content="ABeiTools · 专业的AI工具导航站" data-i18n-content="site.twitterTitle">
+    <meta property="twitter:description" content="发现优质 AI 工具，提升你的效率与创造力" data-i18n-content="site.twitterDescription">
+
+    <!-- Title will be dynamically updated by i18n -->
+    <title data-i18n="site.title"></title>
+    
+    <!-- Google AdSense 自动广告验证脚本 -->
+    <script async 
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6542625868833135" 
+            crossorigin="anonymous"></script>
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/config/i18n.json" as="fetch" crossorigin>
+    <link rel="preload" href="/config/categories.json" as="fetch" crossorigin>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#3B82F6',
+                        'secondary': '#EF4444',
+                        'accent': '#10B981'
+                    },
+                    fontFamily: {
+                        'chinese': ['PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'sans-serif'],
+                        'arabic': ['Noto Sans Arabic', 'Arabic UI Text', 'sans-serif'],
+                        'japanese': ['Hiragino Kaku Gothic ProN', 'Meiryo', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "ABeiTools",
+        "description": "Curated Global AI Tools Directory - Premium AI tools across multiple categories in 6 languages",
+        "url": "https://abeitools.com",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://abeitools.com/?search={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+        },
+        "inLanguage": ["zh-CN", "en-US", "es-ES", "ar", "ru", "ja"],
+        "publisher": {
+            "@type": "Organization",
+            "name": "ABeiTools",
+            "url": "https://abeitools.com"
+        }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "AI Tools Directory",
+        "description": "Curated collection of premium AI tools organized across multiple categories: Chat Assistants, Content Creation, Office Efficiency, Coding & Development, and Information Retrieval",
+        "url": "https://abeitools.com",
+        "mainEntity": {
+            "@type": "ItemList",
+            "numberOfItems": 74,
+            "itemListElement": [
+                {
+                    "@type": "SoftwareApplication",
+                    "name": "ChatGPT",
+                    "description": "Latest GPT-4 multimodal AI assistant",
+                    "url": "https://chat.openai.com/",
+                    "applicationCategory": "AI Chat Assistant",
+                    "operatingSystem": "Web Browser",
+                    "offers": {
+                        "@type": "Offer",
+                        "price": "0",
+                        "priceCurrency": "USD",
+                        "description": "Freemium model available"
+                    }
+                },
+                {
+                    "@type": "SoftwareApplication", 
+                    "name": "Claude",
+                    "description": "Latest Claude 3 with safety focus",
+                    "url": "https://claude.ai/",
+                    "applicationCategory": "AI Chat Assistant",
+                    "operatingSystem": "Web Browser",
+                    "offers": {
+                        "@type": "Offer",
+                        "price": "0",
+                        "priceCurrency": "USD",
+                        "description": "Freemium model available"
+                    }
+                },
+                {
+                    "@type": "SoftwareApplication",
+                    "name": "Midjourney", 
+                    "description": "Discord-based text-driven art creation",
+                    "url": "https://www.midjourney.com/",
+                    "applicationCategory": "AI Image Generator",
+                    "operatingSystem": "Web Browser",
+                    "offers": {
+                        "@type": "Offer",
+                        "price": "10",
+                        "priceCurrency": "USD",
+                        "description": "Paid subscription service"
+                    }
+                }
+            ]
+        },
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://abeitools.com"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "AI Tools",
+                    "item": "https://abeitools.com"
+                }
+            ]
+        }
+    }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <style>
+        /* RTL Support */
+        .rtl { direction: rtl; text-align: right; }
+        .ltr { direction: ltr; text-align: left; }
+        
+        /* Smooth transitions - exclude theme changes */
+        * { transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        
+        /* Loading animation */
+        .loading { opacity: 0; animation: fadeIn 0.5s ease-in-out forwards; }
+        @keyframes fadeIn { to { opacity: 1; } }
+        
+        /* Tool card styles - 更大气的设计 */
+        .tool-card {
+            display: block;
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 24px; /* "手指宽"的内边距 */
+            height: 160px; /* 增加高度以适配更大的内容 */
+            position: relative; /* 为状态指示器提供定位基准 */
+            transition: all 0.2s ease-in-out;
+            text-decoration: none;
+            color: inherit;
+            overflow: hidden;
+        }
+        
+        .tool-card:hover { 
+            transform: translateY(-4px); 
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            border-color: #d1d5db;
+        }
+        
+        .tool-header {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 16px; /* 增加与描述的间距 */
+            min-height: 56px; /* 调整最小高度以适配56px的LOGO */
+        }
+        
+        .tool-icon {
+            width: 56px; /* 放大到56-64px范围的下限 */
+            height: 56px;
+            margin-right: 16px; /* 增加与标题的间距 */
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8fafc; /* 统一白底小方框 */
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .tool-icon img {
+            width: 40px; /* 图片在56px框内保持40px */
+            height: 40px;
+            object-fit: contain;
+            border-radius: 4px;
+        }
+        
+        .tool-info {
+            flex: 1;
+            min-width: 0; /* 允许文本截断 */
+        }
+        
+        .tool-title {
+            font-size: 18px; /* 18px标题尺寸保持一致性 */
+            font-weight: 700; /* 更加粗 */
+            color: #111827;
+            margin: 0;
+            line-height: 1.2;
+            max-height: 2.4em; /* 限制为2行 */
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+        
+        .tool-description {
+            font-size: 14px;
+            color: #6b7280;
+            line-height: 1.4;
+            height: 40px; /* 调整描述区高度适配2行限制 */
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2; /* 限制为2行，如用户要求 */
+            -webkit-box-orient: vertical;
+        }
+        
+        /* Tools grid layout */
+        .tools-grid {
+            display: grid;
+            gap: 24px; /* 加宽间距，增强松弛感 */
+        }
+        
+        /* Responsive grid columns - 桌面端固定4列 */
+        @media (max-width: 639px) {
+            .tools-grid { 
+                grid-template-columns: 1fr; 
+            }
+            .tool-card {
+                height: 140px; /* 移动端适应新的更大气设计 */
+                padding: 20px;
+            }
+            .tool-icon {
+                width: 48px; /* 移动端稍微缩小 */
+                height: 48px;
+            }
+            .tool-icon img {
+                width: 32px;
+                height: 32px;
+            }
+            .tool-description {
+                height: 36px; /* 移动端调整描述区高度 */
+                font-size: 13px;
+            }
+            .tool-title {
+                font-size: 18px; /* 移动端保持较大标题 */
+                font-weight: 700;
+            }
+        }
+        @media (min-width: 640px) {
+            .tools-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+        @media (min-width: 1024px) {
+            .tools-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        }
+        @media (min-width: 1280px) {
+            .tools-grid { 
+                grid-template-columns: repeat(4, minmax(0, 1fr)); 
+                gap: 24px; /* 桌面端"一个图标宽"的间距 */
+            }
+        }
+        
+        /* 大屏幕保持4列，不再扩展为5列 */
+        @media (min-width: 1536px) {
+            .tools-grid { 
+                grid-template-columns: repeat(4, minmax(0, 1fr)); 
+                gap: 28px; /* 大屏幕稍微增加间距 */
+            }
+        }
+        
+        /* Accessibility enhancements */
+        .tool-card {
+            outline: none; /* 移除默认轮廓 */
+        }
+        
+        .tool-card:focus {
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.4), 0 4px 12px rgba(0, 0, 0, 0.15);
+            transform: translateY(-2px);
+            border-color: #3B82F6;
+        }
+        
+        .category-item:focus {
+            outline: 2px solid #3B82F6;
+            outline-offset: 2px;
+        }
+        
+        /* Skip link for screen readers */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: #3B82F6;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 4px;
+            text-decoration: none;
+            z-index: 1000;
+            font-size: 14px;
+            transition: top 0.2s;
+        }
+        
+        .skip-link:focus {
+            top: 6px;
+        }
+        
+        /* Screen reader only text */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            .tool-card {
+                border-width: 2px;
+                border-color: #000;
+            }
+            .tool-card:focus {
+                border-color: #0000FF;
+                box-shadow: 0 0 0 3px #0000FF;
+            }
+        }
+        
+        /* Reduced motion support */
+        @media (prefers-reduced-motion: reduce) {
+            .tool-card, .category-item {
+                transition: none;
+            }
+            .tool-card:hover {
+                transform: none;
+            }
+        }
+        
+        /* Category active state - remove conflicting styles, let JS handle colors dynamically */
+        .category-active { 
+            background-color: rgba(59, 130, 246, 0.1); /* 轻微背景色 */
+            /* color and borders are handled dynamically by JavaScript */
+        }
+        
+        /* Mobile menu toggle */
+        .hamburger { display: flex; flex-direction: column; width: 24px; height: 18px; cursor: pointer; }
+        .hamburger span { width: 100%; height: 2px; background: #374151; margin: 2px 0; transition: 0.3s; }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
+        
+        /* Search input focus */
+        .search-input:focus { box-shadow: 0 0 0 3px rgb(59 130 246 / 0.1); }
+        
+        /* Language selector */
+        .language-option:hover { background-color: #f8fafc; }
+        
+        /* No results animation */
+        .no-results { animation: slideUp 0.5s ease-out; }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        
+        /* Dark theme styles */
+        .dark { background-color: #0f172a; color: #f1f5f9; }
+        .dark .bg-gray-50 { background-color: #1e293b; }
+        .dark .bg-white { background-color: #334155; }
+        .dark .text-gray-900 { color: #f1f5f9; }
+        .dark .text-gray-700 { color: #cbd5e1; }
+        .dark .text-gray-600 { color: #94a3b8; }
+        .dark .text-gray-500 { color: #64748b; }
+        .dark .text-gray-400 { color: #475569; }
+        .dark .border-gray-200 { border-color: #475569; }
+        .dark .border-gray-100 { border-color: #334155; }
+        .dark .hover\\:bg-gray-100:hover { background-color: #475569; }
+        .dark .hover\\:bg-blue-50:hover { background-color: #1e40af; }
+        .dark .bg-gray-100 { background-color: #475569; }
+        .dark .shadow-sm { box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3); }
+        .dark .shadow-md { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2); }
+    </style>
+</head>
+
+<body class="bg-gray-50 min-h-screen">
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="fixed inset-0 bg-white z-50 flex items-center justify-center">
+        <div class="text-center">
+            <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
+            <p class="text-gray-600 loading-text" data-i18n="ui.loading">加载中...</p>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="flex min-h-screen">
+        <!-- Left Sidebar (20%) -->
+        <aside id="sidebar" class="w-full lg:w-1/5 bg-white shadow-sm border-r border-gray-200 fixed lg:static inset-y-0 left-0 z-40 transform -translate-x-full lg:translate-x-0 transition-transform duration-300">
+            <!-- Header -->
+            <div class="p-6 border-b border-gray-200">
+                <div class="flex items-center justify-between">
+                    <div class="brand-container">
+                        <a href="/" class="brand-link hover:opacity-80 transition-opacity" title="回到首页">
+                            <!-- Brand Title -->
+                            <h1 class="brand-title text-2xl font-black text-gray-900 site-title">ABeiTools</h1>
+                        </a>
+                    </div>
+                    <!-- Mobile Close Button -->
+                    <button id="sidebar-close" class="lg:hidden p-2 rounded-md hover:bg-gray-100">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+                <!-- Language Selector -->
+                <div class="mt-4 relative">
+                    <select id="language-selector" class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                        <option value="zh">CN</option>
+                        <option value="en">EN</option>
+                        <option value="es">ES</option>
+                        <option value="ar">AR</option>
+                        <option value="ru">RU</option>
+                        <option value="ja">JP</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Categories Navigation -->
+            <nav class="flex-1 p-4">
+                <div class="space-y-2" id="categories-nav">
+                    <!-- Categories will be loaded here dynamically -->
+                </div>
+            </nav>
+            
+            <!-- Footer Info -->
+            <div class="p-4 border-t border-gray-200 text-center">
+                <p class="text-xs text-gray-500">
+                    <span id="stats-text">36 精选AI工具 · 5 核心场景</span>
+                </p>
+                <p class="text-xs text-gray-400 mt-1">
+                    ABeiTools V3.0
+                </p>
+            </div>
+        </aside>
+        
+        <!-- Sidebar Overlay (Mobile) -->
+        <div id="sidebar-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-30 lg:hidden hidden"></div>
+        
+        <!-- Main Content Area (80%) -->
+        <main class="flex-1 lg:w-4/5">
+            <!-- Top Header - 移动端搜索栏sticky -->
+            <header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-20 mobile-sticky-search">
+                <div class="px-4 lg:px-8 py-4">
+                    <div class="flex items-center justify-between">
+                        <!-- Mobile Menu Button -->
+                        <button id="mobile-menu-toggle" class="lg:hidden hamburger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                        
+                        <!-- Search Bar -->
+                        <div class="flex-1 max-w-2xl mx-4 lg:mx-8">
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                    </svg>
+                                </div>
+                                <input 
+                                    id="search-input" 
+                                    type="text" 
+                                    class="search-input block w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" 
+                                    data-i18n-placeholder="ui.searchPlaceholder"
+                                    placeholder="搜索AI工具..."
+                                >
+                                <!-- Search Clear Button -->
+                                <button id="search-clear" class="absolute inset-y-0 right-0 pr-3 hidden items-center">
+                                    <svg class="h-5 w-5 text-gray-400 hover:text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Action Buttons -->
+                        <div class="flex items-center space-x-4">
+                            <!-- 主题切换功能已移除 -->
+                        </div>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Page Content -->
+            <div class="px-4 lg:px-8 py-6">
+                <!-- Category Header -->
+                <div class="mb-6">
+                    <h2 id="current-category-title" class="text-2xl font-bold text-gray-900">所有工具</h2>
+                </div>
+                
+                <!-- Loading State -->
+                <div id="tools-loading" class="hidden text-center py-20">
+                    <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
+                    <p class="text-gray-600" data-i18n="ui.loading">加载中...</p>
+                </div>
+                
+                <!-- Tools Container -->
+                <div id="tools-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <!-- Tool cards will be rendered here -->
+                </div>
+                
+                <!-- No Results -->
+                <div id="no-results" class="hidden text-center py-20">
+                    <svg class="mx-auto h-16 w-16 text-gray-400 mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                    <h3 class="text-xl font-medium text-gray-900 mb-3" data-i18n="ui.noResults">
+                        没有找到相关工具
+                    </h3>
+                    <p class="text-gray-600 mb-6">
+                        尝试使用不同的关键词搜索，或者浏览下面的分类
+                    </p>
+                    <button id="clear-search-btn" class="px-6 py-2 bg-primary text-white rounded-lg hover:bg-blue-600 transition-colors">
+                        浏览所有工具
+                    </button>
+                </div>
+
+                <!-- All Tools Sections (for category view) -->
+                <div id="all-tools-container" class="hidden">
+                    <!-- Tools sections will be dynamically generated here -->
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary text-white p-3 rounded-full shadow-lg hover:bg-blue-600 transform translate-y-16 transition-transform duration-300" data-i18n-title="ui.backToTop">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </button>
+
+    <!-- Scripts (fixed loading order) -->
+    <script src="/assets/js/utils.js"></script>
+    <script src="/assets/js/i18n.js"></script>
+    <script src="/assets/js/search.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

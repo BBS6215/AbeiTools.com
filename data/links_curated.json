@@ -1,0 +1,1732 @@
+{
+  "links": [
+    {
+      "id": "1",
+      "url": "https://chatgpt.com/",
+      "category": "chat",
+      "name": {
+        "zh": "ChatGPT",
+        "en": "ChatGPT",
+        "es": "ChatGPT",
+        "ar": "ChatGPT",
+        "ru": "ChatGPT",
+        "ja": "ChatGPT"
+      },
+      "description": {
+        "zh": "最知名的AI对话助手，基于GPT-4技术",
+        "en": "Most popular AI assistant powered by GPT-4",
+        "es": "Asistente IA más popular con tecnología GPT-4",
+        "ar": "أشهر مساعد ذكي بتقنية GPT-4",
+        "ru": "Самый популярный ИИ-помощник на базе GPT-4",
+        "ja": "最も有名なGPT-4ベースのAI対話アシスタント"
+      },
+      "recommendation": "editor",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "2",
+      "url": "https://claude.ai/",
+      "category": "chat",
+      "name": {
+        "zh": "Claude",
+        "en": "Claude",
+        "es": "Claude",
+        "ar": "كلود",
+        "ru": "Claude",
+        "ja": "Claude"
+      },
+      "description": {
+        "zh": "Anthropic开发的安全可靠AI助手",
+        "en": "Safe and reliable AI assistant by Anthropic",
+        "es": "Asistente IA seguro y confiable de Anthropic",
+        "ar": "مساعد ذكي آمن وموثوق من Anthropic",
+        "ru": "Безопасный и надёжный ИИ-помощник от Anthropic",
+        "ja": "Anthropic製の安全で信頼できるAIアシスタント"
+      },
+      "recommendation": "editor",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "3",
+      "url": "https://gemini.google.com/",
+      "category": "chat",
+      "name": {
+        "zh": "Google Gemini",
+        "en": "Google Gemini",
+        "es": "Google Gemini",
+        "ar": "جوجل جيميني",
+        "ru": "Google Gemini",
+        "ja": "Google Gemini"
+      },
+      "description": {
+        "zh": "Google最新多模态AI，深度整合生态",
+        "en": "Google's latest multimodal AI with ecosystem integration",
+        "es": "IA multimodal más reciente de Google con integración",
+        "ar": "أحدث ذكاء اصطناعي متعدد الوسائط من جوجل",
+        "ru": "Новейший мультимодальный ИИ Google с экосистемной интеграцией",
+        "ja": "Googleの最新マルチモーダルAI、エコシステム統合"
+      },
+      "recommendation": "popular",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "4",
+      "url": "https://grok.x.ai/",
+      "category": "chat",
+      "name": {
+        "zh": "Grok",
+        "en": "Grok",
+        "es": "Grok",
+        "ar": "جروك",
+        "ru": "Grok",
+        "ja": "Grok"
+      },
+      "description": {
+        "zh": "X平台AI助手，实时信息获取能力强",
+        "en": "X platform AI assistant with strong real-time information capabilities",
+        "es": "Asistente IA de la plataforma X con fuertes capacidades de información en tiempo real",
+        "ar": "مساعد ذكي لمنصة X مع قدرات قوية على المعلومات الفورية",
+        "ru": "ИИ-помощник платформы X с мощными возможностями получения информации в реальном времени",
+        "ja": "Xプラットフォームのリアルタイム情報取得に強いAIアシスタント"
+      },
+      "recommendation": "popular",
+      "pricing": "paid",
+      "sponsor": false
+    },
+    {
+      "id": "5",
+      "url": "https://poe.com/",
+      "category": "chat",
+      "name": {
+        "zh": "Poe",
+        "en": "Poe",
+        "es": "Poe",
+        "ar": "بو",
+        "ru": "Poe",
+        "ja": "Poe"
+      },
+      "description": {
+        "zh": "Quora出品，集成多个AI模型",
+        "en": "Multi-AI platform by Quora with various models",
+        "es": "Plataforma multi-IA de Quora con varios modelos",
+        "ar": "منصة ذكاء اصطناعي متعددة من Quora مع نماذج متنوعة",
+        "ru": "Мульти-ИИ платформа от Quora с различными моделями",
+        "ja": "Quora製の複数AIモデル統合プラットフォーム"
+      },
+      "recommendation": "popular",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "48",
+      "url": "https://ernie.baidu.com/",
+      "category": "chat",
+      "name": {
+        "zh": "文心一言",
+        "en": "Ernie Bot",
+        "es": "Ernie Bot",
+        "ar": "إرني بوت",
+        "ru": "Ernie Bot",
+        "ja": "文心一言"
+      },
+      "description": {
+        "zh": "百度AI助手，专为中文用户优化",
+        "en": "Baidu AI assistant optimized for Chinese users",
+        "es": "Asistente IA de Baidu optimizado para usuarios chinos",
+        "ar": "مساعد بايدو الذكي المحسن للمستخدمين الصينيين",
+        "ru": "ИИ-помощник Baidu, оптимизированный для китайских пользователей",
+        "ja": "中国語ユーザー向けに最適化された百度AIアシスタント"
+      },
+      "recommendation": "popular",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "37",
+      "url": "https://www.deepseek.com/",
+      "category": "chat",
+      "name": {
+        "zh": "DeepSeek",
+        "en": "DeepSeek",
+        "es": "DeepSeek",
+        "ar": "ديب سيك",
+        "ru": "DeepSeek",
+        "ja": "DeepSeek"
+      },
+      "description": {
+        "zh": "国产大模型新星，推理能力强劲",
+        "en": "Rising Chinese LLM with strong reasoning capabilities",
+        "es": "Modelo de lenguaje chino emergente con capacidades de razonamiento fuertes",
+        "ar": "نموذج لغوي صيني ناشئ بقدرات استدلال قوية",
+        "ru": "Восходящая китайская языковая модель с сильными возможностями рассуждения",
+        "ja": "強力な推論能力を持つ新興中国製大規模言語モデル"
+      },
+      "recommendation": "new",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "49",
+      "url": "https://doubao.com/",
+      "category": "chat",
+      "name": {
+        "zh": "豆包",
+        "en": "Doubao",
+        "es": "Doubao",
+        "ar": "دوباو",
+        "ru": "Doubao",
+        "ja": "豆包"
+      },
+      "description": {
+        "zh": "字节跳动AI助手，年轻用户群体广泛",
+        "en": "ByteDance AI assistant popular among young users",
+        "es": "Asistente IA de ByteDance popular entre usuarios jóvenes",
+        "ar": "مساعد بايت دانس الذكي المحبوب بين الشباب",
+        "ru": "ИИ-помощник ByteDance, популярный среди молодых пользователей",
+        "ja": "ByteDance製の若いユーザーに人気のAIアシスタント"
+      },
+      "recommendation": "popular",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "38",
+      "url": "https://character.ai/",
+      "category": "chat",
+      "name": {
+        "zh": "Character.ai",
+        "en": "Character.ai",
+        "es": "Character.ai",
+        "ar": "كاراكتر دوت إيه آي",
+        "ru": "Character.ai",
+        "ja": "Character.ai"
+      },
+      "description": {
+        "zh": "角色扮演对话平台，个性化AI角色",
+        "en": "Role-playing chat platform with personalized AI characters",
+        "es": "Plataforma de chat de juegos de rol con personajes IA personalizados",
+        "ar": "منصة دردشة لعب الأدوار مع شخصيات ذكية مخصصة",
+        "ru": "Платформа ролевых чатов с персонализированными ИИ-персонажами",
+        "ja": "パーソナライズされたAIキャラクターとのロールプレイチャットプラットフォーム"
+      },
+      "recommendation": "popular",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "39",
+      "url": "https://www.kimi.com/",
+      "category": "chat",
+      "name": {
+        "zh": "Kimi",
+        "en": "Kimi",
+        "es": "Kimi",
+        "ar": "كيمي",
+        "ru": "Kimi",
+        "ja": "Kimi"
+      },
+      "description": {
+        "zh": "月之暗面出品，支持超长文本输入",
+        "en": "Moonshot AI's chatbot with ultra-long context support",
+        "es": "Chatbot de Moonshot AI con soporte de contexto ultra largo",
+        "ar": "روبوت دردشة من Moonshot AI مع دعم السياق فائق الطول",
+        "ru": "Чат-бот от Moonshot AI с поддержкой сверхдлинного контекста",
+        "ja": "Moonshot AI製、超長文コンテキスト対応チャットボット"
+      },
+      "recommendation": "new",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "50",
+      "url": "https://tongyi.aliyun.com/",
+      "category": "chat",
+      "name": {
+        "zh": "通义千问",
+        "en": "Tongyi Qianwen",
+        "es": "Tongyi Qianwen",
+        "ar": "تونغيي تشيانون",
+        "ru": "Tongyi Qianwen",
+        "ja": "通義千問"
+      },
+      "description": {
+        "zh": "阿里云AI助手，企业级应用丰富",
+        "en": "Alibaba Cloud AI assistant with rich enterprise applications",
+        "es": "Asistente IA de Alibaba Cloud con aplicaciones empresariales ricas",
+        "ar": "مساعد علي باباي الذكي مع تطبيقات مؤسسية غنية",
+        "ru": "ИИ-помощник Alibaba Cloud с богатыми корпоративными приложениями",
+        "ja": "豊富な企業向けアプリケーションを持つAlibabaクラウドAIアシスタント"
+      },
+      "recommendation": "popular",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "62",
+      "url": "https://www.midjourney.com/",
+      "category": "creative",
+      "name": {
+        "zh": "Midjourney",
+        "en": "Midjourney",
+        "es": "Midjourney",
+        "ar": "ميد جورني",
+        "ru": "Midjourney",
+        "ja": "Midjourney"
+      },
+      "description": {
+        "zh": "顶级AI艺术创作工具，效果最佳",
+        "en": "Top-tier AI art creation tool with best quality",
+        "es": "Herramienta IA de arte de primer nivel con mejor calidad",
+        "ar": "أداة إبداع فني ذكية من الدرجة الأولى بأفضل جودة",
+        "ru": "Высококачественный инструмент создания ИИ-арта",
+        "ja": "最高品質のAIアート作成ツール"
+      },
+      "recommendation": "editor",
+      "pricing": "paid",
+      "sponsor": false
+    },
+    {
+      "id": "6",
+      "url": "https://labs.openai.com/",
+      "category": "creative",
+      "name": {
+        "zh": "DALL·E 3",
+        "en": "DALL·E 3",
+        "es": "DALL·E 3",
+        "ar": "DALL·E 3",
+        "ru": "DALL·E 3",
+        "ja": "DALL·E 3"
+      },
+      "description": {
+        "zh": "OpenAI官方图像生成器，整合ChatGPT",
+        "en": "OpenAI's official image generator with ChatGPT integration",
+        "es": "Generador de imágenes oficial de OpenAI con integración ChatGPT",
+        "ar": "مولد الصور الرسمي من OpenAI مع تكامل ChatGPT",
+        "ru": "Официальный генератор изображений OpenAI с интеграцией ChatGPT",
+        "ja": "OpenAI公式の画像生成器、ChatGPT統合"
+      },
+      "recommendation": "editor",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "7",
+      "url": "https://stability.ai/",
+      "category": "creative",
+      "name": {
+        "zh": "Stable Diffusion",
+        "en": "Stable Diffusion",
+        "es": "Stable Diffusion",
+        "ar": "ستيبل ديفيوزن",
+        "ru": "Stable Diffusion",
+        "ja": "Stable Diffusion"
+      },
+      "description": {
+        "zh": "开源图像生成模型，免费使用",
+        "en": "Open-source image generation model, free to use",
+        "es": "Modelo de generación de imágenes open-source, gratuito",
+        "ar": "نموذج توليد صور مفتوح المصدر، مجاني الاستخدام",
+        "ru": "Открытая модель генерации изображений, бесплатная",
+        "ja": "オープンソース画像生成モデル、無料利用"
+      },
+      "recommendation": "free",
+      "pricing": "free",
+      "sponsor": false
+    },
+    {
+      "id": "8",
+      "url": "https://leonardo.ai/",
+      "category": "creative",
+      "name": {
+        "zh": "Leonardo.ai",
+        "en": "Leonardo.ai",
+        "es": "Leonardo.ai",
+        "ar": "ليوناردو إيه آي",
+        "ru": "Leonardo.ai",
+        "ja": "Leonardo.ai"
+      },
+      "description": {
+        "zh": "专注游戏美术的AI图像生成平台",
+        "en": "AI image generation platform focused on game art",
+        "es": "Plataforma IA de generación de imágenes enfocada en arte de juegos",
+        "ar": "منصة توليد صور ذكية متخصصة في فن الألعاب",
+        "ru": "Платформа генерации ИИ-изображений для игрового арта",
+        "ja": "ゲームアート特化のAI画像生成プラットフォーム"
+      },
+      "recommendation": "new",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "11",
+      "url": "https://runwayml.com/",
+      "category": "creative",
+      "name": {
+        "zh": "RunwayML",
+        "en": "RunwayML",
+        "es": "RunwayML",
+        "ar": "رانوي إم إل",
+        "ru": "RunwayML",
+        "ja": "RunwayML"
+      },
+      "description": {
+        "zh": "前沿AI视频技术平台，创意无限",
+        "en": "Cutting-edge AI video technology platform",
+        "es": "Plataforma de tecnología de video IA de vanguardia",
+        "ar": "منصة تقنية فيديو ذكية متطورة",
+        "ru": "Передовая платформа ИИ-видео технологий",
+        "ja": "最先端のAI動画技術プラットフォーム"
+      },
+      "recommendation": "new",
+      "pricing": "paid",
+      "sponsor": false
+    },
+    {
+      "id": "57",
+      "url": "https://pika.art/",
+      "category": "creative",
+      "name": {
+        "zh": "Pika",
+        "en": "Pika",
+        "es": "Pika",
+        "ar": "بيكا",
+        "ru": "Pika",
+        "ja": "Pika"
+      },
+      "description": {
+        "zh": "AI视频生成新星，支持图像到视频转换",
+        "en": "Rising AI video generation tool with image-to-video conversion",
+        "es": "Herramienta emergente de generación de video IA con conversión imagen a video",
+        "ar": "أداة توليد فيديو ذكية ناشئة مع تحويل الصورة إلى فيديو",
+        "ru": "Восходящий инструмент генерации ИИ-видео с преобразованием изображения в видео",
+        "ja": "画像から動画変換対応の新興AI動画生成ツール"
+      },
+      "recommendation": "new",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "58",
+      "url": "https://kling.kuaishou.com/",
+      "category": "creative",
+      "name": {
+        "zh": "可灵",
+        "en": "Kling",
+        "es": "Kling",
+        "ar": "كلينغ",
+        "ru": "Kling",
+        "ja": "可灵(Kling)"
+      },
+      "description": {
+        "zh": "快手出品的视频生成模型，长视频生成能力强",
+        "en": "Kuaishou's video generation model with strong long-video capabilities",
+        "es": "Modelo de generación de video de Kuaishou con fuertes capacidades de video largo",
+        "ar": "نموذج توليد فيديو من كوايشو بقدرات قوية للفيديو الطويل",
+        "ru": "Модель генерации видео от Kuaishou с сильными возможностями длинного видео",
+        "ja": "長尺動画生成能力の強いKuaishou製動画生成モデル"
+      },
+      "recommendation": "popular",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "59",
+      "url": "https://jimeng.jianying.com/",
+      "category": "creative",
+      "name": {
+        "zh": "即梦AI",
+        "en": "Jimeng AI",
+        "es": "Jimeng AI",
+        "ar": "جيمنغ إيه آي",
+        "ru": "Jimeng AI",
+        "ja": "即梦AI"
+      },
+      "description": {
+        "zh": "字节跳动即影旗下视频生成工具",
+        "en": "ByteDance's CapCut video generation tool",
+        "es": "Herramienta de generación de video de CapCut de ByteDance",
+        "ar": "أداة توليد فيديو من كاب كت التابعة لبايت دانس",
+        "ru": "Инструмент генерации видео CapCut от ByteDance",
+        "ja": "ByteDanceのCapCut傘下動画生成ツール"
+      },
+      "recommendation": "popular",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "60",
+      "url": "https://hailuoai.com/",
+      "category": "creative",
+      "name": {
+        "zh": "海螺AI",
+        "en": "Conch AI",
+        "es": "Conch AI",
+        "ar": "كونش إيه آي",
+        "ru": "Conch AI",
+        "ja": "海螺AI"
+      },
+      "description": {
+        "zh": "MiniMax出品的多模态AI创作平台",
+        "en": "MiniMax's multimodal AI creation platform",
+        "es": "Plataforma de creación IA multimodal de MiniMax",
+        "ar": "منصة إبداع ذكية متعددة الوسائط من مينيماكس",
+        "ru": "Мультимодальная ИИ-платформа создания от MiniMax",
+        "ja": "MiniMax製のマルチモーダルAI創作プラットフォーム"
+      },
+      "recommendation": "popular",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "61",
+      "url": "https://xingliu.ai/",
+      "category": "creative",
+      "name": {
+        "zh": "星流AI",
+        "en": "Xingliu AI",
+        "es": "Xingliu AI",
+        "ar": "شينغليو إيه آي",
+        "ru": "Xingliu AI",
+        "ja": "星流AI"
+      },
+      "description": {
+        "zh": "国产视频生成工具，支持多风格创作",
+        "en": "Chinese video generation tool supporting multiple creative styles",
+        "es": "Herramienta china de generación de video que soporta múltiples estilos creativos",
+        "ar": "أداة توليد فيديو صينية تدعم أساليب إبداعية متعددة",
+        "ru": "Китайский инструмент генерации видео с поддержкой множественных творческих стилей",
+        "ja": "多様なクリエイティブスタイル対応の中国製動画生成ツール"
+      },
+      "recommendation": "new",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "9",
+      "url": "https://www.synthesia.io/",
+      "category": "creative",
+      "name": {
+        "zh": "Synthesia",
+        "en": "Synthesia",
+        "es": "Synthesia",
+        "ar": "سينثيسيا",
+        "ru": "Synthesia",
+        "ja": "Synthesia"
+      },
+      "description": {
+        "zh": "虚拟主播视频生成领域的领导者",
+        "en": "Leading AI video generation with virtual presenters",
+        "es": "Líder en generación de video IA con presentadores virtuales",
+        "ar": "رائد في توليد فيديو ذكي مع مقدمين افتراضيين",
+        "ru": "Лидер в создании ИИ-видео с виртуальными ведущими",
+        "ja": "バーチャルプレゼンター動画生成のリーダー"
+      },
+      "recommendation": "editor",
+      "pricing": "paid",
+      "sponsor": false
+    },
+    {
+      "id": "12",
+      "url": "https://www.heygen.com/",
+      "category": "creative",
+      "name": {
+        "zh": "HeyGen",
+        "en": "HeyGen",
+        "es": "HeyGen",
+        "ar": "هاي جين",
+        "ru": "HeyGen",
+        "ja": "HeyGen"
+      },
+      "description": {
+        "zh": "文本转视频平台，支持虚拟人定制",
+        "en": "Text-to-video platform with custom avatar creation",
+        "es": "Plataforma texto a video con creación de avatares personalizados",
+        "ar": "منصة تحويل النص إلى فيديو مع إنشاء صور رمزية مخصصة",
+        "ru": "Платформа преобразования текста в видео с созданием аватаров",
+        "ja": "カスタムアバター作成対応のテキスト動画変換プラットフォーム"
+      },
+      "recommendation": "popular",
+      "pricing": "paid",
+      "sponsor": false
+    },
+    {
+      "id": "13",
+      "url": "https://elevenlabs.io/",
+      "category": "creative",
+      "name": {
+        "zh": "ElevenLabs",
+        "en": "ElevenLabs",
+        "es": "ElevenLabs",
+        "ar": "إليفن لابز",
+        "ru": "ElevenLabs",
+        "ja": "ElevenLabs"
+      },
+      "description": {
+        "zh": "业界最佳AI语音合成技术",
+        "en": "Industry-leading AI voice synthesis technology",
+        "es": "Tecnología de síntesis de voz IA líder en la industria",
+        "ar": "تقنية تركيب صوتي ذكي رائدة في الصناعة",
+        "ru": "Ведущая в отрасли технология синтеза ИИ-голоса",
+        "ja": "業界最高峰のAI音声合成技術"
+      },
+      "recommendation": "editor",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "14",
+      "url": "https://murf.ai/",
+      "category": "creative",
+      "name": {
+        "zh": "Murf.ai",
+        "en": "Murf.ai",
+        "es": "Murf.ai",
+        "ar": "مورف إيه آي",
+        "ru": "Murf.ai",
+        "ja": "Murf.ai"
+      },
+      "description": {
+        "zh": "专业解说视频配音工具",
+        "en": "Professional voiceover tool for explainer videos",
+        "es": "Herramienta profesional de locución para videos explicativos",
+        "ar": "أداة تعليق صوتي احترافية لفيديوهات الشرح",
+        "ru": "Профессиональный инструмент озвучивания для обучающих видео",
+        "ja": "解説動画専用プロフェッショナル音声ツール"
+      },
+      "recommendation": "popular",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "41",
+      "url": "https://suno.com/",
+      "category": "creative",
+      "name": {
+        "zh": "Suno",
+        "en": "Suno",
+        "es": "Suno",
+        "ar": "سونو",
+        "ru": "Suno",
+        "ja": "Suno"
+      },
+      "description": {
+        "zh": "AI音乐生成平台，从歌词到完整歌曲",
+        "en": "AI music generation platform from lyrics to complete songs",
+        "es": "Plataforma de generación de música IA desde letras hasta canciones completas",
+        "ar": "منصة توليد موسيقى ذكية من الكلمات إلى الأغاني الكاملة",
+        "ru": "Платформа генерации ИИ-музыки от текстов до полных песен",
+        "ja": "歌詞から完全な楽曲まで生成するAI音楽プラットフォーム"
+      },
+      "recommendation": "editor",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "10",
+      "url": "https://www.veed.io/",
+      "category": "creative",
+      "name": {
+        "zh": "VEED.io",
+        "en": "VEED.io",
+        "es": "VEED.io",
+        "ar": "فيد آي أو",
+        "ru": "VEED.io",
+        "ja": "VEED.io"
+      },
+      "description": {
+        "zh": "在线视频编辑平台，操作简便",
+        "en": "User-friendly online video editing platform",
+        "es": "Plataforma de edición de video online fácil de usar",
+        "ar": "منصة تحرير فيديو عبر الإنترنت سهلة الاستخدام",
+        "ru": "Удобная онлайн-платформа редактирования видео",
+        "ja": "使いやすいオンライン動画編集プラットフォーム"
+      },
+      "recommendation": "popular",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "42",
+      "url": "https://gamma.app/",
+      "category": "office",
+      "name": {
+        "zh": "Gamma",
+        "en": "Gamma",
+        "es": "Gamma",
+        "ar": "جاما",
+        "ru": "Gamma",
+        "ja": "Gamma"
+      },
+      "description": {
+        "zh": "AI演示文稿生成，一键制作PPT",
+        "en": "AI presentation generator for instant slideshow creation",
+        "es": "Generador de presentaciones IA para creación instantánea de diapositivas",
+        "ar": "مولد عروض تقديمية ذكي لإنشاء الشرائح فورياً",
+        "ru": "ИИ-генератор презентаций для мгновенного создания слайд-шоу",
+        "ja": "AIプレゼンテーション生成ツール、瞬時にスライドショー作成"
+      },
+      "recommendation": "new",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "43",
+      "url": "https://remove.bg/",
+      "category": "creative",
+      "name": {
+        "zh": "Remove.bg",
+        "en": "Remove.bg",
+        "es": "Remove.bg",
+        "ar": "ريموف دوت بي جي",
+        "ru": "Remove.bg",
+        "ja": "Remove.bg"
+      },
+      "description": {
+        "zh": "AI自动抠图工具，一键去除背景",
+        "en": "AI-powered background removal tool for instant cutouts",
+        "es": "Herramienta de eliminación de fondo con IA para recortes instantáneos",
+        "ar": "أداة إزالة الخلفية بالذكاء الاصطناعي للقص الفوري",
+        "ru": "ИИ-инструмент удаления фона для мгновенного вырезания",
+        "ja": "AI背景除去ツール、瞬時に切り抜き"
+      },
+      "recommendation": "popular",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "16",
+      "url": "https://www.jasper.ai/",
+      "category": "creative",
+      "name": {
+        "zh": "Jasper",
+        "en": "Jasper",
+        "es": "Jasper",
+        "ar": "جاسبر",
+        "ru": "Jasper",
+        "ja": "Jasper"
+      },
+      "description": {
+        "zh": "全能AI写作工具，博客营销专业",
+        "en": "All-in-one AI writing tool for blogs and marketing",
+        "es": "Herramienta IA de escritura todo en uno para blogs y marketing",
+        "ar": "أداة كتابة ذكية شاملة للمدونات والتسويق",
+        "ru": "Универсальный ИИ-инструмент для написания блогов и маркетинга",
+        "ja": "ブログ・マーケティング特化の万能AI執筆ツール"
+      },
+      "recommendation": "popular",
+      "pricing": "paid",
+      "sponsor": false
+    },
+    {
+      "id": "15",
+      "url": "https://www.copy.ai/",
+      "category": "creative",
+      "name": {
+        "zh": "Copy.ai",
+        "en": "Copy.ai",
+        "es": "Copy.ai",
+        "ar": "كوبي إيه آي",
+        "ru": "Copy.ai",
+        "ja": "Copy.ai"
+      },
+      "description": {
+        "zh": "营销文案创作平台，模板丰富",
+        "en": "Marketing copywriting platform with rich templates",
+        "es": "Plataforma de redacción de marketing con plantillas ricas",
+        "ar": "منصة كتابة محتوى تسويقي مع قوالب غنية",
+        "ru": "Платформа маркетингового копирайтинга с богатыми шаблонами",
+        "ja": "豊富なテンプレート搭載マーケティングコピー作成プラットフォーム"
+      },
+      "recommendation": "popular",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "18",
+      "url": "https://copilot.microsoft.com/",
+      "category": "office",
+      "name": {
+        "zh": "Microsoft Copilot",
+        "en": "Microsoft Copilot",
+        "es": "Microsoft Copilot",
+        "ar": "مايكروسوفت كوبايلوت",
+        "ru": "Microsoft Copilot",
+        "ja": "Microsoft Copilot"
+      },
+      "description": {
+        "zh": "Office办公套件AI助手，深度整合",
+        "en": "AI assistant deeply integrated with Office suite",
+        "es": "Asistente IA profundamente integrado con suite Office",
+        "ar": "مساعد ذكي مدمج بعمق مع مجموعة Office",
+        "ru": "ИИ-помощник с глубокой интеграцией в Office",
+        "ja": "Officeスイートと深く統合されたAIアシスタント"
+      },
+      "recommendation": "popular",
+      "pricing": "paid",
+      "sponsor": false
+    },
+    {
+      "id": "19",
+      "url": "https://workspace.google.com/",
+      "category": "office",
+      "name": {
+        "zh": "Google Workspace AI",
+        "en": "Google Workspace AI",
+        "es": "Google Workspace AI",
+        "ar": "جوجل وركسبيس إيه آي",
+        "ru": "Google Workspace AI",
+        "ja": "Google Workspace AI"
+      },
+      "description": {
+        "zh": "Google办公生态AI增强功能",
+        "en": "AI enhancements across Google's office ecosystem",
+        "es": "Mejoras IA en el ecosistema de oficina de Google",
+        "ar": "تحسينات ذكية عبر النظام البيئي لمكتب جوجل",
+        "ru": "ИИ-улучшения в офисной экосистеме Google",
+        "ja": "Googleオフィスエコシステムの AI機能強化"
+      },
+      "recommendation": "popular",
+      "pricing": "paid",
+      "sponsor": false
+    },
+    {
+      "id": "63",
+      "url": "https://slack.com/features/ai",
+      "category": "office",
+      "name": {
+        "zh": "Slack AI",
+        "en": "Slack AI",
+        "es": "Slack AI",
+        "ar": "سلاك إيه آي",
+        "ru": "Slack AI",
+        "ja": "Slack AI"
+      },
+      "description": {
+        "zh": "团队协作平台AI功能，智能摘要和搜索",
+        "en": "Team collaboration platform with AI-powered summaries and search",
+        "es": "Plataforma colaboración equipo con resúmenes y búsqueda con IA",
+        "ar": "منصة تعاون فريق مع ملخصات وبحث مدعوم بالذكاء الاصطناعي",
+        "ru": "Платформа командного сотрудничества с ИИ-сводками и поиском",
+        "ja": "AI搭載要約・検索機能付きチームコラボレーションプラットフォーム"
+      },
+      "recommendation": "popular",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "21",
+      "url": "https://zoom.us/ai",
+      "category": "office",
+      "name": {
+        "zh": "Zoom AI Companion",
+        "en": "Zoom AI Companion",
+        "es": "Zoom AI Companion",
+        "ar": "زوم مرافق ذكي",
+        "ru": "Zoom AI Companion",
+        "ja": "Zoom AI Companion"
+      },
+      "description": {
+        "zh": "会议转录摘要，自动生成要点",
+        "en": "Meeting transcription and automatic key points generation",
+        "es": "Transcripción de reuniones y generación automática de puntos clave",
+        "ar": "نسخ الاجتماعات وتوليد النقاط الرئيسية تلقائياً",
+        "ru": "Транскрипция встреч и автоматическое создание ключевых пунктов",
+        "ja": "会議の文字起こしと自動要点生成"
+      },
+      "recommendation": "popular",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "22",
+      "url": "https://otter.ai/",
+      "category": "office",
+      "name": {
+        "zh": "Otter.ai",
+        "en": "Otter.ai",
+        "es": "Otter.ai",
+        "ar": "أوتر إيه آي",
+        "ru": "Otter.ai",
+        "ja": "Otter.ai"
+      },
+      "description": {
+        "zh": "实时语音转写专家，搜索便捷",
+        "en": "Real-time transcription expert with easy search",
+        "es": "Experto en transcripción en tiempo real con búsqueda fácil",
+        "ar": "خبير النسخ في الوقت الفعلي مع بحث سهل",
+        "ru": "Эксперт транскрипции в реальном времени с удобным поиском",
+        "ja": "検索機能充実のリアルタイム音声認識エキスパート"
+      },
+      "recommendation": "popular",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "24",
+      "url": "https://www.fireflies.ai/",
+      "category": "office",
+      "name": {
+        "zh": "Fireflies.ai",
+        "en": "Fireflies.ai",
+        "es": "Fireflies.ai",
+        "ar": "فاير فلايز إيه آي",
+        "ru": "Fireflies.ai",
+        "ja": "Fireflies.ai"
+      },
+      "description": {
+        "zh": "会议记录助手，自动任务分配",
+        "en": "Meeting recording assistant with automatic task assignment",
+        "es": "Asistente de grabación de reuniones con asignación automática de tareas",
+        "ar": "مساعد تسجيل اجتماعات مع توزيع المهام التلقائي",
+        "ru": "Помощник записи встреч с автоматическим назначением задач",
+        "ja": "自動タスク割り当て機能付き会議記録アシスタント"
+      },
+      "recommendation": "new",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "20",
+      "url": "https://www.grammarly.com/",
+      "category": "office",
+      "name": {
+        "zh": "Grammarly",
+        "en": "Grammarly",
+        "es": "Grammarly",
+        "ar": "جرامارلي",
+        "ru": "Grammarly",
+        "ja": "Grammarly"
+      },
+      "description": {
+        "zh": "经典英文写作助手，语法检查专业",
+        "en": "Classic writing assistant with professional grammar checking",
+        "es": "Asistente de escritura clásico con verificación gramatical profesional",
+        "ar": "مساعد كتابة كلاسيكي مع فحص نحوي احترافي",
+        "ru": "Классический помощник письма с профессиональной проверкой грамматики",
+        "ja": "プロレベル文法チェック機能搭載の定番ライティングアシスタント"
+      },
+      "recommendation": "popular",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "45",
+      "url": "https://quillbot.com/",
+      "category": "office",
+      "name": {
+        "zh": "QuillBot",
+        "en": "QuillBot",
+        "es": "QuillBot",
+        "ar": "كويل بوت",
+        "ru": "QuillBot",
+        "ja": "QuillBot"
+      },
+      "description": {
+        "zh": "文本改写和语法检查工具",
+        "en": "Text paraphrasing and grammar checking tool",
+        "es": "Herramienta de parafraseo de texto y verificación gramatical",
+        "ar": "أداة إعادة صياغة النصوص وفحص القواعد النحوية",
+        "ru": "Инструмент перефразирования текста и проверки грамматики",
+        "ja": "テキスト書き換えと文法チェックツール"
+      },
+      "recommendation": "popular",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "72",
+      "url": "https://www.deepl.com/",
+      "category": "office",
+      "name": {
+        "zh": "DeepL",
+        "en": "DeepL",
+        "es": "DeepL",
+        "ar": "ديب إل",
+        "ru": "DeepL",
+        "ja": "DeepL"
+      },
+      "description": {
+        "zh": "最佳AI翻译工具，准确度超越谷歌翻译",
+        "en": "Best AI translation tool, more accurate than Google Translate",
+        "es": "Mejor herramienta de traducción IA, más precisa que Google Translate",
+        "ar": "أفضل أداة ترجمة ذكية، أكثر دقة من جوجل ترجمة",
+        "ru": "Лучший ИИ-переводчик, точнее Google Translate",
+        "ja": "Google翻訳より高精度な最高のAI翻訳ツール"
+      },
+      "recommendation": "editor",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "17",
+      "url": "https://www.notion.so/product/ai",
+      "category": "office",
+      "name": {
+        "zh": "Notion AI",
+        "en": "Notion AI",
+        "es": "Notion AI",
+        "ar": "نوشن إيه آي",
+        "ru": "Notion AI",
+        "ja": "Notion AI"
+      },
+      "description": {
+        "zh": "最佳知识管理AI助手，功能全面",
+        "en": "Best knowledge management AI with comprehensive features",
+        "es": "Mejor IA de gestión de conocimiento con características integrales",
+        "ar": "أفضل ذكاء اصطناعي لإدارة المعرفة مع ميزات شاملة",
+        "ru": "Лучший ИИ для управления знаниями с комплексными функциями",
+        "ja": "包括的機能を持つ最高の知識管理AI"
+      },
+      "recommendation": "editor",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "44",
+      "url": "https://notebooklm.google/",
+      "category": "office",
+      "name": {
+        "zh": "NotebookLM",
+        "en": "NotebookLM",
+        "es": "NotebookLM",
+        "ar": "نوت بوك إل إم",
+        "ru": "NotebookLM",
+        "ja": "NotebookLM"
+      },
+      "description": {
+        "zh": "Google AI笔记助手，文档智能分析",
+        "en": "Google's AI-powered note-taking with document analysis",
+        "es": "Toma de notas con IA de Google con análisis de documentos",
+        "ar": "مساعد الملاحظات الذكي من جوجل مع تحليل المستندات",
+        "ru": "ИИ-помощник для заметок Google с анализом документов",
+        "ja": "Googleのドキュメント分析機能付きAIノートアシスタント"
+      },
+      "recommendation": "editor",
+      "pricing": "free",
+      "sponsor": false
+    },
+    {
+      "id": "26",
+      "url": "https://airtable.com/",
+      "category": "office",
+      "name": {
+        "zh": "AirTable AI",
+        "en": "AirTable AI",
+        "es": "AirTable AI",
+        "ar": "إير تيبل إيه آي",
+        "ru": "AirTable AI",
+        "ja": "AirTable AI"
+      },
+      "description": {
+        "zh": "智能数据库，自然语言查询",
+        "en": "Smart database with natural language queries",
+        "es": "Base de datos inteligente con consultas en lenguaje natural",
+        "ar": "قاعدة بيانات ذكية مع استعلامات باللغة الطبيعية",
+        "ru": "Умная база данных с запросами на естественном языке",
+        "ja": "自然言語クエリ対応スマートデータベース"
+      },
+      "recommendation": "new",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "23",
+      "url": "https://zapier.com/solutions/ai",
+      "category": "office",
+      "name": {
+        "zh": "Zapier AI",
+        "en": "Zapier AI",
+        "es": "Zapier AI",
+        "ar": "زابير إيه آي",
+        "ru": "Zapier AI",
+        "ja": "Zapier AI"
+      },
+      "description": {
+        "zh": "自动化流程专家，连接数千应用",
+        "en": "Automation expert connecting thousands of apps",
+        "es": "Experto en automatización conectando miles de aplicaciones",
+        "ar": "خبير الأتمتة يربط آلاف التطبيقات",
+        "ru": "Эксперт автоматизации, соединяющий тысячи приложений",
+        "ja": "数千のアプリを連携する自動化エキスパート"
+      },
+      "recommendation": "editor",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "64",
+      "url": "https://www.make.com/",
+      "category": "office",
+      "name": {
+        "zh": "Make",
+        "en": "Make",
+        "es": "Make",
+        "ar": "مايك",
+        "ru": "Make",
+        "ja": "Make"
+      },
+      "description": {
+        "zh": "可视化自动化平台，无代码工作流程",
+        "en": "Visual automation platform with no-code workflows",
+        "es": "Plataforma automatización visual con flujos de trabajo sin código",
+        "ar": "منصة أتمتة مرئية مع سير عمل بدون كود",
+        "ru": "Визуальная платформа автоматизации с бескодовыми рабочими процессами",
+        "ja": "ノーコードワークフローによるビジュアル自動化プラットフォーム"
+      },
+      "recommendation": "popular",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "65",
+      "url": "https://n8n.io/",
+      "category": "office",
+      "name": {
+        "zh": "n8n",
+        "en": "n8n",
+        "es": "n8n",
+        "ar": "إن ثمانية إن",
+        "ru": "n8n",
+        "ja": "n8n"
+      },
+      "description": {
+        "zh": "开源工作流自动化工具，技术友好",
+        "en": "Open-source workflow automation tool for technical users",
+        "es": "Herramienta automatización flujo trabajo open-source para usuarios técnicos",
+        "ar": "أداة أتمتة سير العمل مفتوحة المصدر للمستخدمين التقنيين",
+        "ru": "Инструмент автоматизации рабочих процессов с открытым исходным кодом для технических пользователей",
+        "ja": "技術ユーザー向けオープンソースワークフロー自動化ツール"
+      },
+      "recommendation": "new",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "66",
+      "url": "https://reclaim.ai/",
+      "category": "office",
+      "name": {
+        "zh": "Reclaim.ai",
+        "en": "Reclaim.ai",
+        "es": "Reclaim.ai",
+        "ar": "ريكلايم إيه آي",
+        "ru": "Reclaim.ai",
+        "ja": "Reclaim.ai"
+      },
+      "description": {
+        "zh": "智能日程管理，AI优化时间分配",
+        "en": "AI-powered smart calendar scheduling and time management",
+        "es": "Programación calendario inteligente y gestión tiempo con IA",
+        "ar": "جدولة تقويم ذكية وإدارة وقت مدعومة بالذكاء الاصطناعي",
+        "ru": "Умное планирование календаря и управление временем на базе ИИ",
+        "ja": "AI搭載スマートカレンダースケジューリング・時間管理"
+      },
+      "recommendation": "new",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "67",
+      "url": "https://superhuman.com/",
+      "category": "office",
+      "name": {
+        "zh": "Superhuman",
+        "en": "Superhuman",
+        "es": "Superhuman",
+        "ar": "سوبر هيومان",
+        "ru": "Superhuman",
+        "ja": "Superhuman"
+      },
+      "description": {
+        "zh": "AI增强的超级邮件客户端，极速邮件处理",
+        "en": "AI-enhanced email client for lightning-fast email management",
+        "es": "Cliente email mejorado con IA para gestión ultrarrápida de correos",
+        "ar": "عميل بريد إلكتروني محسن بالذكاء الاصطناعي لإدارة فائقة السرعة",
+        "ru": "Улучшенный ИИ почтовый клиент для молниеносного управления электронной почтой",
+        "ja": "超高速メール管理のためのAI強化メールクライアント"
+      },
+      "recommendation": "new",
+      "pricing": "paid",
+      "sponsor": false
+    },
+    {
+      "id": "73",
+      "url": "https://www.manus.ai/",
+      "category": "office",
+      "name": {
+        "zh": "Manus",
+        "en": "Manus",
+        "es": "Manus",
+        "ar": "مانوس",
+        "ru": "Manus",
+        "ja": "Manus"
+      },
+      "description": {
+        "zh": "AI知识管理和研究助手，智能文档整理",
+        "en": "AI knowledge management and research assistant with smart document organization",
+        "es": "Asistente de gestión conocimiento e investigación IA con organización documentos inteligente",
+        "ar": "مساعد إدارة المعرفة والبحث بالذكاء الاصطناعي مع تنظيم ذكي للوثائق",
+        "ru": "ИИ-помощник управления знаниями и исследований с умной организацией документов",
+        "ja": "スマート文書整理機能付きAI知識管理・研究アシスタント"
+      },
+      "recommendation": "new",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "74",
+      "url": "https://www.genspark.ai/",
+      "category": "office",
+      "name": {
+        "zh": "Genspark",
+        "en": "Genspark",
+        "es": "Genspark",
+        "ar": "جين سبارك",
+        "ru": "Genspark",
+        "ja": "Genspark"
+      },
+      "description": {
+        "zh": "AI驱动的研究和分析工具，智能内容生成",
+        "en": "AI-powered research and analysis tool with intelligent content generation",
+        "es": "Herramienta investigación y análisis impulsada por IA con generación contenido inteligente",
+        "ar": "أداة بحث وتحليل مدعومة بالذكاء الاصطناعي مع توليد محتوى ذكي",
+        "ru": "ИИ-инструмент исследований и анализа с интеллектуальной генерацией контента",
+        "ja": "インテリジェントコンテンツ生成機能付きAI研究・分析ツール"
+      },
+      "recommendation": "new",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "27",
+      "url": "https://github.com/features/copilot/",
+      "category": "coding",
+      "name": {
+        "zh": "GitHub Copilot",
+        "en": "GitHub Copilot",
+        "es": "GitHub Copilot",
+        "ar": "جيت هاب كوبايلوت",
+        "ru": "GitHub Copilot",
+        "ja": "GitHub Copilot"
+      },
+      "description": {
+        "zh": "最强代码助手，VS Code完美集成",
+        "en": "Most powerful code assistant with perfect VS Code integration",
+        "es": "Asistente de código más potente con integración perfecta VS Code",
+        "ar": "أقوى مساعد برمجة مع تكامل مثالي مع VS Code",
+        "ru": "Самый мощный помощник кода с идеальной интеграцией VS Code",
+        "ja": "VS Code完全統合の最強コードアシスタント"
+      },
+      "recommendation": "editor",
+      "pricing": "paid",
+      "sponsor": false
+    },
+    {
+      "id": "46",
+      "url": "https://cursor.com/",
+      "category": "coding",
+      "name": {
+        "zh": "Cursor",
+        "en": "Cursor",
+        "es": "Cursor",
+        "ar": "كيرسور",
+        "ru": "Cursor",
+        "ja": "Cursor"
+      },
+      "description": {
+        "zh": "新一代AI代码编辑器，智能编程体验",
+        "en": "Next-generation AI code editor with intelligent coding experience",
+        "es": "Editor de código IA de próxima generación con experiencia de codificación inteligente",
+        "ar": "محرر أكواد ذكي من الجيل التالي مع تجربة برمجة ذكية",
+        "ru": "ИИ-редактор кода нового поколения с интеллектуальным опытом программирования",
+        "ja": "次世代AIコードエディター、インテリジェントなプログラミング体験"
+      },
+      "recommendation": "new",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "68",
+      "url": "https://www.marscode.com/",
+      "category": "coding",
+      "name": {
+        "zh": "TRAE（豆包 MarsCode）",
+        "en": "TRAE (MarsCode)",
+        "es": "TRAE (MarsCode)",
+        "ar": "تراي (مارس كود)",
+        "ru": "TRAE (MarsCode)",
+        "ja": "TRAE（MarsCode）"
+      },
+      "description": {
+        "zh": "字节跳动出品的智能编程助手，集成AI代码生成",
+        "en": "ByteDance's intelligent coding assistant with AI code generation",
+        "es": "Asistente codificación inteligente de ByteDance con generación código IA",
+        "ar": "مساعد برمجة ذكي من بايت دانس مع توليد أكواد ذكية",
+        "ru": "Умный помощник программирования от ByteDance с генерацией ИИ-кода",
+        "ja": "ByteDance製AIコード生成統合スマートプログラミングアシスタント"
+      },
+      "recommendation": "new",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "69",
+      "url": "https://www.jetbrains.com/ai/",
+      "category": "coding",
+      "name": {
+        "zh": "JetBrains AI Assistant",
+        "en": "JetBrains AI Assistant",
+        "es": "JetBrains AI Assistant",
+        "ar": "جيت برينز مساعد ذكي",
+        "ru": "JetBrains AI Assistant",
+        "ja": "JetBrains AI Assistant"
+      },
+      "description": {
+        "zh": "JetBrains IDE内置AI编程助手，深度集成开发环境",
+        "en": "Built-in AI programming assistant for JetBrains IDEs with deep integration",
+        "es": "Asistente programación IA integrado para IDEs JetBrains con integración profunda",
+        "ar": "مساعد برمجة ذكي مدمج لبيئات التطوير JetBrains مع تكامل عميق",
+        "ru": "Встроенный ИИ-помощник программирования для JetBrains IDE с глубокой интеграцией",
+        "ja": "JetBrains IDE深度統合内蔵AIプログラミングアシスタント"
+      },
+      "recommendation": "popular",
+      "pricing": "paid",
+      "sponsor": false
+    },
+    {
+      "id": "32",
+      "url": "https://sourcegraph.com/cody/",
+      "category": "coding",
+      "name": {
+        "zh": "Sourcegraph Cody",
+        "en": "Sourcegraph Cody",
+        "es": "Sourcegraph Cody",
+        "ar": "سورس جراف كودي",
+        "ru": "Sourcegraph Cody",
+        "ja": "Sourcegraph Cody"
+      },
+      "description": {
+        "zh": "代码库搜索与智能导航专家",
+        "en": "Codebase search and smart navigation expert",
+        "es": "Experto en búsqueda de base de código y navegación inteligente",
+        "ar": "خبير البحث في قاعدة الأكواد والتنقل الذكي",
+        "ru": "Эксперт поиска в кодовой базе и умной навигации",
+        "ja": "コードベース検索・スマートナビゲーション専門家"
+      },
+      "recommendation": "new",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "28",
+      "url": "https://www.tabnine.com/",
+      "category": "coding",
+      "name": {
+        "zh": "Tabnine",
+        "en": "Tabnine",
+        "es": "Tabnine",
+        "ar": "تاب ناين",
+        "ru": "Tabnine",
+        "ja": "Tabnine"
+      },
+      "description": {
+        "zh": "多语言智能补全，支持本地部署",
+        "en": "Multi-language smart completion with local deployment",
+        "es": "Completado inteligente multilenguaje con despliegue local",
+        "ar": "إكمال ذكي متعدد اللغات مع النشر المحلي",
+        "ru": "Умное автодополнение для множества языков с локальным развёртыванием",
+        "ja": "ローカル展開対応多言語スマート補完"
+      },
+      "recommendation": "popular",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "29",
+      "url": "https://codeium.com/",
+      "category": "coding",
+      "name": {
+        "zh": "Codeium",
+        "en": "Codeium",
+        "es": "Codeium",
+        "ar": "كوديوم",
+        "ru": "Codeium",
+        "ja": "Codeium"
+      },
+      "description": {
+        "zh": "免费开源代码助手，功能强大",
+        "en": "Free open-source code assistant with powerful features",
+        "es": "Asistente de código gratuito y open-source con características potentes",
+        "ar": "مساعد برمجة مجاني ومفتوح المصدر بميزات قوية",
+        "ru": "Бесплатный помощник кода с открытым исходным кодом и мощными функциями",
+        "ja": "強力な機能を持つ無料オープンソースコードアシスタント"
+      },
+      "recommendation": "free",
+      "pricing": "free",
+      "sponsor": false
+    },
+    {
+      "id": "30",
+      "url": "https://replit.com/ghostwriter",
+      "category": "coding",
+      "name": {
+        "zh": "Replit Ghostwriter",
+        "en": "Replit Ghostwriter",
+        "es": "Replit Ghostwriter",
+        "ar": "ريبليت جوست رايتر",
+        "ru": "Replit Ghostwriter",
+        "ja": "Replit Ghostwriter"
+      },
+      "description": {
+        "zh": "在线IDE集成AI编程助手",
+        "en": "Online IDE with integrated AI coding assistant",
+        "es": "IDE online con asistente de codificación IA integrado",
+        "ar": "بيئة تطوير عبر الإنترنت مع مساعد برمجة ذكي متكامل",
+        "ru": "Онлайн IDE с интегрированным ИИ-помощником программирования",
+        "ja": "AIコーディングアシスタント統合オンラインIDE"
+      },
+      "recommendation": "new",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "31",
+      "url": "https://aws.amazon.com/q/developer/",
+      "category": "coding",
+      "name": {
+        "zh": "Amazon Q Developer",
+        "en": "Amazon Q Developer",
+        "es": "Amazon Q Developer",
+        "ar": "أمازون كيو للمطورين",
+        "ru": "Amazon Q Developer",
+        "ja": "Amazon Q Developer"
+      },
+      "description": {
+        "zh": "AWS智能编程助手，原CodeWhisperer升级版",
+        "en": "AWS intelligent coding assistant, evolved from CodeWhisperer",
+        "es": "Asistente codificación inteligente AWS, evolución de CodeWhisperer",
+        "ar": "مساعد برمجة ذكي من AWS، تطوير من CodeWhisperer",
+        "ru": "Умный помощник программирования AWS, развитие CodeWhisperer",
+        "ja": "AWS智能编程助手，CodeWhispererの進化版"
+      },
+      "recommendation": "popular",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "70",
+      "url": "https://www.phind.com/",
+      "category": "coding",
+      "name": {
+        "zh": "Phind",
+        "en": "Phind",
+        "es": "Phind",
+        "ar": "فايند",
+        "ru": "Phind",
+        "ja": "Phind"
+      },
+      "description": {
+        "zh": "面向开发者的AI搜索引擎，精准解答编程问题",
+        "en": "AI search engine for developers with precise programming answers",
+        "es": "Motor búsqueda IA para desarrolladores con respuestas programación precisas",
+        "ar": "محرك بحث ذكي للمطورين مع إجابات برمجة دقيقة",
+        "ru": "ИИ-поисковик для разработчиков с точными ответами по программированию",
+        "ja": "開発者向けAI検索エンジン、正確なプログラミング回答"
+      },
+      "recommendation": "popular",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "47",
+      "url": "https://huggingface.co/",
+      "category": "coding",
+      "name": {
+        "zh": "Hugging Face",
+        "en": "Hugging Face",
+        "es": "Hugging Face",
+        "ar": "هاجينج فيس",
+        "ru": "Hugging Face",
+        "ja": "Hugging Face"
+      },
+      "description": {
+        "zh": "开源AI模型社区平台和工具集",
+        "en": "Open-source AI model community platform and toolkit",
+        "es": "Plataforma comunitaria de modelos IA de código abierto y conjunto de herramientas",
+        "ar": "منصة مجتمع نماذج الذكاء الاصطناعي مفتوحة المصدر ومجموعة الأدوات",
+        "ru": "Платформа сообщества открытых ИИ-моделей и набор инструментов",
+        "ja": "オープンソースAIモデルコミュニティプラットフォーム&ツールキット"
+      },
+      "recommendation": "editor",
+      "pricing": "free",
+      "sponsor": false
+    },
+    {
+      "id": "71",
+      "url": "https://continue.dev/",
+      "category": "coding",
+      "name": {
+        "zh": "Continue",
+        "en": "Continue",
+        "es": "Continue",
+        "ar": "كونتينيو",
+        "ru": "Continue",
+        "ja": "Continue"
+      },
+      "description": {
+        "zh": "开源AI编程助手，支持多种IDE和模型",
+        "en": "Open-source AI coding assistant supporting multiple IDEs and models",
+        "es": "Asistente codificación IA open-source compatible con múltiples IDEs y modelos",
+        "ar": "مساعد برمجة ذكي مفتوح المصدر يدعم عدة بيئات تطوير ونماذج",
+        "ru": "ИИ-помощник программирования с открытым исходным кодом для множества IDE и моделей",
+        "ja": "複数IDE・モデル対応オープンソースAIコーディングアシスタント"
+      },
+      "recommendation": "new",
+      "pricing": "free",
+      "sponsor": false
+    },
+    {
+      "id": "33",
+      "url": "https://www.perplexity.ai/",
+      "category": "search",
+      "name": {
+        "zh": "Perplexity AI",
+        "en": "Perplexity AI",
+        "es": "Perplexity AI",
+        "ar": "بيربليكسيتي إيه آي",
+        "ru": "Perplexity AI",
+        "ja": "Perplexity AI"
+      },
+      "description": {
+        "zh": "最佳AI问答搜索引擎，自动引用",
+        "en": "Best AI Q&A search engine with automatic citations",
+        "es": "Mejor motor de búsqueda IA de Q&A con citas automáticas",
+        "ar": "أفضل محرك بحث ذكي للأسئلة والأجوبة مع اقتباسات تلقائية",
+        "ru": "Лучшая поисковая система ИИ вопросов и ответов с автоматическими ссылками",
+        "ja": "自動引用機能付き最高のAI質疑応答検索エンジン"
+      },
+      "recommendation": "editor",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "34",
+      "url": "https://you.com/",
+      "category": "search",
+      "name": {
+        "zh": "You.com",
+        "en": "You.com",
+        "es": "You.com",
+        "ar": "يو دوت كوم",
+        "ru": "You.com",
+        "ja": "You.com"
+      },
+      "description": {
+        "zh": "可定制AI搜索，插件扩展丰富",
+        "en": "Customizable AI search with rich plugin extensions",
+        "es": "Búsqueda IA personalizable con extensiones de plugins ricas",
+        "ar": "بحث ذكي قابل للتخصيص مع ملحقات غنية",
+        "ru": "Настраиваемый ИИ-поиск с богатыми плагинами",
+        "ja": "豊富なプラグイン拡張対応カスタマイズ可能AI検索"
+      },
+      "recommendation": "popular",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "51",
+      "url": "https://metaso.cn/",
+      "category": "search",
+      "name": {
+        "zh": "秘塔AI搜索",
+        "en": "Metaso AI Search",
+        "es": "Metaso Búsqueda IA",
+        "ar": "بحث ميتاسو الذكي",
+        "ru": "Metaso ИИ Поиск",
+        "ja": "Metaso AI検索"
+      },
+      "description": {
+        "zh": "国产AI搜索引擎，无广告纯净搜索",
+        "en": "Chinese AI search engine with ad-free clean results",
+        "es": "Motor de búsqueda IA chino con resultados limpios sin anuncios",
+        "ar": "محرك بحث ذكي صيني مع نتائج نظيفة بدون إعلانات",
+        "ru": "Китайский ИИ поисковик с чистыми результатами без рекламы",
+        "ja": "広告なしクリーンな中国製AI検索エンジン"
+      },
+      "recommendation": "popular",
+      "pricing": "free",
+      "sponsor": false
+    },
+    {
+      "id": "52",
+      "url": "https://nami.ai/",
+      "category": "search",
+      "name": {
+        "zh": "纳米AI搜索",
+        "en": "Nami AI Search",
+        "es": "Nami Búsqueda IA",
+        "ar": "بحث نامي الذكي",
+        "ru": "Nami ИИ Поиск",
+        "ja": "Nami AI検索"
+      },
+      "description": {
+        "zh": "智能搜索助手，提供精准答案和来源",
+        "en": "Intelligent search assistant providing accurate answers and sources",
+        "es": "Asistente de búsqueda inteligente que proporciona respuestas precisas y fuentes",
+        "ar": "مساعد بحث ذكي يقدم إجابات دقيقة ومصادر",
+        "ru": "Умный поисковый помощник с точными ответами и источниками",
+        "ja": "正確な回答とソースを提供するインテリジェント検索アシスタント"
+      },
+      "recommendation": "new",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "35",
+      "url": "https://consensus.app/",
+      "category": "search",
+      "name": {
+        "zh": "Consensus",
+        "en": "Consensus",
+        "es": "Consensus",
+        "ar": "كونسينسس",
+        "ru": "Consensus",
+        "ja": "Consensus"
+      },
+      "description": {
+        "zh": "学术文献搜索专家，科研必备",
+        "en": "Academic literature search expert, essential for research",
+        "es": "Experto en búsqueda de literatura académica, esencial para investigación",
+        "ar": "خبير البحث في الأدبيات الأكاديمية، ضروري للبحث",
+        "ru": "Эксперт поиска академической литературы, необходим для исследований",
+        "ja": "学術文献検索の専門家、研究に必須"
+      },
+      "recommendation": "editor",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "36",
+      "url": "https://elicit.org/",
+      "category": "search",
+      "name": {
+        "zh": "Elicit",
+        "en": "Elicit",
+        "es": "Elicit",
+        "ar": "إليسيت",
+        "ru": "Elicit",
+        "ja": "Elicit"
+      },
+      "description": {
+        "zh": "免费科研助手，文献综述专家",
+        "en": "Free research assistant and literature review expert",
+        "es": "Asistente de investigación gratuito y experto en revisión de literatura",
+        "ar": "مساعد بحث مجاني وخبير مراجعة الأدبيات",
+        "ru": "Бесплатный исследовательский помощник и эксперт обзора литературы",
+        "ja": "無料研究アシスタント・文献レビュー専門家"
+      },
+      "recommendation": "free",
+      "pricing": "free",
+      "sponsor": false
+    },
+    {
+      "id": "53",
+      "url": "https://www.semanticscholar.org/",
+      "category": "search",
+      "name": {
+        "zh": "Semantic Scholar",
+        "en": "Semantic Scholar (TLDR)",
+        "es": "Semantic Scholar (TLDR)",
+        "ar": "سيمانتيك سكولر",
+        "ru": "Semantic Scholar",
+        "ja": "Semantic Scholar"
+      },
+      "description": {
+        "zh": "学术文献搜索平台，AI生成论文摘要",
+        "en": "Academic literature search with AI-generated paper summaries",
+        "es": "Búsqueda de literatura académica con resúmenes de papers generados por IA",
+        "ar": "بحث الأدبيات الأكاديمية مع ملخصات الأوراق المولدة بالذكاء الاصطناعي",
+        "ru": "Поиск академической литературы с ИИ-сводками статей",
+        "ja": "AI生成論文要約付き学術文献検索プラットフォーム"
+      },
+      "recommendation": "editor",
+      "pricing": "free",
+      "sponsor": false
+    },
+    {
+      "id": "54",
+      "url": "https://scite.ai/",
+      "category": "search",
+      "name": {
+        "zh": "scite",
+        "en": "scite",
+        "es": "scite",
+        "ar": "سايت",
+        "ru": "scite",
+        "ja": "scite"
+      },
+      "description": {
+        "zh": "学术引用分析平台，追踪论文可信度",
+        "en": "Academic citation analysis platform tracking paper credibility",
+        "es": "Plataforma de análisis de citas académicas que rastrea la credibilidad de papers",
+        "ar": "منصة تحليل الاستشهادات الأكاديمية لتتبع مصداقية الأوراق",
+        "ru": "Платформа анализа академических цитат для отслеживания достоверности статей",
+        "ja": "論文の信頼性を追跡する学術引用分析プラットフォーム"
+      },
+      "recommendation": "new",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "55",
+      "url": "https://typeset.io/",
+      "category": "search",
+      "name": {
+        "zh": "SciSpace",
+        "en": "SciSpace",
+        "es": "SciSpace",
+        "ar": "ساي سبيس",
+        "ru": "SciSpace",
+        "ja": "SciSpace"
+      },
+      "description": {
+        "zh": "科研写作平台，AI辅助论文理解",
+        "en": "Research writing platform with AI-assisted paper comprehension",
+        "es": "Plataforma de escritura de investigación con comprensión de papers asistida por IA",
+        "ar": "منصة كتابة البحوث مع فهم الأوراق بمساعدة الذكاء الاصطناعي",
+        "ru": "Платформа научного письма с ИИ-помощью понимания статей",
+        "ja": "AI支援論文理解機能付き研究執筆プラットフォーム"
+      },
+      "recommendation": "popular",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "56",
+      "url": "https://andisearch.com/",
+      "category": "search",
+      "name": {
+        "zh": "Andi",
+        "en": "Andi",
+        "es": "Andi",
+        "ar": "آندي",
+        "ru": "Andi",
+        "ja": "Andi"
+      },
+      "description": {
+        "zh": "对话式搜索引擎，像聊天一样搜索",
+        "en": "Conversational search engine, search like chatting",
+        "es": "Motor de búsqueda conversacional, busca como chatear",
+        "ar": "محرك بحث محادثي، ابحث كما لو كنت تتحدث",
+        "ru": "Разговорный поисковик, поиск как в чате",
+        "ja": "チャットのような対話型検索エンジン"
+      },
+      "recommendation": "new",
+      "pricing": "free",
+      "sponsor": false
+    }
+  ]
+}

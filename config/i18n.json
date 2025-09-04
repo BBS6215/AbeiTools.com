@@ -1,0 +1,548 @@
+{
+  "zh": {
+    "site": {
+      "title": "ABeiTools",
+      "description": "ABeiTools是专业的AI工具导航站，精选优质人工智能工具，覆盖多个核心应用场景：聊天、创意、办公、编程、搜索等，支持6种语言，帮助用户快速找到最适合的AI工具。",
+      "keywords": "AI工具,人工智能,工具导航,ChatGPT,Midjourney,AI助手,精选工具",
+      "ogTitle": "ABeiTools · 专业的AI工具导航站",
+      "ogDescription": "发现优质 AI 工具，提升你的效率与创造力",
+      "twitterTitle": "ABeiTools · 专业的AI工具导航站", 
+      "twitterDescription": "发现优质 AI 工具，提升你的效率与创造力",
+      "welcome": "✨ 精选全球优质AI工具"
+    },
+    "nav": {
+      "home": "首页",
+      "categories": "分类导航",
+      "search": "搜索工具",
+      "admin": "管理后台",
+      "language": "语言选择"
+    },
+    "categories": {
+      "chat": "AI对话助手",
+      "creative": "内容创作",
+      "office": "办公效率",
+      "coding": "编程开发",
+      "search": "信息获取"
+    },
+    "categoryDescriptions": {
+      "chat": "ChatGPT、Claude、Gemini、文心一言",
+      "creative": "图像生成、视频制作、音频处理、文字创作",
+      "office": "协作工具、自动化流程、会议助手",
+      "coding": "代码助手、开发工具、技术辅助",
+      "search": "智能搜索、数据分析、研究助手"
+    },
+    "categoryUsage": {
+      "chat": "智能对话、内容生成、学习辅助",
+      "creative": "设计海报、制作视频、生成音乐、撰写文案",
+      "office": "文档协作、会议纪要、任务管理",
+      "coding": "代码编写、错误调试、项目部署",
+      "search": "资料查找、论文研究、市场分析"
+    },
+    "recommendations": {
+      "editor": "编辑推荐",
+      "popular": "用户热门",
+      "new": "最新工具",
+      "free": "免费工具"
+    },
+    "ui": {
+      "searchPlaceholder": "搜索AI工具...",
+      "loading": "加载中...",
+      "noResults": "没有找到相关工具",
+      "viewAll": "查看全部",
+      "newWindow": "新窗口打开",
+      "backToTop": "回到顶部"
+    },
+    "tools": {
+      "htmlToImage": {
+        "title": "HTML转图片工具",
+        "description": "将HTML代码转换为高质量图片",
+        "inputLabel": "HTML代码输入",
+        "previewLabel": "实时预览",
+        "formatCode": "格式化代码",
+        "clearCode": "清空代码",
+        "sampleCode": "示例代码",
+        "desktopView": "桌面视图",
+        "tabletView": "平板视图", 
+        "mobileView": "手机视图",
+        "exportSettings": "导出设置",
+        "imageFormat": "图片格式",
+        "imageSize": "图片尺寸",
+        "backgroundColor": "背景颜色",
+        "exportButton": "导出图片",
+        "exporting": "正在导出...",
+        "exportSuccess": "导出成功！",
+        "exportError": "导出失败，请重试"
+      }
+    },
+    "admin": {
+      "title": "管理后台",
+      "toolManagement": "工具管理",
+      "addTool": "添加工具",
+      "editTool": "编辑工具", 
+      "deleteTool": "删除工具",
+      "batchActions": "批量操作",
+      "importData": "导入数据",
+      "exportData": "导出数据",
+      "saveChanges": "保存更改",
+      "cancel": "取消",
+      "confirm": "确认",
+      "success": "操作成功",
+      "error": "操作失败"
+    }
+  },
+  "en": {
+    "site": {
+      "title": "ABeiTools",
+      "description": "ABeiTools is a professional AI tools directory featuring curated artificial intelligence tools across multiple core categories: Chat, Creative, Office, Coding, and Search. Supporting 6 languages to help users find the perfect AI tools.",
+      "keywords": "AI tools,artificial intelligence,tool directory,ChatGPT,Midjourney,AI assistant,curated tools",
+      "ogTitle": "ABeiTools · Professional AI Tools Directory",
+      "ogDescription": "Discover quality AI tools to boost your efficiency and creativity",
+      "twitterTitle": "ABeiTools · Professional AI Tools Directory",
+      "twitterDescription": "Discover quality AI tools to boost your efficiency and creativity", 
+      "welcome": "🧭 Curated Global AI Tools"
+    },
+    "nav": {
+      "home": "Home",
+      "categories": "Categories", 
+      "search": "Search Tools",
+      "admin": "Admin Panel",
+      "language": "Language"
+    },
+    "categories": {
+      "chat": "AI Chat Assistants",
+      "creative": "Content Creation",
+      "office": "Office Efficiency",
+      "coding": "Coding & Development",
+      "search": "Information Retrieval"
+    },
+    "categoryDescriptions": {
+      "chat": "ChatGPT, Claude, Gemini, Ernie Bot",
+      "creative": "Image generation, video production, audio processing, text creation",
+      "office": "Collaboration tools, automation workflows, meeting assistants",
+      "coding": "Code assistants, development tools, technical assistance",
+      "search": "Smart search, data analysis, research assistants"
+    },
+    "categoryUsage": {
+      "chat": "Smart conversation, content generation, learning assistance",
+      "creative": "Design posters, create videos, generate music, write copy",
+      "office": "Document collaboration, meeting minutes, task management",
+      "coding": "Code writing, bug debugging, project deployment",
+      "search": "Information searching, paper research, market analysis"
+    },
+    "recommendations": {
+      "editor": "Editor's Pick",
+      "popular": "Popular",
+      "new": "New Tool",
+      "free": "Free Tool"
+    },
+    "ui": {
+      "searchPlaceholder": "Search AI tools...",
+      "loading": "Loading...",
+      "noResults": "No tools found",
+      "viewAll": "View All",
+      "newWindow": "Open in new window",
+      "backToTop": "Back to top"
+    },
+    "tools": {
+      "htmlToImage": {
+        "title": "HTML to Image Tool",
+        "description": "Convert HTML code to high-quality images",
+        "inputLabel": "HTML Code Input",
+        "previewLabel": "Live Preview",
+        "formatCode": "Format Code",
+        "clearCode": "Clear Code",
+        "sampleCode": "Sample Code",
+        "desktopView": "Desktop View",
+        "tabletView": "Tablet View",
+        "mobileView": "Mobile View", 
+        "exportSettings": "Export Settings",
+        "imageFormat": "Image Format",
+        "imageSize": "Image Size",
+        "backgroundColor": "Background Color",
+        "exportButton": "Export Image",
+        "exporting": "Exporting...",
+        "exportSuccess": "Export successful!",
+        "exportError": "Export failed, please retry"
+      }
+    },
+    "admin": {
+      "title": "Admin Panel",
+      "toolManagement": "Tool Management",
+      "addTool": "Add Tool",
+      "editTool": "Edit Tool",
+      "deleteTool": "Delete Tool", 
+      "batchActions": "Batch Actions",
+      "importData": "Import Data",
+      "exportData": "Export Data",
+      "saveChanges": "Save Changes",
+      "cancel": "Cancel",
+      "confirm": "Confirm",
+      "success": "Operation successful",
+      "error": "Operation failed"
+    }
+  },
+  "es": {
+    "site": {
+      "title": "ABeiTools",
+      "description": "ABeiTools es un directorio profesional de herramientas de IA con herramientas de inteligencia artificial seleccionadas en múltiples categorías principales: Chat, Creativo, Oficina, Programación y Búsqueda. Compatible con 6 idiomas para ayudar a los usuarios a encontrar las herramientas de IA perfectas.",
+      "keywords": "herramientas IA,inteligencia artificial,directorio herramientas,ChatGPT,Midjourney,asistente IA,herramientas seleccionadas",
+      "ogTitle": "ABeiTools · Directorio Profesional de Herramientas IA",
+      "ogDescription": "Descubre herramientas IA de calidad para impulsar tu eficiencia y creatividad",
+      "twitterTitle": "ABeiTools · Directorio Profesional de Herramientas IA",
+      "twitterDescription": "Descubre herramientas IA de calidad para impulsar tu eficiencia y creatividad",
+      "welcome": "🌟 Herramientas IA Globales Seleccionadas"
+    },
+    "nav": {
+      "home": "Inicio",
+      "categories": "Categorías",
+      "search": "Buscar Herramientas", 
+      "admin": "Panel Admin",
+      "language": "Idioma"
+    },
+    "categories": {
+      "chat": "Asistentes de Chat IA",
+      "creative": "Creación de Contenido",
+      "office": "Eficiencia Oficina",
+      "coding": "Programación y Desarrollo",
+      "search": "Obtención de Información"
+    },
+    "categoryDescriptions": {
+      "chat": "ChatGPT, Claude, Gemini, Ernie Bot",
+      "creative": "Generación imágenes, producción video, procesamiento audio, creación texto",
+      "office": "Herramientas colaboración, flujos automatización, asistentes reunión",
+      "coding": "Asistentes código, herramientas desarrollo, asistencia técnica",
+      "search": "Búsqueda inteligente, análisis datos, asistentes investigación"
+    },
+    "categoryUsage": {
+      "chat": "Conversación inteligente, generación contenido, asistencia aprendizaje",
+      "creative": "Diseñar carteles, crear videos, generar música, escribir contenido",
+      "office": "Colaboración documentos, actas reuniones, gestión tareas",
+      "coding": "Escribir código, depurar errores, desplegar proyectos",
+      "search": "Búsqueda información, investigación papers, análisis mercado"
+    },
+    "recommendations": {
+      "editor": "Recomendación Editor",
+      "popular": "Popular",
+      "new": "Herramienta Nueva",
+      "free": "Herramienta Gratis"
+    },
+    "ui": {
+      "searchPlaceholder": "Buscar herramientas IA...",
+      "loading": "Cargando...",
+      "noResults": "No se encontraron herramientas",
+      "viewAll": "Ver Todo",
+      "newWindow": "Abrir en nueva ventana",
+      "backToTop": "Volver arriba"
+    },
+    "tools": {
+      "htmlToImage": {
+        "title": "Herramienta HTML a Imagen",
+        "description": "Convertir código HTML a imágenes de alta calidad",
+        "inputLabel": "Entrada de Código HTML",
+        "previewLabel": "Vista Previa en Vivo",
+        "formatCode": "Formatear Código",
+        "clearCode": "Limpiar Código",
+        "sampleCode": "Código de Muestra",
+        "desktopView": "Vista Escritorio",
+        "tabletView": "Vista Tablet",
+        "mobileView": "Vista Móvil",
+        "exportSettings": "Configuración de Exportación",
+        "imageFormat": "Formato de Imagen",
+        "imageSize": "Tamaño de Imagen",
+        "backgroundColor": "Color de Fondo",
+        "exportButton": "Exportar Imagen",
+        "exporting": "Exportando...",
+        "exportSuccess": "¡Exportación exitosa!",
+        "exportError": "Exportación falló, por favor reintente"
+      }
+    },
+    "admin": {
+      "title": "Panel de Administración",
+      "toolManagement": "Gestión de Herramientas",
+      "addTool": "Agregar Herramienta",
+      "editTool": "Editar Herramienta",
+      "deleteTool": "Eliminar Herramienta",
+      "batchActions": "Acciones en Lote",
+      "importData": "Importar Datos",
+      "exportData": "Exportar Datos",
+      "saveChanges": "Guardar Cambios",
+      "cancel": "Cancelar",
+      "confirm": "Confirmar",
+      "success": "Operación exitosa",
+      "error": "Operación falló"
+    }
+  },
+  "ar": {
+    "site": {
+      "title": "ABeiTools",
+      "description": "ABeiTools هو دليل مهني لأدوات الذكاء الاصطناعي يضم أدوات ذكاء اصطناعي مختارة عبر فئات متعددة أساسية: الدردشة، الإبداع، المكتب، البرمجة، والبحث. يدعم 6 لغات لمساعدة المستخدمين في العثور على أدوات الذكاء الاصطناعي المثالية.",
+      "keywords": "أدوات ذكاء اصطناعي,ذكاء اصطناعي,دليل أدوات,ChatGPT,Midjourney,مساعد ذكي,أدوات مختارة",
+      "ogTitle": "ABeiTools · دليل مهني لأدوات الذكاء الاصطناعي",
+      "ogDescription": "اكتشف أدوات ذكاء اصطناعي عالية الجودة لتعزيز كفاءتك وإبداعك",
+      "twitterTitle": "ABeiTools · دليل مهني لأدوات الذكاء الاصطناعي",
+      "twitterDescription": "اكتشف أدوات ذكاء اصطناعي عالية الجودة لتعزيز كفاءتك وإبداعك",
+      "welcome": "🔹 أدوات ذكاء اصطناعي عالمية مختارة"
+    },
+    "nav": {
+      "home": "الصفحة الرئيسية",
+      "categories": "التصنيفات",
+      "search": "البحث عن الأدوات",
+      "admin": "لوحة الإدارة", 
+      "language": "اللغة"
+    },
+    "categories": {
+      "chat": "مساعدي الدردشة الذكية",
+      "creative": "إنتاج المحتوى",
+      "office": "كفاءة المكتب",
+      "coding": "البرمجة والتطوير",
+      "search": "استرجاع المعلومات"
+    },
+    "categoryDescriptions": {
+      "chat": "ChatGPT وكلود وجيميني وإرني بوت",
+      "creative": "توليد الصور، إنتاج الفيديو، معالجة الصوت، إنشاء النصوص",
+      "office": "أدوات تعاون، سير عمل تلقائية، مساعدو اجتماعات",
+      "coding": "مساعدو الأكواد، أدوات التطوير، المساعدة التقنية",
+      "search": "بحث ذكي، تحليل بيانات، مساعدو بحث"
+    },
+    "categoryUsage": {
+      "chat": "محادثة ذكية، توليد محتوى، مساعدة تعليمية",
+      "creative": "تصميم الملصقات، إنشاء الفيديوهات، توليد الموسيقى، كتابة المحتوى",
+      "office": "تعاون في الوثائق، محاضر الاجتماعات، إدارة المهام",
+      "coding": "كتابة الأكواد، إصلاح الأخطاء، نشر المشاريع",
+      "search": "البحث عن المعلومات، بحث الأوراق، تحليل السوق"
+    },
+    "recommendations": {
+      "editor": "اختيار المحرر",
+      "popular": "شائع",
+      "new": "أداة جديدة",
+      "free": "أداة مجانية"
+    },
+    "ui": {
+      "searchPlaceholder": "البحث عن أدوات الذكاء الاصطناعي...",
+      "loading": "جاري التحميل...",
+      "noResults": "لم يتم العثور على أدوات",
+      "viewAll": "عرض الكل",
+      "newWindow": "فتح في نافذة جديدة",
+      "backToTop": "العودة للأعلى"
+    },
+    "tools": {
+      "htmlToImage": {
+        "title": "أداة HTML إلى صورة",
+        "description": "تحويل كود HTML إلى صور عالية الجودة",
+        "inputLabel": "إدخال كود HTML",
+        "previewLabel": "معاينة مباشرة",
+        "formatCode": "تنسيق الكود",
+        "clearCode": "مسح الكود",
+        "sampleCode": "كود نموذجي",
+        "desktopView": "عرض سطح المكتب",
+        "tabletView": "عرض الجهاز اللوحي",
+        "mobileView": "عرض الجوال",
+        "exportSettings": "إعدادات التصدير",
+        "imageFormat": "تنسيق الصورة",
+        "imageSize": "حجم الصورة",
+        "backgroundColor": "لون الخلفية",
+        "exportButton": "تصدير الصورة",
+        "exporting": "جاري التصدير...",
+        "exportSuccess": "تم التصدير بنجاح!",
+        "exportError": "فشل التصدير، يرجى المحاولة مرة أخرى"
+      }
+    },
+    "admin": {
+      "title": "لوحة الإدارة",
+      "toolManagement": "إدارة الأدوات",
+      "addTool": "إضافة أداة",
+      "editTool": "تحرير أداة",
+      "deleteTool": "حذف أداة",
+      "batchActions": "إجراءات مجمعة",
+      "importData": "استيراد البيانات",
+      "exportData": "تصدير البيانات",
+      "saveChanges": "حفظ التغييرات",
+      "cancel": "إلغاء",
+      "confirm": "تأكيد",
+      "success": "العملية نجحت",
+      "error": "العملية فشلت"
+    }
+  },
+  "ru": {
+    "site": {
+      "title": "ABeiTools",
+      "description": "ABeiTools — это профессиональный каталог инструментов ИИ, включающий отобранные инструменты искусственного интеллекта в множестве основных категорий: Чат, Творчество, Офис, Программирование и Поиск. Поддерживает 6 языков, помогая пользователям найти идеальные инструменты ИИ.",
+      "keywords": "инструменты ИИ,искусственный интеллект,каталог инструментов,ChatGPT,Midjourney,ИИ помощник,отобранные инструменты",
+      "ogTitle": "ABeiTools · Профессиональный Каталог Инструментов ИИ",
+      "ogDescription": "Откройте качественные инструменты ИИ для повышения эффективности и творчества",
+      "twitterTitle": "ABeiTools · Профессиональный Каталог Инструментов ИИ",
+      "twitterDescription": "Откройте качественные инструменты ИИ для повышения эффективности и творчества",
+      "welcome": "🚀 Отобранные Глобальные ИИ Инструменты"
+    },
+    "nav": {
+      "home": "Главная",
+      "categories": "Категории",
+      "search": "Поиск Инструментов",
+      "admin": "Панель Админа",
+      "language": "Язык"
+    },
+    "categories": {
+      "chat": "ИИ Чат Ассистенты",
+      "creative": "Создание Контента",
+      "office": "Офисная Эффективность",
+      "coding": "Программирование и Разработка",
+      "search": "Получение Информации"
+    },
+    "categoryDescriptions": {
+      "chat": "ChatGPT, Claude, Gemini, Ernie Bot",
+      "creative": "Генерация изображений, создание видео, обработка аудио, создание текста",
+      "office": "Средства сотрудничества, автоматизация рабочих процессов, помощники для совещаний",
+      "coding": "Помощники по коду, средства разработки, техническая помощь",
+      "search": "Умный поиск, анализ данных, исследовательские помощники"
+    },
+    "categoryUsage": {
+      "chat": "Умные разговоры, создание контента, помощь в обучении",
+      "creative": "Дизайн постеров, создание видео, генерация музыки, написание текстов",
+      "office": "Совместная работа над документами, протоколы совещаний, управление задачами",
+      "coding": "Написание кода, отладка ошибок, развертывание проектов",
+      "search": "Поиск информации, исследование статей, рыночный анализ"
+    },
+    "recommendations": {
+      "editor": "Выбор Редактора",
+      "popular": "Популярный",
+      "new": "Новый Инструмент",
+      "free": "Бесплатный Инструмент"
+    },
+    "ui": {
+      "searchPlaceholder": "Поиск ИИ инструментов...",
+      "loading": "Загрузка...",
+      "noResults": "Инструменты не найдены",
+      "viewAll": "Показать Все",
+      "newWindow": "Открыть в новом окне",
+      "backToTop": "Наверх"
+    },
+    "tools": {
+      "htmlToImage": {
+        "title": "Инструмент HTML в Изображение",
+        "description": "Преобразование HTML кода в высококачественные изображения",
+        "inputLabel": "Ввод HTML Кода",
+        "previewLabel": "Живая Предпросмотр",
+        "formatCode": "Форматировать Код",
+        "clearCode": "Очистить Код",
+        "sampleCode": "Пример Кода",
+        "desktopView": "Вид Рабочего Стола",
+        "tabletView": "Вид Планшета",
+        "mobileView": "Мобильный Вид",
+        "exportSettings": "Настройки Экспорта",
+        "imageFormat": "Формат Изображения",
+        "imageSize": "Размер Изображения",
+        "backgroundColor": "Цвет Фона",
+        "exportButton": "Экспортировать Изображение",
+        "exporting": "Экспорт...",
+        "exportSuccess": "Экспорт успешен!",
+        "exportError": "Экспорт не удался, повторите попытку"
+      }
+    },
+    "admin": {
+      "title": "Панель Администратора",
+      "toolManagement": "Управление Инструментами",
+      "addTool": "Добавить Инструмент",
+      "editTool": "Редактировать Инструмент",
+      "deleteTool": "Удалить Инструмент",
+      "batchActions": "Пакетные Действия",
+      "importData": "Импорт Данных",
+      "exportData": "Экспорт Данных",
+      "saveChanges": "Сохранить Изменения",
+      "cancel": "Отменить",
+      "confirm": "Подтвердить",
+      "success": "Операция успешна",
+      "error": "Операция не удалась"
+    }
+  },
+  "ja": {
+    "site": {
+      "title": "ABeiTools",
+      "description": "ABeiToolsは、チャット、クリエイティブ、オフィス、コーディング、検索の多数の主要カテゴリーにわたる厳選されたAIツールを特集する専門的なAIツールディレクトリです。6言語をサポートし、ユーザーが最適なAIツールを見つけるのを支援します。",
+      "keywords": "AIツール,人工知能,ツールディレクトリ,ChatGPT,Midjourney,AIアシスタント,厳選ツール",
+      "ogTitle": "ABeiTools · プロフェッショナルAIツールディレクトリ",
+      "ogDescription": "効率性と創造性を高める高品質AIツールを発見",
+      "twitterTitle": "ABeiTools · プロフェッショナルAIツールディレクトリ",
+      "twitterDescription": "効率性と創造性を高める高品質AIツールを発見",
+      "welcome": "⚡ 厳選グローバルAIツール"
+    },
+    "nav": {
+      "home": "ホーム",
+      "categories": "カテゴリー",
+      "search": "ツール検索",
+      "admin": "管理パネル",
+      "language": "言語"
+    },
+    "categories": {
+      "chat": "AIチャットアシスタント",
+      "creative": "コンテンツ作成",
+      "office": "オフィス効率",
+      "coding": "プログラミング・開発",
+      "search": "情報収集"
+    },
+    "categoryDescriptions": {
+      "chat": "ChatGPT、Claude、Gemini、文心一言",
+      "creative": "画像生成、動画制作、音声処理、テキスト作成",
+      "office": "コラボレーションツール、自動化ワークフロー、会議アシスタント",
+      "coding": "コードアシスタント、開発ツール、技術支援",
+      "search": "スマート検索、データ分析、研究アシスタント"
+    },
+    "categoryUsage": {
+      "chat": "スマート会話、コンテンツ生成、学習支援",
+      "creative": "ポスターデザイン、動画作成、音楽生成、コピーライティング",
+      "office": "文書協力、会議議事録、タスク管理",
+      "coding": "コード作成、バグデバッグ、プロジェクトデプロイ",
+      "search": "情報検索、論文研究、市場分析"
+    },
+    "recommendations": {
+      "editor": "編集者おすすめ",
+      "popular": "人気",
+      "new": "新ツール",
+      "free": "無料ツール"
+    },
+    "ui": {
+      "searchPlaceholder": "AIツールを検索...",
+      "loading": "読み込み中...",
+      "noResults": "ツールが見つかりません",
+      "viewAll": "すべて表示",
+      "newWindow": "新しいウィンドウで開く",
+      "backToTop": "トップに戻る"
+    },
+    "tools": {
+      "htmlToImage": {
+        "title": "HTML画像変換ツール",
+        "description": "HTMLコードを高品質画像に変換",
+        "inputLabel": "HTMLコード入力",
+        "previewLabel": "ライブプレビュー",
+        "formatCode": "コード整形",
+        "clearCode": "コードクリア",
+        "sampleCode": "サンプルコード",
+        "desktopView": "デスクトップ表示",
+        "tabletView": "タブレット表示",
+        "mobileView": "モバイル表示",
+        "exportSettings": "エクスポート設定",
+        "imageFormat": "画像フォーマット",
+        "imageSize": "画像サイズ",
+        "backgroundColor": "背景色",
+        "exportButton": "画像エクスポート",
+        "exporting": "エクスポート中...",
+        "exportSuccess": "エクスポート成功！",
+        "exportError": "エクスポート失敗、再試行してください"
+      }
+    },
+    "admin": {
+      "title": "管理パネル",
+      "toolManagement": "ツール管理",
+      "addTool": "ツール追加",
+      "editTool": "ツール編集",
+      "deleteTool": "ツール削除",
+      "batchActions": "一括操作",
+      "importData": "データインポート",
+      "exportData": "データエクスポート",
+      "saveChanges": "変更保存",
+      "cancel": "キャンセル",
+      "confirm": "確認",
+      "success": "操作成功",
+      "error": "操作失敗"
+    }
+  }
+}
