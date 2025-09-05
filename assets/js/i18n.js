@@ -355,7 +355,24 @@ class I18nManager {
             }
         });
         
+        // 更新工具链接，传递当前语言参数
+        this._updateToolLinks();
+        
         console.log('✅ Translation application completed');
+    }
+
+    /**
+     * 更新工具链接，传递当前语言参数
+     * @private
+     */
+    _updateToolLinks() {
+        const htmlToImageLink = document.getElementById('html-to-image-link');
+        if (htmlToImageLink) {
+            // 构建包含语言参数的链接
+            const baseUrl = './tools/html-to-image/';
+            const urlWithLang = `${baseUrl}?lang=${this.currentLang}`;
+            htmlToImageLink.href = urlWithLang;
+        }
     }
 
     /**

@@ -328,7 +328,7 @@
                 <div class="flex items-center justify-between">
                     <!-- Left side: ABeiTools Title & Language Selector -->
                     <div class="flex items-center space-x-6">
-                        <a href="../../index.html" class="inline-block hover:opacity-80 transition-opacity">
+                        <a id="back-to-main-link" href="../../index.html" class="inline-block hover:opacity-80 transition-opacity">
                             <h1 class="text-2xl font-black brand-title site-title">ABeiTools</h1>
                         </a>
                         <!-- Language Selector -->
@@ -498,7 +498,7 @@
                 // Get language from URL or localStorage
                 const urlParams = new URLSearchParams(window.location.search);
                 const urlLang = urlParams.get('lang');
-                const savedLang = localStorage.getItem('tool-language');
+                const savedLang = localStorage.getItem('abei_language');
                 
                 if (urlLang && this.translations[urlLang]) {
                     this.currentLanguage = urlLang;
@@ -575,6 +575,13 @@
                     }
                 }
                 
+                // Update back to main link with current language parameter
+                const backToMainLink = document.getElementById('back-to-main-link');
+                if (backToMainLink) {
+                    const urlWithLang = `../../index.html?lang=${this.currentLanguage}`;
+                    backToMainLink.href = urlWithLang;
+                }
+                
                 console.log(`Language changed to: ${this.currentLanguage}`);
             }
             
@@ -594,7 +601,7 @@
                 this.isRTL = lang === 'ar';
                 
                 // Save to localStorage
-                localStorage.setItem('tool-language', lang);
+                localStorage.setItem('abei_language', lang);
                 
                 // Update URL
                 const url = new URL(window.location);
