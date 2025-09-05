@@ -1213,12 +1213,12 @@
         "ja": "GitHub Copilot"
       },
       "description": {
-        "zh": "最强代码助手，VS Code完美集成",
-        "en": "Most powerful code assistant with perfect VS Code integration",
-        "es": "Asistente de código más potente con integración perfecta VS Code",
-        "ar": "أقوى مساعد برمجة مع تكامل مثالي مع VS Code",
-        "ru": "Самый мощный помощник кода с идеальной интеграцией VS Code",
-        "ja": "VS Code完全統合の最強コードアシスタント"
+        "zh": "GitHub官方AI编程助手，业界标杆级代码生成工具",
+        "en": "GitHub's official AI programming assistant, industry-standard code generation tool",
+        "es": "Asistente programación IA oficial de GitHub, herramienta generación código estándar industria",
+        "ar": "مساعد البرمجة الذكي الرسمي من GitHub، أداة توليد الكود المعيارية في الصناعة",
+        "ru": "Официальный ИИ-помощник программирования GitHub, отраслевой стандарт генерации кода",
+        "ja": "GitHub公式AIプログラミングアシスタント、業界標準コード生成ツール"
       },
       "recommendation": "editor",
       "pricing": "paid",
@@ -1237,36 +1237,12 @@
         "ja": "Cursor"
       },
       "description": {
-        "zh": "新一代AI代码编辑器，智能编程体验",
-        "en": "Next-generation AI code editor with intelligent coding experience",
-        "es": "Editor de código IA de próxima generación con experiencia de codificación inteligente",
-        "ar": "محرر أكواد ذكي من الجيل التالي مع تجربة برمجة ذكية",
-        "ru": "ИИ-редактор кода нового поколения с интеллектуальным опытом программирования",
-        "ja": "次世代AIコードエディター、インテリジェントなプログラミング体験"
-      },
-      "recommendation": "new",
-      "pricing": "freemium",
-      "sponsor": false
-    },
-    {
-      "id": "68",
-      "url": "https://www.marscode.com/",
-      "category": "coding",
-      "name": {
-        "zh": "TRAE（豆包 MarsCode）",
-        "en": "TRAE (MarsCode)",
-        "es": "TRAE (MarsCode)",
-        "ar": "تراي (مارس كود)",
-        "ru": "TRAE (MarsCode)",
-        "ja": "TRAE（MarsCode）"
-      },
-      "description": {
-        "zh": "字节跳动出品的智能编程助手，集成AI代码生成",
-        "en": "ByteDance's intelligent coding assistant with AI code generation",
-        "es": "Asistente codificación inteligente de ByteDance con generación código IA",
-        "ar": "مساعد برمجة ذكي من بايت دانس مع توليد أكواد ذكية",
-        "ru": "Умный помощник программирования от ByteDance с генерацией ИИ-кода",
-        "ja": "ByteDance製AIコード生成統合スマートプログラミングアシスタント"
+        "zh": "新一代AI代码编辑器，颠覆性编程体验",
+        "en": "Next-generation AI code editor with revolutionary programming experience",
+        "es": "Editor de código IA de próxima generación con experiencia programación revolucionaria",
+        "ar": "محرر أكواد ذكي من الجيل التالي مع تجربة برمجة ثورية",
+        "ru": "ИИ-редактор кода нового поколения с революционным опытом программирования",
+        "ja": "革新的プログラミング体験の次世代AIコードエディター"
       },
       "recommendation": "new",
       "pricing": "freemium",
@@ -1429,12 +1405,12 @@
         "ja": "Phind"
       },
       "description": {
-        "zh": "面向开发者的AI搜索引擎，精准解答编程问题",
-        "en": "AI search engine for developers with precise programming answers",
-        "es": "Motor búsqueda IA para desarrolladores con respuestas programación precisas",
-        "ar": "محرك بحث ذكي للمطورين مع إجابات برمجة دقيقة",
-        "ru": "ИИ-поисковик для разработчиков с точными ответами по программированию",
-        "ja": "開発者向けAI検索エンジン、正確なプログラミング回答"
+        "zh": "开发者专用AI搜索引擎，精准解答编程技术问题",
+        "en": "Developer-focused AI search engine with precise programming solutions",
+        "es": "Motor búsqueda IA enfocado desarrolladores con soluciones programación precisas",
+        "ar": "محرك بحث ذكي للمطورين مع حلول برمجة دقيقة",
+        "ru": "ИИ-поисковик для разработчиков с точными решениями программирования",
+        "ja": "開発者特化AI検索エンジン、正確なプログラミング解決策"
       },
       "recommendation": "popular",
       "pricing": "freemium",
@@ -1461,30 +1437,6 @@
         "ja": "オープンソースAIモデルコミュニティプラットフォーム&ツールキット"
       },
       "recommendation": "editor",
-      "pricing": "free",
-      "sponsor": false
-    },
-    {
-      "id": "71",
-      "url": "https://continue.dev/",
-      "category": "coding",
-      "name": {
-        "zh": "Continue",
-        "en": "Continue",
-        "es": "Continue",
-        "ar": "كونتينيو",
-        "ru": "Continue",
-        "ja": "Continue"
-      },
-      "description": {
-        "zh": "开源AI编程助手，支持多种IDE和模型",
-        "en": "Open-source AI coding assistant supporting multiple IDEs and models",
-        "es": "Asistente codificación IA open-source compatible con múltiples IDEs y modelos",
-        "ar": "مساعد برمجة ذكي مفتوح المصدر يدعم عدة بيئات تطوير ونماذج",
-        "ru": "ИИ-помощник программирования с открытым исходным кодом для множества IDE и моделей",
-        "ja": "複数IDE・モデル対応オープンソースAIコーディングアシスタント"
-      },
-      "recommendation": "new",
       "pricing": "free",
       "sponsor": false
     },
@@ -1726,6 +1678,54 @@
       },
       "recommendation": "new",
       "pricing": "free",
+      "sponsor": false
+    },
+    {
+      "id": "75",
+      "url": "https://v0.dev/",
+      "category": "coding",
+      "name": {
+        "zh": "v0（Vercel AI Agent）",
+        "en": "v0 (Vercel AI Agent)",
+        "es": "v0 (Vercel AI Agent)",
+        "ar": "في زيرو (وكيل فيرسيل الذكي)",
+        "ru": "v0 (Vercel AI Agent)",
+        "ja": "v0（Vercel AIエージェント）"
+      },
+      "description": {
+        "zh": "Vercel出品的React组件生成AI，快速构建界面",
+        "en": "Vercel's React component generation AI for rapid UI development",
+        "es": "IA de generación de componentes React de Vercel para desarrollo rápido de interfaces",
+        "ar": "ذكاء اصطناعي لتوليد مكونات React من Vercel لتطوير واجهات سريع",
+        "ru": "ИИ генерации React-компонентов от Vercel для быстрой разработки интерфейсов",
+        "ja": "Vercel製React コンポーネント生成AI、高速UI開発"
+      },
+      "recommendation": "popular",
+      "pricing": "freemium",
+      "sponsor": false
+    },
+    {
+      "id": "76",
+      "url": "https://lovable.dev/",
+      "category": "coding",
+      "name": {
+        "zh": "Lovable",
+        "en": "Lovable",
+        "es": "Lovable",
+        "ar": "لوفابل",
+        "ru": "Lovable",
+        "ja": "Lovable"
+      },
+      "description": {
+        "zh": "全栈应用快速开发平台，从想法到部署",
+        "en": "Full-stack application rapid development platform from idea to deployment",
+        "es": "Plataforma desarrollo rápido aplicaciones full-stack desde idea hasta despliegue",
+        "ar": "منصة تطوير سريع للتطبيقات المتكاملة من الفكرة إلى النشر",
+        "ru": "Платформа быстрой разработки полнофункциональных приложений от идеи до развертывания",
+        "ja": "アイデアから開発まで、フルスタックアプリケーション高速開発プラットフォーム"
+      },
+      "recommendation": "new",
+      "pricing": "freemium",
       "sponsor": false
     }
   ]
