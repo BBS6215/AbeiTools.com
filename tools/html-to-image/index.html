@@ -7,6 +7,36 @@
     <meta name="description" content="快速将HTML代码转换为高质量图片，支持PNG/JPG格式，自定义背景和尺寸设置。">
     <meta name="keywords" content="HTML转图片,HTML截图,代码转图片,网页截图,html2canvas">
     
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://abeitools.com/tools/html-to-image/">
+    <meta property="og:title" content="HTML转图片工具 - ABeiTools" data-i18n-content="tool.ogTitle">
+    <meta property="og:description" content="快速将HTML代码转换为高质量图片，支持PNG/JPG格式，自定义背景和尺寸设置。" data-i18n-content="tool.ogDescription">
+    <meta property="og:image" content="https://abeitools.com/assets/images/html-to-image-preview.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="ABeiTools">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://abeitools.com/tools/html-to-image/">
+    <meta property="twitter:title" content="HTML转图片工具 - ABeiTools" data-i18n-content="tool.twitterTitle">
+    <meta property="twitter:description" content="快速将HTML代码转换为高质量图片，支持PNG/JPG格式，自定义背景和尺寸设置。" data-i18n-content="tool.twitterDescription">
+    <meta property="twitter:image" content="https://abeitools.com/assets/images/html-to-image-preview.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://abeitools.com/tools/html-to-image/">
+    
+    <!-- Multi-language alternate links -->
+    <link rel="alternate" hreflang="zh-CN" href="https://abeitools.com/tools/html-to-image/?lang=zh">
+    <link rel="alternate" hreflang="en-US" href="https://abeitools.com/tools/html-to-image/?lang=en">
+    <link rel="alternate" hreflang="es-ES" href="https://abeitools.com/tools/html-to-image/?lang=es">
+    <link rel="alternate" hreflang="ar" href="https://abeitools.com/tools/html-to-image/?lang=ar">
+    <link rel="alternate" hreflang="ru" href="https://abeitools.com/tools/html-to-image/?lang=ru">
+    <link rel="alternate" hreflang="ja" href="https://abeitools.com/tools/html-to-image/?lang=ja">
+    <link rel="alternate" hreflang="x-default" href="https://abeitools.com/tools/html-to-image/">
+    
+    
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%234F46E5'><path d='M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z'/><path d='M9 12l2 2 4-4' stroke='white' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
     
@@ -318,6 +348,39 @@
             font-weight: 500;
         }
     </style>
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "HTML转图片工具",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web Browser",
+        "url": "https://abeitools.com/tools/html-to-image/",
+        "description": "快速将HTML代码转换为高质量图片，支持PNG/JPG格式，自定义背景和尺寸设置。",
+        "creator": {
+            "@type": "Organization",
+            "name": "ABeiTools",
+            "url": "https://abeitools.com"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "HTML代码转换为图片",
+            "支持PNG和JPG格式",
+            "自定义输出尺寸",
+            "实时预览功能",
+            "多语言界面支持"
+        ],
+        "softwareRequirements": "Web Browser",
+        "applicationSubCategory": "Image Conversion Tool",
+        "inLanguage": ["zh-CN", "en-US", "es-ES", "ar", "ru", "ja"]
+    }
+    </script>
 </head>
 
 <body class="bg-gray-50 min-h-screen font-chinese">
@@ -544,6 +607,9 @@
                     metaDesc.content = this.getText('tool.description');
                 }
                 
+                // Update SEO meta tags dynamically
+                this.updateSEOTags();
+                
                 // Update all elements with data-i18n attribute
                 document.querySelectorAll('[data-i18n]').forEach(element => {
                     const key = element.getAttribute('data-i18n');
@@ -612,6 +678,91 @@
                 
                 // Trigger language change event
                 window.dispatchEvent(new CustomEvent('languageChanged', { detail: { language: lang } }));
+            }
+            
+            updateSEOTags() {
+                const currentUrl = window.location.origin + window.location.pathname;
+                const langParam = this.currentLanguage !== 'zh' ? `?lang=${this.currentLanguage}` : '';
+                const canonicalUrl = currentUrl + langParam;
+                
+                // Update OpenGraph meta tags
+                this.updateMetaTag('property', 'og:title', this.getText('tool.ogTitle'));
+                this.updateMetaTag('property', 'og:description', this.getText('tool.ogDescription'));
+                this.updateMetaTag('property', 'og:url', canonicalUrl);
+                
+                // Update Twitter Card meta tags
+                this.updateMetaTag('name', 'twitter:title', this.getText('tool.twitterTitle'));
+                this.updateMetaTag('name', 'twitter:description', this.getText('tool.twitterDescription'));
+                
+                // Update canonical URL
+                let canonicalLink = document.querySelector('link[rel="canonical"]');
+                if (canonicalLink) {
+                    canonicalLink.href = canonicalUrl;
+                }
+                
+                // Update hreflang links
+                this.updateHreflangLinks();
+                
+                // Update JSON-LD structured data
+                this.updateStructuredData();
+            }
+            
+            updateMetaTag(attribute, value, content) {
+                let metaTag = document.querySelector(`meta[${attribute}="${value}"]`);
+                if (metaTag) {
+                    metaTag.content = content;
+                }
+            }
+            
+            updateHreflangLinks() {
+                const currentUrl = window.location.origin + window.location.pathname;
+                
+                // Remove existing hreflang links
+                document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(link => {
+                    link.remove();
+                });
+                
+                // Add new hreflang links
+                const languages = ['zh', 'en', 'es', 'ar', 'ru', 'ja'];
+                languages.forEach(lang => {
+                    const link = document.createElement('link');
+                    link.rel = 'alternate';
+                    link.hreflang = lang;
+                    link.href = lang === 'zh' ? currentUrl : `${currentUrl}?lang=${lang}`;
+                    document.head.appendChild(link);
+                });
+                
+                // Add x-default hreflang
+                const defaultLink = document.createElement('link');
+                defaultLink.rel = 'alternate';
+                defaultLink.hreflang = 'x-default';
+                defaultLink.href = currentUrl;
+                document.head.appendChild(defaultLink);
+            }
+            
+            updateStructuredData() {
+                let structuredDataScript = document.querySelector('script[type="application/ld+json"]');
+                if (structuredDataScript) {
+                    const structuredData = {
+                        "@context": "https://schema.org",
+                        "@type": "WebApplication",
+                        "name": this.getText('tool.title'),
+                        "description": this.getText('tool.description'),
+                        "url": window.location.href,
+                        "applicationCategory": "DeveloperApplication",
+                        "operatingSystem": "Any",
+                        "offers": {
+                            "@type": "Offer",
+                            "price": "0",
+                            "priceCurrency": "USD"
+                        },
+                        "author": {
+                            "@type": "Organization",
+                            "name": "ABeiTools"
+                        }
+                    };
+                    structuredDataScript.textContent = JSON.stringify(structuredData, null, 2);
+                }
             }
         }
         

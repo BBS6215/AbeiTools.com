@@ -2,7 +2,11 @@
   "zh": {
     "tool": {
       "title": "HTML转图片工具",
-      "description": "快速将HTML代码转换为高质量图片"
+      "description": "快速将HTML代码转换为高质量图片",
+      "ogTitle": "HTML转图片工具 - ABeiTools",
+      "ogDescription": "快速将HTML代码转换为高质量图片，支持PNG/JPG格式，自定义背景和尺寸设置。",
+      "twitterTitle": "HTML转图片工具 - ABeiTools",
+      "twitterDescription": "快速将HTML代码转换为高质量图片，支持PNG/JPG格式，自定义背景和尺寸设置。"
     },
     "input": {
       "title": "HTML代码输入",
@@ -43,7 +47,11 @@
   "en": {
     "tool": {
       "title": "HTML to Image Tool",
-      "description": "Convert HTML code to high-quality images quickly"
+      "description": "Convert HTML code to high-quality images quickly",
+      "ogTitle": "HTML to Image Tool - ABeiTools",
+      "ogDescription": "Convert HTML code to high-quality images quickly. Supports PNG/JPG formats with custom background and size settings.",
+      "twitterTitle": "HTML to Image Tool - ABeiTools",
+      "twitterDescription": "Convert HTML code to high-quality images quickly. Supports PNG/JPG formats with custom background and size settings."
     },
     "input": {
       "title": "HTML Code Input",
@@ -84,7 +92,11 @@
   "es": {
     "tool": {
       "title": "Herramienta HTML a Imagen",
-      "description": "Convierte código HTML a imágenes de alta calidad rápidamente"
+      "description": "Convierte código HTML a imágenes de alta calidad rápidamente",
+      "ogTitle": "Herramienta HTML a Imagen - ABeiTools",
+      "ogDescription": "Convierte código HTML a imágenes de alta calidad rápidamente. Soporta formatos PNG/JPG con configuraciones personalizadas de fondo y tamaño.",
+      "twitterTitle": "Herramienta HTML a Imagen - ABeiTools",
+      "twitterDescription": "Convierte código HTML a imágenes de alta calidad rápidamente. Soporta formatos PNG/JPG con configuraciones personalizadas de fondo y tamaño."
     },
     "input": {
       "title": "Entrada de Código HTML",
@@ -125,7 +137,11 @@
   "ar": {
     "tool": {
       "title": "أداة تحويل HTML إلى صورة",
-      "description": "تحويل كود HTML إلى صور عالية الجودة بسرعة"
+      "description": "تحويل كود HTML إلى صور عالية الجودة بسرعة",
+      "ogTitle": "أداة تحويل HTML إلى صورة - ABeiTools",
+      "ogDescription": "تحويل كود HTML إلى صور عالية الجودة بسرعة. يدعم تنسيقات PNG/JPG مع إعدادات خلفية وحجم مخصصة.",
+      "twitterTitle": "أداة تحويل HTML إلى صورة - ABeiTools",
+      "twitterDescription": "تحويل كود HTML إلى صور عالية الجودة بسرعة. يدعم تنسيقات PNG/JPG مع إعدادات خلفية وحجم مخصصة."
     },
     "input": {
       "title": "إدخال كود HTML",
@@ -166,7 +182,11 @@
   "ru": {
     "tool": {
       "title": "Инструмент HTML в Изображение",
-      "description": "Быстро конвертируйте HTML код в высококачественные изображения"
+      "description": "Быстро конвертируйте HTML код в высококачественные изображения",
+      "ogTitle": "Инструмент HTML в Изображение - ABeiTools",
+      "ogDescription": "Быстро конвертируйте HTML код в высококачественные изображения. Поддерживает форматы PNG/JPG с настраиваемыми параметрами фона и размера.",
+      "twitterTitle": "Инструмент HTML в Изображение - ABeiTools",
+      "twitterDescription": "Быстро конвертируйте HTML код в высококачественные изображения. Поддерживает форматы PNG/JPG с настраиваемыми параметрами фона и размера."
     },
     "input": {
       "title": "Ввод HTML Кода",
@@ -207,7 +227,11 @@
   "ja": {
     "tool": {
       "title": "HTML画像変換ツール",
-      "description": "HTMLコードを高品質な画像に素早く変換"
+      "description": "HTMLコードを高品質な画像に素早く変換",
+      "ogTitle": "HTML画像変換ツール - ABeiTools",
+      "ogDescription": "HTMLコードを高品質な画像に素早く変換。PNG/JPG形式をサポートし、背景とサイズのカスタム設定が可能。",
+      "twitterTitle": "HTML画像変換ツール - ABeiTools",
+      "twitterDescription": "HTMLコードを高品質な画像に素早く変換。PNG/JPG形式をサポートし、背景とサイズのカスタム設定が可能。"
     },
     "input": {
       "title": "HTMLコード入力",
