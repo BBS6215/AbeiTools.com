@@ -1,0 +1,248 @@
+{
+  "zh": {
+    "tool": {
+      "title": "HTML转图片工具",
+      "description": "快速将HTML代码转换为高质量图片"
+    },
+    "input": {
+      "title": "HTML代码输入",
+      "placeholder": "请在此输入HTML代码..."
+    },
+    "settings": {
+      "title": "设置选项",
+      "background": "背景颜色",
+      "width": "输出宽度",
+      "format": "图片格式"
+    },
+    "preview": {
+      "title": "预览区域",
+      "empty": "预览区域"
+    },
+    "buttons": {
+      "example": "示例代码",
+      "clear": "清空代码",
+      "export": "导出为图片"
+    },
+    "progress": {
+      "generating": "正在生成图片...",
+      "step1": "解析HTML代码...",
+      "step2": "渲染页面元素...",
+      "step3": "生成图片文件...",
+      "step4": "准备下载..."
+    },
+    "messages": {
+      "noCode": "请先输入HTML代码",
+      "exportFailed": "图片导出失败，请检查HTML代码是否正确",
+      "exportSuccess": "✓ 导出成功"
+    },
+    "controls": {
+      "fit": "适应",
+      "zoom": "缩放:"
+    }
+  },
+  "en": {
+    "tool": {
+      "title": "HTML to Image Tool",
+      "description": "Convert HTML code to high-quality images quickly"
+    },
+    "input": {
+      "title": "HTML Code Input",
+      "placeholder": "Enter your HTML code here..."
+    },
+    "settings": {
+      "title": "Settings",
+      "background": "Background Color",
+      "width": "Output Width",
+      "format": "Image Format"
+    },
+    "preview": {
+      "title": "Preview Area",
+      "empty": "Preview Area"
+    },
+    "buttons": {
+      "example": "Example Code",
+      "clear": "Clear Code",
+      "export": "Export as Image"
+    },
+    "progress": {
+      "generating": "Generating image...",
+      "step1": "Parsing HTML code...",
+      "step2": "Rendering elements...",
+      "step3": "Generating image file...",
+      "step4": "Preparing download..."
+    },
+    "messages": {
+      "noCode": "Please enter HTML code first",
+      "exportFailed": "Image export failed, please check if the HTML code is correct",
+      "exportSuccess": "✓ Export successful"
+    },
+    "controls": {
+      "fit": "Fit",
+      "zoom": "Zoom:"
+    }
+  },
+  "es": {
+    "tool": {
+      "title": "Herramienta HTML a Imagen",
+      "description": "Convierte código HTML a imágenes de alta calidad rápidamente"
+    },
+    "input": {
+      "title": "Entrada de Código HTML",
+      "placeholder": "Ingresa tu código HTML aquí..."
+    },
+    "settings": {
+      "title": "Configuración",
+      "background": "Color de Fondo",
+      "width": "Ancho de Salida",
+      "format": "Formato de Imagen"
+    },
+    "preview": {
+      "title": "Área de Vista Previa",
+      "empty": "Área de Vista Previa"
+    },
+    "buttons": {
+      "example": "Código de Ejemplo",
+      "clear": "Limpiar Código",
+      "export": "Exportar como Imagen"
+    },
+    "progress": {
+      "generating": "Generando imagen...",
+      "step1": "Analizando código HTML...",
+      "step2": "Renderizando elementos...",
+      "step3": "Generando archivo de imagen...",
+      "step4": "Preparando descarga..."
+    },
+    "messages": {
+      "noCode": "Por favor ingresa código HTML primero",
+      "exportFailed": "Falló la exportación de imagen, verifica si el código HTML es correcto",
+      "exportSuccess": "✓ Exportación exitosa"
+    },
+    "controls": {
+      "fit": "Ajustar",
+      "zoom": "Zoom:"
+    }
+  },
+  "ar": {
+    "tool": {
+      "title": "أداة تحويل HTML إلى صورة",
+      "description": "تحويل كود HTML إلى صور عالية الجودة بسرعة"
+    },
+    "input": {
+      "title": "إدخال كود HTML",
+      "placeholder": "أدخل كود HTML هنا..."
+    },
+    "settings": {
+      "title": "الإعدادات",
+      "background": "لون الخلفية",
+      "width": "عرض الإخراج",
+      "format": "تنسيق الصورة"
+    },
+    "preview": {
+      "title": "منطقة المعاينة",
+      "empty": "منطقة المعاينة"
+    },
+    "buttons": {
+      "example": "كود مثال",
+      "clear": "مسح الكود",
+      "export": "تصدير كصورة"
+    },
+    "progress": {
+      "generating": "جاري إنشاء الصورة...",
+      "step1": "تحليل كود HTML...",
+      "step2": "عرض العناصر...",
+      "step3": "إنشاء ملف الصورة...",
+      "step4": "تحضير التحميل..."
+    },
+    "messages": {
+      "noCode": "يرجى إدخال كود HTML أولاً",
+      "exportFailed": "فشل تصدير الصورة، يرجى التحقق من صحة كود HTML",
+      "exportSuccess": "✓ تم التصدير بنجاح"
+    },
+    "controls": {
+      "fit": "ملائم",
+      "zoom": "تكبير:"
+    }
+  },
+  "ru": {
+    "tool": {
+      "title": "Инструмент HTML в Изображение",
+      "description": "Быстро конвертируйте HTML код в высококачественные изображения"
+    },
+    "input": {
+      "title": "Ввод HTML Кода",
+      "placeholder": "Введите ваш HTML код здесь..."
+    },
+    "settings": {
+      "title": "Настройки",
+      "background": "Цвет Фона",
+      "width": "Ширина Вывода",
+      "format": "Формат Изображения"
+    },
+    "preview": {
+      "title": "Область Предварительного Просмотра",
+      "empty": "Область Предварительного Просмотра"
+    },
+    "buttons": {
+      "example": "Пример Кода",
+      "clear": "Очистить Код",
+      "export": "Экспортировать как Изображение"
+    },
+    "progress": {
+      "generating": "Генерация изображения...",
+      "step1": "Анализ HTML кода...",
+      "step2": "Рендеринг элементов...",
+      "step3": "Создание файла изображения...",
+      "step4": "Подготовка загрузки..."
+    },
+    "messages": {
+      "noCode": "Пожалуйста, сначала введите HTML код",
+      "exportFailed": "Экспорт изображения не удался, проверьте правильность HTML кода",
+      "exportSuccess": "✓ Экспорт успешен"
+    },
+    "controls": {
+      "fit": "По размеру",
+      "zoom": "Масштаб:"
+    }
+  },
+  "ja": {
+    "tool": {
+      "title": "HTML画像変換ツール",
+      "description": "HTMLコードを高品質な画像に素早く変換"
+    },
+    "input": {
+      "title": "HTMLコード入力",
+      "placeholder": "HTMLコードをここに入力してください..."
+    },
+    "settings": {
+      "title": "設定",
+      "background": "背景色",
+      "width": "出力幅",
+      "format": "画像フォーマット"
+    },
+    "preview": {
+      "title": "プレビューエリア",
+      "empty": "プレビューエリア"
+    },
+    "buttons": {
+      "example": "サンプルコード",
+      "clear": "コードクリア",
+      "export": "画像として出力"
+    },
+    "progress": {
+      "generating": "画像生成中...",
+      "step1": "HTMLコード解析中...",
+      "step2": "要素レンダリング中...",
+      "step3": "画像ファイル生成中...",
+      "step4": "ダウンロード準備中..."
+    },
+    "messages": {
+      "noCode": "まずHTMLコードを入力してください",
+      "exportFailed": "画像出力に失敗しました。HTMLコードが正しいか確認してください",
+      "exportSuccess": "✓ 出力成功"
+    },
+    "controls": {
+      "fit": "フィット",
+      "zoom": "ズーム:"
+    }
+  }
+}

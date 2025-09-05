@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML转图片工具 - ABeiTools</title>
+    <meta name="description" content="快速将HTML代码转换为高质量图片，支持PNG/JPG格式，自定义背景和尺寸设置。">
+    <meta name="keywords" content="HTML转图片,HTML截图,代码转图片,网页截图,html2canvas">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%234F46E5'><path d='M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z'/><path d='M9 12l2 2 4-4' stroke='white' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#3B82F6',
+                        'secondary': '#EF4444',
+                        'accent': '#10B981'
+                    },
+                    fontFamily: {
+                        'chinese': ['PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'sans-serif'],
+                        'arabic': ['Noto Sans Arabic', 'Arabic UI Text', 'sans-serif'],
+                        'japanese': ['Hiragino Kaku Gothic ProN', 'Meiryo', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google AdSense 自动广告验证脚本 -->
+    <script async 
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6542625868833135" 
+            crossorigin="anonymous"></script>
+    
+    <!-- html2canvas for HTML to Image conversion -->
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    
+    <style data-tool-style="true">
+        /* Custom styles */
+        .code-editor {
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            line-height: 1.5;
+            height: 398px !important; /* 再微调增加3px，从395px到398px */
+            overflow: auto;
+            resize: none;
+        }
+        
+        .preview-container {
+            border: 2px dashed #e5e7eb;
+            transition: border-color 0.3s ease;
+            height: 500px !important;
+            overflow: auto;
+        }
+        
+        .preview-container.has-content {
+            border-color: #3B82F6;
+            border-style: solid;
+        }
+        
+        .settings-compact {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            align-items: start;
+        }
+        
+        .settings-section {
+            min-width: 0;
+        }
+        
+        .main-content-area {
+            height: 600px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* 左侧内容区域高度调整 */
+        .input-section .main-content-area {
+            height: 518px; /* 再微调增加3px，从515px到518px */
+        }
+        
+        .progress-overlay {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(4px);
+        }
+        
+        .progress-bar {
+            background: linear-gradient(90deg, #3B82F6, #10B981);
+            transition: width 0.3s ease;
+        }
+        
+        /* Brand title color consistency - Apply same gradient as homepage */
+        .brand-title {
+            font-weight: 900;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6, #ef4444) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            background-clip: text !important;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            color: transparent !important; /* Fallback for non-webkit browsers */
+        }
+        
+        /* Language selector styling */
+        .language-selector {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+            background-position: right 0.75rem center;
+            background-repeat: no-repeat;
+            background-size: 1.25em 1.25em;
+            padding-right: 3.25rem;
+            min-width: 80px;
+        }
+        
+        /* RTL Support */
+        .rtl .language-selector {
+            background-position: left 0.75rem center;
+            padding-right: 0.75rem;
+            padding-left: 3.25rem;
+        }
+        
+        .rtl .layout-container {
+            direction: rtl;
+        }
+        
+        .rtl .input-section {
+            margin-left: 2rem;
+            margin-right: 0;
+        }
+        
+        .rtl .preview-section {
+            margin-right: 2rem;
+            margin-left: 0;
+        }
+        
+        .rtl .flex.items-center.space-x-6 {
+            direction: rtl;
+        }
+        
+        .rtl .space-x-6 > :not([hidden]) ~ :not([hidden]) {
+            margin-right: 1.5rem;
+            margin-left: 0;
+        }
+        
+        .rtl .flex.items-center.space-x-3 {
+            direction: rtl;
+        }
+        
+        .rtl .flex.items-center.space-x-3 .text-right {
+            text-align: right;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 1024px) {
+            .layout-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .input-section, .preview-section {
+                width: 100% !important;
+            }
+            
+            .rtl .input-section,
+            .rtl .preview-section {
+                margin: 0;
+            }
+            
+            /* Mobile header adjustments */
+            .flex.items-center.justify-between {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 1rem;
+            }
+            
+            .flex.items-center.space-x-6 {
+                justify-content: flex-start;
+                gap: 1rem;
+            }
+            
+            .flex.items-center.space-x-6 > * {
+                margin-right: 0 !important;
+            }
+            
+            .flex-1.text-center.mx-8 {
+                margin-left: 0;
+                margin-right: 0;
+                text-align: center;
+            }
+            
+            /* Mobile language selector */
+            .language-selector {
+                width: auto;
+                min-width: 80px;
+            }
+            
+            /* Mobile tool title */
+            .text-xl.lg\:text-2xl {
+                font-size: 1.25rem;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            /* Mobile layout adjustments */
+            .main-content-area {
+                height: auto;
+            }
+            
+            .code-editor {
+                height: 220px !important; /* 移动端继续调整 */
+            }
+            
+            .preview-container {
+                height: 300px !important;
+            }
+            
+            /* Mobile settings panel */
+            .settings-compact {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+            
+            .settings-section {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            
+            .settings-section label {
+                margin-bottom: 0;
+                margin-right: 1rem;
+            }
+            
+            /* Mobile button groups */
+            .bg-setting-btn {
+                flex: 1;
+            }
+            
+            /* Mobile optimizations */
+            .text-sm {
+                font-size: 0.75rem;
+            }
+        }
+        
+        /* Focus styles for accessibility */
+        .bg-setting-btn:focus {
+            outline: 2px solid #3B82F6;
+            outline-offset: 2px;
+        }
+        
+        /* Loading animation */
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .animate-spin {
+            animation: spin 1s linear infinite;
+        }
+        
+        /* Scrollbar styling */
+        .code-editor::-webkit-scrollbar,
+        .preview-container::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        
+        .code-editor::-webkit-scrollbar-track,
+        .preview-container::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 4px;
+        }
+        
+        .code-editor::-webkit-scrollbar-thumb,
+        .preview-container::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        
+        .code-editor::-webkit-scrollbar-thumb:hover,
+        .preview-container::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        
+        /* Scroll indicators */
+        .scroll-indicator {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 12px;
+            padding: 4px 8px;
+            font-size: 10px;
+            color: #3B82F6;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .scroll-indicator.visible {
+            opacity: 1;
+        }
+        
+        /* Content size badge */
+        .size-badge {
+            background: linear-gradient(135deg, #3B82F6, #10B981);
+            color: white;
+            padding: 2px 6px;
+            border-radius: 8px;
+            font-size: 10px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 min-h-screen font-chinese">
+    <div class="min-h-screen flex flex-col">
+        <!-- Header Section -->
+        <header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-10">
+            <div class="w-full px-4 sm:px-6 lg:px-8 py-4">
+                <div class="flex items-center justify-between">
+                    <!-- Left side: ABeiTools Title & Language Selector -->
+                    <div class="flex items-center space-x-6">
+                        <a href="../../index.html" class="inline-block hover:opacity-80 transition-opacity">
+                            <h1 class="text-2xl font-black brand-title site-title">ABeiTools</h1>
+                        </a>
+                        <!-- Language Selector -->
+                        <div class="relative">
+                            <select id="language-selector" class="language-selector appearance-none bg-white border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                                <option value="zh">CN</option>
+                                <option value="en">EN</option>
+                                <option value="es">ES</option>
+                                <option value="ar">AR</option>
+                                <option value="ru">RU</option>
+                                <option value="ja">JA</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <!-- Center: Tool Title -->
+                    <div class="flex-1 text-center mx-8">
+                        <h2 class="text-xl lg:text-2xl font-bold text-blue-700" data-i18n="tool.title">HTML转图片工具</h2>
+                        <p class="text-sm text-gray-600" data-i18n="tool.description">快速将HTML代码转换为高质量图片</p>
+                    </div>
+                    
+                    <!-- Right side: Reserved space -->
+                    <div class="flex items-center space-x-4">
+                        <!-- Reserved for future features -->
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-1 w-full px-4 sm:px-6 lg:px-8 py-4">
+            
+            <div class="layout-container flex gap-8 h-full">
+                <!-- Left Section: Input Area (40%) -->
+                <div class="input-section w-2/5">
+                    <div class="main-content-area">
+                        <!-- HTML Code Input -->
+                        <div class="bg-white rounded-lg shadow-sm border border-gray-200 flex-1 flex flex-col mb-4">
+                            <div class="p-4 border-b border-gray-200">
+                                <h3 class="text-lg font-semibold text-gray-900" data-i18n="input.title">HTML代码输入</h3>
+                            </div>
+                            <div class="flex-1 p-4 relative">
+                                <textarea 
+                                    id="html-input" 
+                                    class="code-editor w-full border-0 focus:ring-0 text-sm"
+                                    placeholder="请在此输入HTML代码..."
+                                    data-i18n-placeholder="input.placeholder"
+                                ></textarea>
+                                <div id="code-scroll-indicator" class="scroll-indicator">滚动查看更多</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Settings Panel - Compact Horizontal Layout -->
+                        <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+                            <div class="p-3 border-b border-gray-200">
+                                <h3 class="text-base font-semibold text-gray-900" data-i18n="settings.title">设置选项</h3>
+                            </div>
+                            <div class="p-3">
+                                <div class="settings-compact">
+                                    <!-- Output Width -->
+                                    <div class="settings-section">
+                                        <label class="block text-xs font-medium text-gray-700 mb-1" data-i18n="settings.width">输出宽度</label>
+                                        <select id="width-selector" class="w-full border border-gray-300 rounded-md px-2 py-1 text-xs focus:outline-none focus:ring-2 focus:ring-primary">
+                                            <option value="auto" selected>自适应</option>
+                                            <option value="1024">标准 (1024px)</option>
+                                            <option value="2048">高清 (2048px)</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <!-- Image Format -->
+                                    <div class="settings-section">
+                                        <label class="block text-xs font-medium text-gray-700 mb-1" data-i18n="settings.format">图片格式</label>
+                                        <select id="format-selector" class="w-full border border-gray-300 rounded-md px-2 py-1 text-xs focus:outline-none focus:ring-2 focus:ring-primary">
+                                            <option value="png">PNG</option>
+                                            <option value="jpeg">JPG</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Action Buttons -->
+                        <div class="flex gap-2 mt-4">
+                            <button id="example-btn" class="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-2 rounded-md transition-colors text-xs font-medium" data-i18n="buttons.example">示例代码</button>
+                            <button id="clear-btn" class="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-2 rounded-md transition-colors text-xs font-medium" data-i18n="buttons.clear">清空代码</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Section: Preview Area (60%) -->
+                <div class="preview-section w-3/5">
+                    <div class="main-content-area">
+                        <!-- Preview Container -->
+                        <div class="bg-white rounded-lg shadow-sm border border-gray-200 flex-1 flex flex-col mb-4">
+                            <div class="p-4 border-b border-gray-200">
+                                <h3 class="text-lg font-semibold text-gray-900" data-i18n="preview.title">预览区域</h3>
+                            </div>
+                            <div class="flex-1 p-4 relative">
+                                <div id="preview-container" class="preview-container w-full rounded-lg relative">
+                                    <div id="preview-content" class="w-full h-full" style="min-width: 100%; transform-origin: top left;"></div>
+                                    <div id="preview-scroll-indicator" class="scroll-indicator">滚动查看预览</div>
+                                <!-- Progress Overlay -->
+                                <div id="progress-overlay" class="progress-overlay absolute inset-0 flex flex-col items-center justify-center hidden">
+                                    <div class="text-center">
+                                        <div class="w-16 h-16 mb-4">
+                                            <svg class="animate-spin w-16 h-16 text-primary" fill="none" viewBox="0 0 24 24">
+                                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                            </svg>
+                                        </div>
+                                        <div class="text-gray-700 font-medium mb-2" data-i18n="progress.generating">正在生成图片...</div>
+                                        <div class="w-48 h-2 bg-gray-200 rounded-full overflow-hidden">
+                                            <div id="progress-bar" class="progress-bar h-full rounded-full" style="width: 0%"></div>
+                                        </div>
+                                        <div class="text-sm text-gray-500 mt-2" id="progress-text" data-i18n="progress.step1">解析HTML代码...</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- 预览控制栏 -->
+                            <div class="mt-2 flex justify-between items-center text-xs text-gray-600">
+                                <div class="flex items-center gap-2">
+                                    <span id="content-size" class="size-badge">尺寸: --</span>
+                                    <button id="zoom-fit" class="text-primary hover:text-blue-600 cursor-pointer px-2 py-1 rounded hover:bg-blue-50 transition-colors" data-i18n="controls.fit">适应</button>
+                                    <button id="zoom-actual" class="text-primary hover:text-blue-600 cursor-pointer px-2 py-1 rounded hover:bg-blue-50 transition-colors">100%</button>
+                                </div>
+                                <div class="flex items-center gap-1">
+                                    <span data-i18n="controls.zoom">缩放:</span>
+                                    <input type="range" id="zoom-slider" min="10" max="200" value="100" class="w-16">
+                                    <span id="zoom-percent" class="min-w-[2.5rem] text-center">100%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Export Button -->
+                    <div>
+                        <button id="export-btn" disabled class="w-full bg-primary hover:bg-blue-600 disabled:bg-gray-400 disabled:cursor-not-allowed text-white px-4 py-2 rounded-md transition-colors font-medium" data-i18n="buttons.export">导出为图片</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Internationalization System
+        class I18n {
+            constructor() {
+                this.currentLanguage = 'zh';
+                this.translations = {};
+                this.isRTL = false;
+                this.init();
+            }
+            
+            async init() {
+                // Load translations
+                try {
+                    const response = await fetch('./i18n.json');
+                    this.translations = await response.json();
+                } catch (error) {
+                    console.error('Failed to load translations:', error);
+                    // Fallback to Chinese
+                    this.translations = { zh: {} };
+                }
+                
+                // Get language from URL or localStorage
+                const urlParams = new URLSearchParams(window.location.search);
+                const urlLang = urlParams.get('lang');
+                const savedLang = localStorage.getItem('tool-language');
+                
+                if (urlLang && this.translations[urlLang]) {
+                    this.currentLanguage = urlLang;
+                } else if (savedLang && this.translations[savedLang]) {
+                    this.currentLanguage = savedLang;
+                } else {
+                    // Auto-detect browser language
+                    const browserLang = navigator.language.split('-')[0];
+                    if (this.translations[browserLang]) {
+                        this.currentLanguage = browserLang;
+                    }
+                }
+                
+                this.isRTL = this.currentLanguage === 'ar';
+                this.applyLanguage();
+                this.bindLanguageSelector();
+            }
+            
+            getText(key, fallback = '') {
+                const keys = key.split('.');
+                let value = this.translations[this.currentLanguage];
+                
+                for (const k of keys) {
+                    if (value && value[k] !== undefined) {
+                        value = value[k];
+                    } else {
+                        return fallback || key;
+                    }
+                }
+                
+                return value || fallback || key;
+            }
+            
+            applyLanguage() {
+                // Update document language and direction
+                document.documentElement.lang = this.currentLanguage;
+                document.documentElement.dir = this.isRTL ? 'rtl' : 'ltr';
+                
+                // Update title and meta
+                document.title = `${this.getText('tool.title')} - ABeiTools`;
+                const metaDesc = document.querySelector('meta[name="description"]');
+                if (metaDesc) {
+                    metaDesc.content = this.getText('tool.description');
+                }
+                
+                // Update all elements with data-i18n attribute
+                document.querySelectorAll('[data-i18n]').forEach(element => {
+                    const key = element.getAttribute('data-i18n');
+                    element.textContent = this.getText(key);
+                });
+                
+                // Update placeholders
+                document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+                    const key = element.getAttribute('data-i18n-placeholder');
+                    element.placeholder = this.getText(key);
+                });
+                
+                // Update language selector
+                const langSelector = document.getElementById('language-selector');
+                if (langSelector) {
+                    langSelector.value = this.currentLanguage;
+                }
+                
+                // Apply RTL styles if needed
+                if (this.isRTL) {
+                    document.body.classList.add('rtl');
+                    document.body.style.fontFamily = "'Noto Sans Arabic', 'Arabic UI Text', sans-serif";
+                } else {
+                    document.body.classList.remove('rtl');
+                    if (this.currentLanguage === 'ja') {
+                        document.body.style.fontFamily = "'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif";
+                    } else {
+                        document.body.style.fontFamily = "'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif";
+                    }
+                }
+                
+                console.log(`Language changed to: ${this.currentLanguage}`);
+            }
+            
+            bindLanguageSelector() {
+                const selector = document.getElementById('language-selector');
+                if (selector) {
+                    selector.addEventListener('change', (e) => {
+                        this.setLanguage(e.target.value);
+                    });
+                }
+            }
+            
+            setLanguage(lang) {
+                if (!this.translations[lang]) return;
+                
+                this.currentLanguage = lang;
+                this.isRTL = lang === 'ar';
+                
+                // Save to localStorage
+                localStorage.setItem('tool-language', lang);
+                
+                // Update URL
+                const url = new URL(window.location);
+                url.searchParams.set('lang', lang);
+                window.history.replaceState({}, '', url);
+                
+                this.applyLanguage();
+                
+                // Trigger language change event
+                window.dispatchEvent(new CustomEvent('languageChanged', { detail: { language: lang } }));
+            }
+        }
+        
+        // Initialize the HTML to Image Tool
+        class HtmlToImageTool {
+            constructor() {
+                this.currentFormat = 'png';
+                this.currentWidth = 'auto';
+                this.isGenerating = false;
+                this.i18n = null;
+                this.currentZoom = 100;
+                this.actualContentSize = { width: 0, height: 0 };
+                this.previewIframe = null;
+                
+                this.init();
+            }
+            
+            async init() {
+                // Wait for i18n to be ready
+                this.i18n = window.i18nInstance;
+                await new Promise(resolve => {
+                    if (this.i18n) {
+                        resolve();
+                    } else {
+                        window.addEventListener('i18nReady', resolve);
+                    }
+                });
+                
+                this.bindEvents();
+                this.loadExampleCode();
+                
+                // Listen for language changes
+                window.addEventListener('languageChanged', () => {
+                    this.updateUI();
+                });
+            }
+            
+            bindEvents() {
+                // HTML input real-time preview
+                const htmlInput = document.getElementById('html-input');
+                htmlInput.addEventListener('input', () => {
+                    this.updatePreview();
+                });
+                
+                // Scroll indicators for code input
+                htmlInput.addEventListener('scroll', () => {
+                    this.updateScrollIndicator('code');
+                });
+                
+                // Format selector
+                document.getElementById('format-selector').addEventListener('change', (e) => {
+                    this.currentFormat = e.target.value;
+                });
+                
+                // Width selector
+                document.getElementById('width-selector').addEventListener('change', (e) => {
+                    this.currentWidth = e.target.value;
+                    this.updatePreview();
+                });
+                
+                // Action buttons
+                document.getElementById('example-btn').addEventListener('click', () => {
+                    this.loadExampleCode();
+                });
+                
+                document.getElementById('clear-btn').addEventListener('click', () => {
+                    this.clearCode();
+                });
+                
+                document.getElementById('export-btn').addEventListener('click', () => {
+                    this.exportImage();
+                });
+                
+                // 缩放控制
+                document.getElementById('zoom-slider').addEventListener('input', (e) => {
+                    this.setZoom(parseInt(e.target.value));
+                });
+                
+                document.getElementById('zoom-fit').addEventListener('click', () => {
+                    this.fitToWindow();
+                });
+                
+                document.getElementById('zoom-actual').addEventListener('click', () => {
+                    this.setZoom(100);
+                });
+                
+                // Preview container scroll indicator
+                const previewContainer = document.getElementById('preview-container');
+                previewContainer.addEventListener('scroll', () => {
+                    this.updateScrollIndicator('preview');
+                });
+            }
+            
+            updatePreview() {
+                const htmlCode = document.getElementById('html-input').value.trim();
+                const previewContent = document.getElementById('preview-content');
+                const previewContainer = document.getElementById('preview-container');
+                const exportBtn = document.getElementById('export-btn');
+                
+                if (htmlCode) {
+                    // 清除现有内容
+                    previewContent.innerHTML = '';
+                    
+                    // 创建iframe进行CSS隔离
+                    const iframe = document.createElement('iframe');
+                    iframe.style.border = 'none';
+                    iframe.style.transformOrigin = 'top left';
+                    
+                    // 关键修改：始终使用固定像素宽度
+                    const exactWidth = this.getExactPixelWidth();
+                    iframe.style.width = exactWidth + 'px';
+                    iframe.style.height = '100%';
+                    
+                    previewContent.appendChild(iframe);
+                    this.previewIframe = iframe;
+                    
+                    // 写入HTML内容到iframe
+                    iframe.onload = () => {
+                        const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                        
+                        // 构造完整的HTML文档
+                        const fullHtml = `
+                            <!DOCTYPE html>
+                            <html>
+                            <head>
+                                <meta charset="UTF-8">
+                                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                                <style>
+                                    * { margin: 0; padding: 0; box-sizing: border-box; }
+                                    html, body { 
+                                        font-family: Arial, sans-serif; 
+                                        line-height: 1.6;
+                                        overflow: visible;
+                                        width: auto;
+                                        height: auto;
+                                    }
+                                    /* 确保内容完全可见 */
+                                    * { 
+                                        max-width: none !important;
+                                        overflow: visible !important;
+                                    }
+                                </style>
+                            </head>
+                            <body>
+                                ${htmlCode}
+                            </body>
+                            </html>
+                        `;
+                        
+                        iframeDoc.write(fullHtml);
+                        iframeDoc.close();
+                        
+                        // 等待内容渲染完成后计算尺寸
+                        setTimeout(() => {
+                            this.calculateContentSize();
+                        }, 200);
+                    };
+                    
+                    // 设置iframe的src为空白页面，触发onload
+                    iframe.src = 'about:blank';
+                    
+                    previewContainer.classList.add('has-content');
+                    exportBtn.disabled = false;
+                } else {
+                    previewContent.innerHTML = `<div class="flex items-center justify-center h-full text-gray-400 text-lg">${this.i18n ? this.i18n.getText('preview.empty') : '预览区域'}</div>`;
+                    previewContainer.classList.remove('has-content');
+                    exportBtn.disabled = true;
+                    this.updateSizeDisplay();
+                }
+            }
+            
+            calculateContentSize() {
+                if (!this.previewIframe) return;
+                
+                try {
+                    const iframeDoc = this.previewIframe.contentDocument || this.previewIframe.contentWindow.document;
+                    const body = iframeDoc.body;
+                    const html = iframeDoc.documentElement;
+                    
+                    // 获取实际内容尺寸
+                    const width = Math.max(
+                        body.scrollWidth, body.offsetWidth,
+                        html.clientWidth, html.scrollWidth, html.offsetWidth
+                    );
+                    const height = Math.max(
+                        body.scrollHeight, body.offsetHeight,
+                        html.clientHeight, html.scrollHeight, html.offsetHeight
+                    );
+                    
+                    this.actualContentSize = { width, height };
+                    
+                    // 更新iframe尺寸以适应内容
+                    this.previewIframe.style.width = width + 'px';
+                    this.previewIframe.style.height = height + 'px';
+                    
+                    // 更新尺寸显示
+                    this.updateSizeDisplay();
+                    
+                    // 适应窗口
+                    this.fitToWindow();
+                    
+                } catch (error) {
+                    console.warn('无法获取iframe内容尺寸:', error);
+                }
+            }
+            
+            updateSizeDisplay() {
+                const sizeElement = document.getElementById('content-size');
+                if (this.actualContentSize.width > 0) {
+                    sizeElement.textContent = `${this.actualContentSize.width} x ${this.actualContentSize.height}`;
+                } else {
+                    sizeElement.textContent = '尺寸: --';
+                }
+            }
+            
+            getExactPixelWidth() {
+                if (this.currentWidth === 'auto') {
+                    // 自适应模式：计算内容自然宽度
+                    return this.calculateNaturalWidth();
+                }
+                return parseInt(this.currentWidth);
+            }
+            
+            calculateNaturalWidth() {
+                if (!this.previewIframe) return 800; // 默认宽度
+                
+                try {
+                    const iframeDoc = this.previewIframe.contentDocument || this.previewIframe.contentWindow.document;
+                    const body = iframeDoc.body;
+                    const html = iframeDoc.documentElement;
+                    
+                    // 获取内容自然宽度
+                    const naturalWidth = Math.max(
+                        body.scrollWidth, body.offsetWidth,
+                        html.clientWidth, html.scrollWidth, html.offsetWidth
+                    );
+                    
+                    return Math.max(naturalWidth, 400); // 最小400px
+                } catch (error) {
+                    console.warn('无法计算自然宽度:', error);
+                    return 800; // 默认宽度
+                }
+            }
+            
+            updateScrollIndicator(type) {
+                const indicator = document.getElementById(type === 'code' ? 'code-scroll-indicator' : 'preview-scroll-indicator');
+                const container = type === 'code' ? document.getElementById('html-input') : document.getElementById('preview-container');
+                
+                if (!indicator || !container) return;
+                
+                const isScrollable = container.scrollHeight > container.clientHeight;
+                const isAtBottom = container.scrollTop + container.clientHeight >= container.scrollHeight - 5;
+                
+                if (isScrollable && !isAtBottom) {
+                    indicator.classList.add('visible');
+                    setTimeout(() => indicator.classList.remove('visible'), 2000);
+                } else {
+                    indicator.classList.remove('visible');
+                }
+            }
+            
+            setZoom(zoom) {
+                this.currentZoom = zoom;
+                document.getElementById('zoom-percent').textContent = zoom + '%';
+                document.getElementById('zoom-slider').value = zoom;
+                
+                if (this.previewIframe) {
+                    const scale = zoom / 100;
+                    this.previewIframe.style.transform = `scale(${scale})`;
+                }
+            }
+            
+            fitToWindow() {
+                if (!this.previewIframe || this.actualContentSize.width <= 0) return;
+                
+                const container = document.getElementById('preview-container');
+                const containerWidth = container.clientWidth - 40; // 减去padding
+                const containerHeight = container.clientHeight - 40;
+                
+                const scaleX = containerWidth / this.actualContentSize.width;
+                const scaleY = containerHeight / this.actualContentSize.height;
+                const scale = Math.min(scaleX, scaleY, 1); // 不放大，只缩小
+                
+                const zoom = Math.round(scale * 100);
+                this.setZoom(Math.max(10, zoom)); // 最小缩放10%
+            }
+            
+            updateUI() {
+                // Update preview empty state
+                const htmlCode = document.getElementById('html-input').value.trim();
+                if (!htmlCode) {
+                    const previewContent = document.getElementById('preview-content');
+                    previewContent.innerHTML = `<div class="flex items-center justify-center h-full text-gray-400 text-lg">${this.i18n.getText('preview.empty')}</div>`;
+                }
+                
+                // Update button text if in success state
+                this.updateSuccessButton();
+            }
+            
+            loadExampleCode() {
+                // 统一使用英文示例代码，提高全球用户理解度
+                const example = {
+                    title: 'Welcome to HTML to Image Tool',
+                    subtitle: 'This is a sample HTML code showing how to create beautiful HTML content.',
+                    features: 'Key Features:',
+                    feature1: 'Real-time HTML preview',
+                    feature2: 'Fixed width constraints',
+                    feature3: 'High-quality image export'
+                };
+                
+                const exampleHtml = `<div style="padding: 40px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 10px; color: white; font-family: Arial, sans-serif;">
+    <h1 style="margin: 0 0 20px 0; font-size: 28px; font-weight: bold;">${example.title}</h1>
+    <p style="margin: 0 0 15px 0; font-size: 16px; opacity: 0.9;">${example.subtitle}</p>
+    <div style="background: rgba(255,255,255,0.2); padding: 20px; border-radius: 8px; margin-top: 20px;">
+        <h3 style="margin: 0 0 10px 0; font-size: 18px;">${example.features}</h3>
+        <ul style="margin: 0; padding-left: 20px;">
+            <li style="margin-bottom: 5px;">${example.feature1}</li>
+            <li style="margin-bottom: 5px;">${example.feature2}</li>
+            <li style="margin-bottom: 5px;">${example.feature3}</li>
+        </ul>
+    </div>
+</div>`;
+                
+                document.getElementById('html-input').value = exampleHtml;
+                this.updatePreview();
+            }
+            
+            clearCode() {
+                document.getElementById('html-input').value = '';
+                this.updatePreview();
+            }
+            
+            async exportImage() {
+                if (this.isGenerating) return;
+                
+                const htmlCode = document.getElementById('html-input').value.trim();
+                
+                if (!htmlCode) {
+                    alert(this.i18n ? this.i18n.getText('messages.noCode') : '请先输入HTML代码');
+                    return;
+                }
+                
+                if (!this.previewIframe) {
+                    alert('预览未加载完成，请稍后再试');
+                    return;
+                }
+                
+                this.isGenerating = true;
+                this.showProgress();
+                
+                try {
+                    // Step 1: Parse HTML
+                    this.updateProgress(20, this.i18n ? this.i18n.getText('progress.step1') : '解析HTML代码...');
+                    await this.sleep(300);
+                    
+                    // 获取iframe文档
+                    const iframeDoc = this.previewIframe.contentDocument || this.previewIframe.contentWindow.document;
+                    if (!iframeDoc) {
+                        throw new Error('无法访问预览内容');
+                    }
+                    
+                    // Step 2: Render elements
+                    this.updateProgress(60, this.i18n ? this.i18n.getText('progress.step2') : '渲染页面元素...');
+                    await this.sleep(500);
+                    
+                    // Step 3: Generate image
+                    this.updateProgress(90, this.i18n ? this.i18n.getText('progress.step3') : '生成图片文件...');
+                    
+                    // 创建临时iframe进行完整的内容复制
+                    const tempIframe = document.createElement('iframe');
+                    tempIframe.style.position = 'absolute';
+                    tempIframe.style.left = '-9999px';
+                    tempIframe.style.top = '-9999px';
+                    tempIframe.style.border = 'none';
+                    tempIframe.style.visibility = 'hidden';
+                    
+                    // 关键修改：使用与预览完全相同的固定像素宽度
+                    const exactWidth = this.getExactPixelWidth();
+                    tempIframe.style.width = exactWidth + 'px';
+                    
+                    document.body.appendChild(tempIframe);
+                    
+                    // 等待iframe加载完成
+                    await new Promise((resolve) => {
+                        tempIframe.onload = () => {
+                            const tempDoc = tempIframe.contentDocument || tempIframe.contentWindow.document;
+                            
+                            const htmlCode = document.getElementById('html-input').value.trim();
+                            
+                            const fullHtml = `
+                                <!DOCTYPE html>
+                                <html>
+                                <head>
+                                    <meta charset="UTF-8">
+                                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                                    <style>
+                                        * { margin: 0; padding: 0; box-sizing: border-box; }
+                                        html, body { 
+                                            font-family: Arial, sans-serif; 
+                                            line-height: 1.6;
+                                            overflow: visible;
+                                            width: auto;
+                                            height: auto;
+                                        }
+                                        /* 确保内容完全可见 */
+                                        * { 
+                                            max-width: none !important;
+                                            overflow: visible !important;
+                                        }
+                                    </style>
+                                </head>
+                                <body>
+                                    ${htmlCode}
+                                </body>
+                                </html>
+                            `;
+                            
+                            tempDoc.write(fullHtml);
+                            tempDoc.close();
+                            
+                            // 等待内容渲染完成
+                            setTimeout(() => {
+                                // 简化尺寸计算：直接使用统一的宽度
+                                const body = tempDoc.body;
+                                const html = tempDoc.documentElement;
+                                
+                                // 使用与预览相同的固定宽度，高度由内容决定
+                                const finalExportWidth = exactWidth;
+                                const realHeight = Math.max(
+                                    body.scrollHeight, body.offsetHeight,
+                                    html.clientHeight, html.scrollHeight, html.offsetHeight
+                                );
+                                const finalExportHeight = Math.max(realHeight, 300);
+                                
+                                // 设置iframe尺寸
+                                tempIframe.style.width = finalExportWidth + 'px';
+                                tempIframe.style.height = finalExportHeight + 'px';
+                                
+                                resolve();
+                            }, 500); // 增加等待时间确保渲染完成
+                        };
+                        tempIframe.src = 'about:blank';
+                    });
+                    
+                    const tempDoc = tempIframe.contentDocument || tempIframe.contentWindow.document;
+                    
+                    // 从临时iframe获取最终导出尺寸
+                    const finalExportWidth = parseInt(tempIframe.style.width);
+                    const finalExportHeight = parseInt(tempIframe.style.height);
+                    
+                    const canvas = await html2canvas(tempDoc.body, {
+                        backgroundColor: null, // 移除背景色设置，保持用户HTML原始背景
+                        width: finalExportWidth,
+                        height: finalExportHeight,
+                        scale: 2, // 提高清晰度
+                        useCORS: true,
+                        allowTaint: true,
+                        foreignObjectRendering: true,
+                        logging: false,
+                        scrollX: 0,
+                        scrollY: 0,
+                        windowWidth: finalExportWidth,
+                        windowHeight: finalExportHeight,
+                        ignoreElements: (element) => {
+                            return false; // 不忽略任何元素，确保完整导出
+                        },
+                        onclone: (clonedDoc) => {
+                            // 在克隆文档中确保内容完全可见
+                            const body = clonedDoc.body;
+                            const html = clonedDoc.documentElement;
+                            if (body) {
+                                body.style.margin = '0';
+                                body.style.padding = '0';
+                                body.style.overflow = 'visible';
+                                body.style.width = 'auto';
+                                body.style.height = 'auto';
+                                body.style.boxSizing = 'border-box';
+                            }
+                            if (html) {
+                                html.style.width = finalExportWidth + 'px';
+                                html.style.height = 'auto';
+                                html.style.minHeight = finalExportHeight + 'px';
+                                html.style.overflow = 'visible';
+                            }
+                            // 确保所有子元素也可见
+                            const allElements = clonedDoc.querySelectorAll('*');
+                            allElements.forEach(el => {
+                                const style = el.style;
+                                if (style.overflow === 'hidden') {
+                                    style.overflow = 'visible';
+                                }
+                                if (style.maxHeight) {
+                                    style.maxHeight = 'none';
+                                }
+                                if (style.height && style.height.includes('px') && parseInt(style.height) < finalExportHeight) {
+                                    style.height = 'auto';
+                                }
+                            });
+                        }
+                    });
+                    
+                    // 清理临时iframe
+                    document.body.removeChild(tempIframe);
+                    
+                    // Step 4: Download
+                    this.updateProgress(100, this.i18n ? this.i18n.getText('progress.step4') : '准备下载...');
+                    await this.sleep(200);
+                    
+                    // Convert to blob and download
+                    canvas.toBlob((blob) => {
+                        const url = URL.createObjectURL(blob);
+                        const a = document.createElement('a');
+                        a.href = url;
+                        a.download = `html-image-${Date.now()}.${this.currentFormat}`;
+                        document.body.appendChild(a);
+                        a.click();
+                        document.body.removeChild(a);
+                        URL.revokeObjectURL(url);
+                        
+                        this.hideProgress();
+                        this.showSuccess();
+                    }, `image/${this.currentFormat}`, 0.92);
+                    
+                } catch (error) {
+                    console.error('Export failed:', error);
+                    this.hideProgress();
+                    alert(this.i18n ? this.i18n.getText('messages.exportFailed') : '图片导出失败，请检查HTML代码是否正确');
+                }
+                
+                this.isGenerating = false;
+            }
+            
+            showProgress() {
+                document.getElementById('progress-overlay').classList.remove('hidden');
+            }
+            
+            hideProgress() {
+                document.getElementById('progress-overlay').classList.add('hidden');
+            }
+            
+            updateProgress(percent, text) {
+                document.getElementById('progress-bar').style.width = percent + '%';
+                document.getElementById('progress-text').textContent = text;
+            }
+            
+            showSuccess() {
+                const btn = document.getElementById('export-btn');
+                const originalText = btn.textContent;
+                const successText = this.i18n ? this.i18n.getText('messages.exportSuccess') : '✓ 导出成功';
+                
+                btn.textContent = successText;
+                btn.classList.add('bg-green-500');
+                btn.classList.remove('bg-primary');
+                
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.classList.remove('bg-green-500');
+                    btn.classList.add('bg-primary');
+                }, 2000);
+            }
+            
+            updateSuccessButton() {
+                // Update button text if it's currently showing success state
+                const btn = document.getElementById('export-btn');
+                if (btn.classList.contains('bg-green-500')) {
+                    btn.textContent = this.i18n ? this.i18n.getText('messages.exportSuccess') : '✓ 导出成功';
+                }
+            }
+            
+            sleep(ms) {
+                return new Promise(resolve => setTimeout(resolve, ms));
+            }
+        }
+        
+        // Application initialization
+        async function initApp() {
+            // Initialize i18n first
+            window.i18nInstance = new I18n();
+            await window.i18nInstance.init();
+            
+            // Trigger i18n ready event
+            window.dispatchEvent(new CustomEvent('i18nReady'));
+            
+            // Initialize the tool
+            new HtmlToImageTool();
+        }
+        
+        // Initialize when DOM is ready
+        document.addEventListener('DOMContentLoaded', initApp);
+    </script>
+</body>
+</html>
