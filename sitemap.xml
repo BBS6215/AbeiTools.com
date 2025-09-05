@@ -177,4 +177,110 @@
         <priority>0.8</priority>
     </url>
     
+    <!-- HTML to Image Tool Pages -->
+    <!-- HTML to Image Tool - Main -->
+    <url>
+        <loc>https://abeitools.com/tools/html-to-image/</loc>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://abeitools.com/tools/html-to-image/?lang=zh" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://abeitools.com/tools/html-to-image/?lang=en" />
+        <xhtml:link rel="alternate" hreflang="es-ES" href="https://abeitools.com/tools/html-to-image/?lang=es" />
+        <xhtml:link rel="alternate" hreflang="ar" href="https://abeitools.com/tools/html-to-image/?lang=ar" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://abeitools.com/tools/html-to-image/?lang=ru" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://abeitools.com/tools/html-to-image/?lang=ja" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://abeitools.com/tools/html-to-image/" />
+        <lastmod>2025-01-04T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- HTML to Image Tool - Chinese -->
+    <url>
+        <loc>https://abeitools.com/tools/html-to-image/?lang=zh</loc>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://abeitools.com/tools/html-to-image/?lang=zh" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://abeitools.com/tools/html-to-image/?lang=en" />
+        <xhtml:link rel="alternate" hreflang="es-ES" href="https://abeitools.com/tools/html-to-image/?lang=es" />
+        <xhtml:link rel="alternate" hreflang="ar" href="https://abeitools.com/tools/html-to-image/?lang=ar" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://abeitools.com/tools/html-to-image/?lang=ru" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://abeitools.com/tools/html-to-image/?lang=ja" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://abeitools.com/tools/html-to-image/" />
+        <lastmod>2025-01-04T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- HTML to Image Tool - English -->
+    <url>
+        <loc>https://abeitools.com/tools/html-to-image/?lang=en</loc>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://abeitools.com/tools/html-to-image/?lang=zh" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://abeitools.com/tools/html-to-image/?lang=en" />
+        <xhtml:link rel="alternate" hreflang="es-ES" href="https://abeitools.com/tools/html-to-image/?lang=es" />
+        <xhtml:link rel="alternate" hreflang="ar" href="https://abeitools.com/tools/html-to-image/?lang=ar" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://abeitools.com/tools/html-to-image/?lang=ru" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://abeitools.com/tools/html-to-image/?lang=ja" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://abeitools.com/tools/html-to-image/" />
+        <lastmod>2025-01-04T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- HTML to Image Tool - Spanish -->
+    <url>
+        <loc>https://abeitools.com/tools/html-to-image/?lang=es</loc>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://abeitools.com/tools/html-to-image/?lang=zh" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://abeitools.com/tools/html-to-image/?lang=en" />
+        <xhtml:link rel="alternate" hreflang="es-ES" href="https://abeitools.com/tools/html-to-image/?lang=es" />
+        <xhtml:link rel="alternate" hreflang="ar" href="https://abeitools.com/tools/html-to-image/?lang=ar" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://abeitools.com/tools/html-to-image/?lang=ru" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://abeitools.com/tools/html-to-image/?lang=ja" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://abeitools.com/tools/html-to-image/" />
+        <lastmod>2025-01-04T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- HTML to Image Tool - Arabic -->
+    <url>
+        <loc>https://abeitools.com/tools/html-to-image/?lang=ar</loc>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://abeitools.com/tools/html-to-image/?lang=zh" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://abeitools.com/tools/html-to-image/?lang=en" />
+        <xhtml:link rel="alternate" hreflang="es-ES" href="https://abeitools.com/tools/html-to-image/?lang=es" />
+        <xhtml:link rel="alternate" hreflang="ar" href="https://abeitools.com/tools/html-to-image/?lang=ar" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://abeitools.com/tools/html-to-image/?lang=ru" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://abeitools.com/tools/html-to-image/?lang=ja" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://abeitools.com/tools/html-to-image/" />
+        <lastmod>2025-01-04T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- HTML to Image Tool - Russian -->
+    <url>
+        <loc>https://abeitools.com/tools/html-to-image/?lang=ru</loc>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://abeitools.com/tools/html-to-image/?lang=zh" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://abeitools.com/tools/html-to-image/?lang=en" />
+        <xhtml:link rel="alternate" hreflang="es-ES" href="https://abeitools.com/tools/html-to-image/?lang=es" />
+        <xhtml:link rel="alternate" hreflang="ar" href="https://abeitools.com/tools/html-to-image/?lang=ar" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://abeitools.com/tools/html-to-image/?lang=ru" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://abeitools.com/tools/html-to-image/?lang=ja" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://abeitools.com/tools/html-to-image/" />
+        <lastmod>2025-01-04T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- HTML to Image Tool - Japanese -->
+    <url>
+        <loc>https://abeitools.com/tools/html-to-image/?lang=ja</loc>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://abeitools.com/tools/html-to-image/?lang=zh" />
+        <xhtml:link rel="alternate" hreflang="en-US" href="https://abeitools.com/tools/html-to-image/?lang=en" />
+        <xhtml:link rel="alternate" hreflang="es-ES" href="https://abeitools.com/tools/html-to-image/?lang=es" />
+        <xhtml:link rel="alternate" hreflang="ar" href="https://abeitools.com/tools/html-to-image/?lang=ar" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://abeitools.com/tools/html-to-image/?lang=ru" />
+        <xhtml:link rel="alternate" hreflang="ja" href="https://abeitools.com/tools/html-to-image/?lang=ja" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://abeitools.com/tools/html-to-image/" />
+        <lastmod>2025-01-04T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
 </urlset>
